@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -52,6 +55,4 @@ dependencies {
     implementation (libs.androidx.navigation.fragment.ktx.v250)
     implementation (libs.androidx.navigation.ui.ktx.v250)
 
-    // Fragemnt Ktx
-    implementation ("androidx.fragment:fragment-ktx:1.8.3")
 }

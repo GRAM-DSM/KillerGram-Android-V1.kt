@@ -16,6 +16,7 @@
             android:id="@+id/introFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.killergram_android_v1.LoginFragment"
@@ -26,6 +27,7 @@
             android:id="@+id/loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.killergram_android_v1.SignUpFragment"
