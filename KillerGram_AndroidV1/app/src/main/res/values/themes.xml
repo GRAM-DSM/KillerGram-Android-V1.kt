@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.KillerGram_Androidv1" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.KillerGram_AndroidV1" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.KillerGram_Androidv1" parent="Base.Theme.KillerGram_Androidv1" />
+    <style name="Theme.KillerGram_AndroidV1" parent="Base.Theme.KillerGram_AndroidV1" />
 </resources>

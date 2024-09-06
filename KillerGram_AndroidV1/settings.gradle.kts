@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KillerGram_Android-v1"
+rootProject.name = "KillerGram_Android-V1"
 include(":app")
  

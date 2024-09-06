@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  MAIN  -->
+    <color name="main">#FF9EFF00</color>
+
+    <!-- SECONDARY  -->
+    <color name="secondary">#FF325100</color>
+
+    <!--  BLACK  -->
+    <color name="black">#FF333333</color>
+    <!--  WHITE  -->
+    <color name="white">#FFFFFFFF</color>
+
+    <!--  GRAY  -->
+    <color name="gray100">#FFF5F6F8</color>
+    <color name="gray200">#FFEFF0F2</color>
+    <color name="gray300">#FFDBDCDE</color>
+    <color name="gray400">#FFB4B5B7</color>
+    <color name="gray500">#FFA5A6A9</color>
+    <color name="gray600">#FF8F9094</color>
+    <color name="gray700">#FF828387</color>
+    <color name="gray800">#FF666669</color>
+    <color name="gray900">#FF4F4F51</color>
+    <color name="gray1000">#FF212121</color>
+    <color name="gray1100">#FF181818</color>
+
+    <!--  SYSTEM  -->
+    <color name="system">#FFE53A3A</color>
+
+    <!--  BACK  -->
+    <color name="back_black">#FF0F0F0F</color>
+</resources>
