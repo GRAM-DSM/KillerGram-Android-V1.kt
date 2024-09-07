@@ -5,16 +5,24 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/introFragment">
 
+    <action
+        android:id="@+id/startDestination"
+        app:popUpTo="@id/introFragment"
+        app:popUpToInclusive="true"
+        app:destination="@id/introFragment" />
 
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.killergram_android_v1.IntroFragment"
+        android:name="com.example.killergram_android_v1.SplashFragment"
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
 
         <action
             android:id="@+id/introFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/introFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
