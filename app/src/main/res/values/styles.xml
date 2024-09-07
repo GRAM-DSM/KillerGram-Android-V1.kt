@@ -5,4 +5,34 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_button1</item>
     </style>
+    <!-- no radius -->
+    <style name="FullKeyboardButton" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_input_button</item>
+    </style>
+
+
+
+    <style name="KillerGramBanner" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">260dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:src">@drawable/killer_gram_banner</item>
+    </style>
+
+    <style name="InputText" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">312dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/bg_input_button</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:textColorHint">@color/gray800</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">20dp</item>
+    </style>
+
+    <style name="InputButton" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">312dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/bg_input_button_color</item>
+    </style>
 </resources>

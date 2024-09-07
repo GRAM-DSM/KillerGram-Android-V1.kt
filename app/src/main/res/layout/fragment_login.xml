@@ -4,14 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/back_black"
     tools:context=".LoginFragment">
+
+    <ImageView
+        style="@style/KillerGramBanner"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="124dp" />
+
+    <TextView
+        style="@style/InputText"
+        android:hint="이메일을 입력해 주세요"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="193dp" />
+
+    <TextView
+        style="@style/InputText"
+        android:hint="비밀번호를 입력해 주세요"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="281dp" />
+
+    <Button
+        style="@style/InputButton"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="346dp" />
 
     <Button
         style="@style/GramButton"
+        android:layout_marginBottom="224dp"
         android:text="로그인"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-         />
-
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
