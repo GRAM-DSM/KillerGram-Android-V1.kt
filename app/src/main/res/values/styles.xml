@@ -37,4 +37,47 @@
 
     <!--  splash 화면  -->
     <!--  <style name="Theme.App.Splash" parent="Theme.SplashScreen" />  -->
+
+    <!-- font style -->
+    <style name="pretendard_h1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:lineSpacingExtra">6.4sp</item>
+    </style>
+
+    <style name="pretendard_h2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">28sp</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:lineSpacingExtra">5.6sp</item>
+    </style>
+
+    <style name="pretendard_h3" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:lineSpacingExtra">7.2sp</item>
+    </style>
+
+    <style name="pretendard_m1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+    </style>
+
+    <style name="pretendard_m2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:lineSpacingExtra">9dp</item>
+    </style>
+
+    <style name="pretendard_m3" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:lineSpacingExtra">8dp</item>
+    </style>
+
+    <style name="pretendard_label" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:lineSpacingExtra">7dp</item>
+    </style>
 </resources>
