@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.killergram_android_v1.SignUpFragment"
+        android:name="com.example.killergram_android_v1.signup.EmailVerificationFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
     </fragment>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="GramButton" parent="Theme.AppCompat.Light.NoActionBar">
+     <style name="GramButton" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_change_button</item>
     </style>
+
     <!-- no change -->
     <style name="FullKeyboardButton" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>
@@ -19,8 +19,8 @@
         <item name="android:src">@drawable/killer_gram_banner</item>
     </style>
 
-    <style name="InputText" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">312dp</item>
+    <style name="InputEditText" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:background">@drawable/bg_gray_color</item>
         <item name="android:fontFamily">@font/pretendard</item>
@@ -30,7 +30,7 @@
     </style>
 
     <style name="InputButton" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">312dp</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:background">@drawable/bg_main_color</item>
     </style>

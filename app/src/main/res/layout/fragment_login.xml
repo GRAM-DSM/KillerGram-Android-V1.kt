@@ -39,10 +39,11 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEmail_layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="20"
+            android:layout_marginHorizontal="24dp"
             android:hint="이메일"
             app:layout_constraintTop_toBottomOf="@id/KillerGramBanner"
             app:layout_constraintStart_toStartOf="@id/glStart"
@@ -51,7 +52,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
-                style="@style/InputText"
+                style="@style/InputEditText"
                 android:textColorHint="@color/gray800"
                 android:hint="이메일을 입력해 주세요"
                 tools:layout_editor_absoluteX="49dp"
@@ -64,8 +65,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputPassword_layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
             android:hint="비밀번호"
             app:counterEnabled="true"
             app:counterMaxLength="20"
@@ -76,7 +78,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputPassword"
-                style="@style/InputText"
+                style="@style/InputEditText"
                 android:hint="비밀번호를 입력해 주세요"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/gray800"
@@ -85,6 +87,7 @@
 
         <Button
             android:id="@+id/loginButton"
+            android:layout_marginHorizontal="24dp"
             style="@style/InputButton"
             android:text="로그인"
             app:layout_constraintTop_toBottomOf="@id/inputPassword_layout"
@@ -103,6 +106,7 @@
             >
 
             <TextView
+                android:id="@+id/signUpTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -120,6 +124,7 @@
                 android:textColor="@color/gray800" />
 
             <TextView
+                android:id="@+id/loginTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"

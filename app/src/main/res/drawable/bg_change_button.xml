@@ -13,4 +13,9 @@
             <corners android:radius="8dp" />
         </shape>
     </item>
+    <item android:state_window_focused="true">
+        <shape>
+            <solid android:color="@color/main" />
+        </shape>
+    </item>
 </selector>

@@ -1,12 +1,13 @@
-package com.example.killergram_android_v1
+package com.example.killergram_android_v1.signup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.killergram_android_v1.R
 
-class SignUpFragment : Fragment() {
+class EmailVerificationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
