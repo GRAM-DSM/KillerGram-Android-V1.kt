@@ -35,7 +35,7 @@ class SplashFragment : Fragment() {
             } else {
                 findNavController().navigate(R.id.introFragment_to_signUpFragment)
             }
-        }, 5500)
+        }, 1500)
     }
 
 
