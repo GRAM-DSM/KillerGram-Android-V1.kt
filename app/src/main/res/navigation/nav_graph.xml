@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.killergram_android_v1.LoginFragment"
+        android:name="com.example.killergram_android_v1.feature.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
 
@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.killergram_android_v1.signup.EmailVerificationFragment"
+        android:name="com.example.killergram_android_v1.feature.signup.EmailVerificationFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
     </fragment>
