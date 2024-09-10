@@ -1,4 +1,4 @@
-package com.example.killergram_android_v1.signup
+package com.example.killergram_android_v1.feature.signup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
