@@ -132,20 +132,11 @@
         </LinearLayout>
 
 
-=======
-            android:paddingVertical="20dp"
-            android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@id/leftArrow"
-            app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            >
 
 
 
 
 
->>>>>>> Stashed changes
         <com.google.android.material.textfield.TextInputLayout
 
             android:id="@+id/inputEmail_layout"
@@ -177,15 +168,6 @@
                 android:layout_marginTop="60dp"
                 android:hint="이메일을 입력해 주세요"
                 android:textColorHint="@color/gray800" />
-=======
-            app:counterEnabled="true"
-            app:counterMaxLength="20"
-            android:layout_marginHorizontal="24dp"
-            android:textColorHint="@color/gray800"
-            app:layout_constraintTop_toBottomOf="@id/TextEmail_layout"
-            app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            >
 
         </com.google.android.material.textfield.TextInputLayout>
 
