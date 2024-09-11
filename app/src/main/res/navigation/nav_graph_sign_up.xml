@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/nav_graph_sign_up">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_sign_up"
+    app:startDestination="@id/emailVerificationFragment">
 
+    <fragment
+        android:id="@+id/emailVerificationFragment"
+        android:name="com.example.killergram_android_v1.feature.signup.fragment.EmailVerificationFragment"
+        android:label="EmailVerificationFragment" />
+    <fragment
+        android:id="@+id/inputEmailFragment"
+        android:name="com.example.killergram_android_v1.feature.signup.fragment.InputEmailFragment"
+        android:label="InputEmailFragment" />
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        android:name="com.example.killergram_android_v1.feature.signup.fragment.SetPasswordFragment"
+        android:label="SetPasswordFragment" />
 </navigation>

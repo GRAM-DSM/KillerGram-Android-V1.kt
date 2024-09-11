@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import com.example.killergram_android_v1.R
 
 
-class AuthCodeFragment : Fragment() {
+class SetPasswordFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_auth_code, container, false)
+        return inflater.inflate(R.layout.fragment_set_password, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

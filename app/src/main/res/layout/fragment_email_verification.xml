@@ -12,7 +12,7 @@
 
         android:background="@color/back_black"
 
-        tools:context=".feature.signup.EmailVerificationFragment">
+        tools:context=".feature.signup.fragment.EmailVerificationFragment">
 
 
 

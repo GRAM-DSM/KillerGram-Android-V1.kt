@@ -1,4 +1,4 @@
-package com.example.killergram_android_v1.feature.signup
+package com.example.killergram_android_v1.feature.signup.fragment
 
 import android.os.Bundle
 import android.text.Editable
@@ -9,10 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.FragmentEmailVerificationBinding
-import com.example.killergram_android_v1.feature.MainActivity
-import com.google.android.material.textfield.TextInputLayout
-import java.util.Objects
-import kotlin.random.Random
 
 class EmailVerificationFragment : Fragment() {
 
