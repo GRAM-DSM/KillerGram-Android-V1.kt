@@ -28,12 +28,12 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         Handler(Looper.getMainLooper()).postDelayed({
             if (isOnBoardingFinished()) {
-                findNavController().navigate(R.id.introFragment_to_signUpFragment)
+
+                findNavController().navigate(R.id.introFragment_to_emailVerificationFragment)
             } else {
-                findNavController().navigate(R.id.introFragment_to_signUpFragment)
+                findNavController().navigate(R.id.introFragment_to_emailVerificationFragment)
             }
         }, 1500)
     }
