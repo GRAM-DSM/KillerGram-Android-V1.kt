@@ -1,8 +1,6 @@
 package com.example.killergram_android_v1.feature.signup
 
 import android.os.Bundle
-<<<<<<< Updated upstream
-=======
 import android.text.Editable
 import android.text.TextWatcher
 >>>>>>> Stashed changes
@@ -31,14 +29,9 @@ class AuthCodeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-<<<<<<< Updated upstream
-        return inflater.inflate(R.layout.fragment_email_verification, container, false)
+        return inflater.inflate(R.layout.fragment_auth_code, container, false)
     }
 
-
-=======
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

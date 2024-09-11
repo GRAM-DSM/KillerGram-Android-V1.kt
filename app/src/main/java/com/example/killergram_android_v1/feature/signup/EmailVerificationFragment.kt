@@ -9,10 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 <<<<<<< Updated upstream:app/src/main/java/com/example/killergram_android_v1/feature/signup/EmailVerificationFragment.kt
 import com.example.killergram_android_v1.R
-=======
-import androidx.core.view.WindowCompat
-import androidx.databinding.DataBindingUtil
-import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.FragmentEmailVerificationBinding
 import com.example.killergram_android_v1.feature.MainActivity
 import com.google.android.material.textfield.TextInputLayout
