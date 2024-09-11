@@ -1,86 +1,36 @@
+# Gradle files
+.gradle/
+build/
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs.class
+# Local configuration file (sdk path, etc)
+local.properties
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class
+# Log/OS Files
+*.log
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxCoreLibraryAccessors.class
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxEspressoLibraryAccessors.class
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLibraryAccessors.class
+# Keystore files
+*.jks
+*.keystore
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationFragmentKtxLibraryAccessors.class
+# Google Services (e.g. APIs or Firebase)
+google-services.json
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationFragmentLibraryAccessors.class
+# Google Cloud Platfor (e.g. Release Google play console)
+google-cloud-platform.json
 
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationUiKtxLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxNavigationUiLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$JetbrainsKotlinPluginAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$JetbrainsPluginAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxCoreLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxEspressoLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationFragmentKtxLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationFragmentLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationUiKtxLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxNavigationUiLibraryAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$JetbrainsKotlinPluginAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$JetbrainsPluginAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/metadata.bin
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/sources/org/gradle/accessors/dm/LibrariesForLibs.java
-
-.gradle/8.7/dependencies-accessors/f6b7f98dd1b04ddf1f3fc67b432d358d3813373d/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java
-
-.gradle/8.7/fileHashes/fileHashes.bin
-
-.gradle/8.7/fileHashes/fileHashes.lock
-
-.idea/.name
-
-.idea/compiler.xml
-
-.idea/gradle.xml
-
-.idea/migrations.xml
-
-.idea/misc.xml
-
-.idea/other.xml
-
-.idea/vcs.xml
-
-.idea/workspace.xml
+# Android Profiling
+*.hprof
