@@ -6,7 +6,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_change_button</item>
     </style>
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     <!-- no change -->
     <style name="FullKeyboardButton" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>

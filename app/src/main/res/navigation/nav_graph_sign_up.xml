@@ -8,7 +8,11 @@
 
     <fragment
         android:id="@+id/authCodeFragment"
+<<<<<<< Updated upstream
+        android:name="com.example.killergram_android_v1.AuthCodeFragment"
+=======
         android:name="com.example.killergram_android_v1.feature.signup.AuthCodeFragment"
+>>>>>>> Stashed changes
         android:label="AuthCodeFragment" />
     <fragment
         android:id="@+id/emailVerificationFragment"

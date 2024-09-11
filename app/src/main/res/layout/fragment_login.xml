@@ -81,7 +81,20 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+<<<<<<< Updated upstream
             android:id="@+id/btn_login"
+=======
+<<<<<<< Updated upstream
+            android:id="@+id/loginButton"
+<<<<<<< Updated upstream
+            android:layout_marginHorizontal="24dp"
+=======
+=======
+            android:id="@+id/btn_login"
+            android:layout_marginHorizontal="24dp"
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
             style="@style/InputButton"
             android:layout_marginHorizontal="24dp"
             android:text="로그인"
@@ -93,6 +106,12 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
+<<<<<<< Updated upstream
+=======
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+>>>>>>> Stashed changes
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"

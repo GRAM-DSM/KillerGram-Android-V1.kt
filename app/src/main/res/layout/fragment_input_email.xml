@@ -78,11 +78,20 @@
             android:textColorHint="@color/gray800"
             app:layout_constraintTop_toBottomOf="@id/TextEmail_layout"
             app:layout_constraintStart_toStartOf="@id/glStart"
+<<<<<<< Updated upstream
             app:layout_constraintEnd_toEndOf="@id/glEnd">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
                 style="@style/InputText"
+=======
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputEmail"
+                style="@style/InputEditText"
+>>>>>>> Stashed changes
                 android:textColorHint="@color/gray800"
                 android:hint="이메일을 입력해 주세요"
                 android:layout_marginTop="60dp"

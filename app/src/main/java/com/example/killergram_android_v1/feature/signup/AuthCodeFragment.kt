@@ -1,8 +1,11 @@
 package com.example.killergram_android_v1.feature.signup
 
 import android.os.Bundle
+<<<<<<< Updated upstream
+=======
 import android.text.Editable
 import android.text.TextWatcher
+>>>>>>> Stashed changes
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +20,12 @@ class AuthCodeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+<<<<<<< Updated upstream
+        return inflater.inflate(R.layout.fragment_email_verification, container, false)
+    }
+
+
+=======
         return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
 
@@ -25,4 +34,5 @@ class AuthCodeFragment : Fragment() {
 
 
     }
+>>>>>>> Stashed changes
 }
