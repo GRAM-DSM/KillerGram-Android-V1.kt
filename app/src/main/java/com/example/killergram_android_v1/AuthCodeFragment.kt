@@ -1,23 +1,27 @@
-package com.example.killergram_android_v1.feature.signup
+package com.example.killergram_android_v1
 
 import android.os.Bundle
-<<<<<<< Updated upstream
-=======
 import android.text.Editable
 import android.text.TextWatcher
->>>>>>> Stashed changes
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< Updated upstream:app/src/main/java/com/example/killergram_android_v1/AuthCodeFragment.kt
+=======
+<<<<<<< Updated upstream:app/src/main/java/com/example/killergram_android_v1/feature/signup/EmailVerificationFragment.kt
 import com.example.killergram_android_v1.R
-========
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+=======
+import androidx.core.view.WindowCompat
+import androidx.databinding.DataBindingUtil
+import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.FragmentEmailVerificationBinding
->>>>>>>> 173b87c (feat :: 회원가입 퍼블리싱):app/src/main/java/com/example/killergram_android_v1/SignUpFragment.kt
+import com.example.killergram_android_v1.feature.MainActivity
+import com.google.android.material.textfield.TextInputLayout
+import java.util.Objects
+import kotlin.random.Random
+>>>>>>> Stashed changes:app/src/main/java/com/example/killergram_android_v1/SignUpFragment.kt
+>>>>>>> Stashed changes:app/src/main/java/com/example/killergram_android_v1/feature/signup/EmailVerificationFragment.kt
 
 
 class AuthCodeFragment : Fragment() {
@@ -31,24 +35,18 @@ class AuthCodeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-<<<<<<< Updated upstream
-        return inflater.inflate(R.layout.fragment_email_verification, container, false)
-    }
 
-
-=======
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-<<<<<<<< HEAD:app/src/main/java/com/example/killergram_android_v1/feature/signup/AuthCodeFragment.kt
+<<<<<<< Updated upstream:app/src/main/java/com/example/killergram_android_v1/AuthCodeFragment.kt
 
     }
->>>>>>> Stashed changes
 }
-========
+=======
         onInputTextChanged()
         onInputFocusChanged()
 
@@ -86,4 +84,4 @@ class AuthCodeFragment : Fragment() {
 
     }
 }
->>>>>>>> 173b87c (feat :: 회원가입 퍼블리싱):app/src/main/java/com/example/killergram_android_v1/SignUpFragment.kt
+>>>>>>> Stashed changes:app/src/main/java/com/example/killergram_android_v1/feature/signup/EmailVerificationFragment.kt
