@@ -1,4 +1,4 @@
-package com.example.killergram_android_v1.feature.signup
+package com.example.killergram_android_v1
 
 import android.os.Bundle
 import android.text.Editable
@@ -7,7 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< Updated upstream:app/src/main/java/com/example/killergram_android_v1/AuthCodeFragment.kt
+=======
+<<<<<<< Updated upstream:app/src/main/java/com/example/killergram_android_v1/feature/signup/EmailVerificationFragment.kt
 import com.example.killergram_android_v1.R
+=======
 import androidx.core.view.WindowCompat
 import androidx.databinding.DataBindingUtil
 import com.example.killergram_android_v1.R
@@ -16,8 +20,11 @@ import com.example.killergram_android_v1.feature.MainActivity
 import com.google.android.material.textfield.TextInputLayout
 import java.util.Objects
 import kotlin.random.Random
+>>>>>>> Stashed changes:app/src/main/java/com/example/killergram_android_v1/SignUpFragment.kt
+>>>>>>> Stashed changes:app/src/main/java/com/example/killergram_android_v1/feature/signup/EmailVerificationFragment.kt
 
-class EmailVerificationFragment : Fragment() {
+
+class AuthCodeFragment : Fragment() {
 
     private val binding by lazy {
         FragmentEmailVerificationBinding.inflate(layoutInflater)
@@ -35,6 +42,11 @@ class EmailVerificationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+<<<<<<< Updated upstream:app/src/main/java/com/example/killergram_android_v1/AuthCodeFragment.kt
+
+    }
+}
+=======
         onInputTextChanged()
         onInputFocusChanged()
 
@@ -72,3 +84,4 @@ class EmailVerificationFragment : Fragment() {
 
     }
 }
+>>>>>>> Stashed changes:app/src/main/java/com/example/killergram_android_v1/feature/signup/EmailVerificationFragment.kt

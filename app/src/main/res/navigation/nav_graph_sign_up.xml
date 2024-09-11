@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/introFragment">
+
+
+    <fragment
+        android:id="@+id/authCodeFragment"
+<<<<<<< Updated upstream
+        android:name="com.example.killergram_android_v1.AuthCodeFragment"
+=======
+        android:name="com.example.killergram_android_v1.feature.signup.AuthCodeFragment"
+>>>>>>> Stashed changes
+        android:label="AuthCodeFragment" />
+    <fragment
+        android:id="@+id/emailVerificationFragment"
+        android:name="com.example.killergram_android_v1.feature.signup.EmailVerificationFragment"
+        android:label="EmailVerificationFragment" />
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        android:name="com.example.killergram_android_v1.feature.signup.SetPasswordFragment"
+        android:label="fragment_set_password"
+        tools:layout="@layout/fragment_set_password" />
+</navigation>

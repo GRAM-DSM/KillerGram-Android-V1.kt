@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -32,32 +33,33 @@
         <ImageView
             android:id="@+id/KillerGramBanner"
             style="@style/KillerGramBanner"
-            app:layout_constraintTop_toTopOf="@id/glTop"
-            app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
-            />
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toTopOf="@id/glTop" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEmail_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="이메일"
             app:counterEnabled="true"
             app:counterMaxLength="20"
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
             android:layout_marginHorizontal="24dp"
             android:hint="이메일"
             app:layout_constraintTop_toBottomOf="@id/KillerGramBanner"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            >
+            app:layout_constraintTop_toBottomOf="@id/KillerGramBanner">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
+                style="@style/InputText"
+                android:layout_marginTop="60dp"
+                android:hint="이메일을 입력해 주세요"
                 style="@style/InputEditText"
                 android:textColorHint="@color/gray800"
-                android:hint="이메일을 입력해 주세요"
                 tools:layout_editor_absoluteX="49dp"
                 tools:layout_editor_absoluteY="192dp"
-                android:layout_marginTop="60dp"
 
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,66 +73,80 @@
             android:hint="비밀번호"
             app:counterEnabled="true"
             app:counterMaxLength="20"
-            app:layout_constraintTop_toBottomOf="@id/inputEmail_layout"
-            app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
-            >
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/inputEmail_layout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputPassword"
+                style="@style/InputText"
+                android:layout_marginTop="8dp"
                 style="@style/InputEditText"
                 android:hint="비밀번호를 입력해 주세요"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/gray800"
-                />
+                android:textColor="@color/gray800" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+<<<<<<< Updated upstream
+            android:id="@+id/btn_login"
+=======
+<<<<<<< Updated upstream
             android:id="@+id/loginButton"
             android:layout_marginHorizontal="24dp"
+            android:id="@+id/btn_login"
+            android:layout_marginHorizontal="24dp"
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+            android:layout_marginHorizontal="24dp"
             style="@style/InputButton"
+            android:layout_marginHorizontal="24dp"
             android:text="로그인"
-            app:layout_constraintTop_toBottomOf="@id/inputPassword_layout"
-            app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
-            />
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/inputPassword_layout" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
+<<<<<<< Updated upstream
+=======
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
-            app:layout_constraintTop_toBottomOf="@id/loginButton"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+>>>>>>> Stashed changes
             android:orientation="horizontal"
-            >
+            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/btn_login">
 
             <TextView
                 android:id="@+id/signUpTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="회원가입"
                 android:fontFamily="@font/pretendard"
-                android:textColor="@color/gray800" />
+                android:text="회원가입"
+                android:textColor="@color/gray800"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:layout_marginHorizontal="16dp"
                 android:fontFamily="@font/pretendard"
                 android:text="|"
-                android:textColor="@color/gray800" />
+                android:textColor="@color/gray800"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/loginTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="로그인"
                 android:fontFamily="@font/pretendard"
-                android:textColor="@color/gray800" />
+                android:text="로그인"
+                android:textColor="@color/gray800"
+                android:textSize="18sp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
