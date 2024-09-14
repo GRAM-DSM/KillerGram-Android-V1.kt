@@ -12,7 +12,7 @@
 
         android:background="@color/back_black"
 
-        tools:context=".feature.signup.EmailVerificationFragment">
+        tools:context=".feature.signup.fragment.EmailVerificationFragment">
 
 
 
@@ -139,10 +139,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
 
+            app:boxStrokeErrorColor="@color/main"
             android:id="@+id/inputEmail_layout"
-
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
 
             android:layout_marginHorizontal="24dp"
@@ -166,8 +165,8 @@
                 android:id="@+id/inputEmail"
                 style="@style/InputEditText"
                 android:layout_marginTop="60dp"
-                android:hint="이메일을 입력해 주세요"
-                android:textColorHint="@color/gray800" />
+                android:hint="인증번호르 입력해 주세요"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 

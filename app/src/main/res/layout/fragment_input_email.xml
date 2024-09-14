@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@color/back_black"
-        tools:context=".feature.signup.EmailVerificationFragment">
+        tools:context=".feature.signup.fragment.EmailVerificationFragment">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/glTop"
@@ -69,6 +69,10 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:endIconMode="password_toggle"
             android:id="@+id/inputEmail_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

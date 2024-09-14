@@ -1,4 +1,4 @@
-package com.example.killergram_android_v1.feature.signup
+package com.example.killergram_android_v1.feature.signup.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import com.example.killergram_android_v1.R
 
 
-class SetPasswordFragment : Fragment() {
-
+class InputEmailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -20,6 +19,6 @@ class SetPasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_set_password, container, false)
+        return inflater.inflate(R.layout.fragment_input_email, container, false)
     }
 }
