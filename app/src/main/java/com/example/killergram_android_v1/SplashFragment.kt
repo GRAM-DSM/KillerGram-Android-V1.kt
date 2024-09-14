@@ -29,12 +29,7 @@ class SplashFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (isOnBoardingFinished()) {
-
-                findNavController().navigate(R.id.introFragment_to_emailVerificationFragment)
-            } else {
-                findNavController().navigate(R.id.introFragment_to_emailVerificationFragment)
-            }
+            findNavController().navigate(R.id.introFragment_to_loginFragment)
         }, 1500)
     }
 
