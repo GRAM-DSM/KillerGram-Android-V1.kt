@@ -71,32 +71,4 @@
         <item name="android:fontFamily">@font/pretendard</item>
         <item name="android:lineSpacingExtra">7dp</item>
     </style>
-
-    <style name="progress_bar_1" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="background">@drawable/progress_bar_1</item>
-        <item name="layout_goneMarginTop">34dp</item>
-    </style>
-
-    <style name="progress_bar_2" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="background">@drawable/progress_bar_2</item>
-        <item name="layout_goneMarginTop">34dp</item>
-    </style>
-
-    <style name="progress_bar_3" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="background">@drawable/progress_bar_3</item>
-        <item name="layout_goneMarginTop">34dp</item>
-    </style>
-
-    <style name="progress_bar_4" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="background">@drawable/progress_bar_4</item>
-        <item name="layout_goneMarginTop">34dp</item>
-    </style>
 </resources>

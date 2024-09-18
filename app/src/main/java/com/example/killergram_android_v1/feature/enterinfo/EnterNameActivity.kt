@@ -11,5 +11,6 @@ class EnterNameActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_enter_name)
 
+
     }
 }
