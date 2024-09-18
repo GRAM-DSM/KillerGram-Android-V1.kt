@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivitySetPasswordBinding
+import com.example.killergram_android_v1.feature.enterinfo.EnterNameActivity
 
 class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -26,13 +27,13 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        //val SetPasswordTo = Intent()
+        val SetPasswordToEnterName = Intent(this, EnterNameActivity::class.java)
         val SetPasswordToEmailVerifiaction = Intent(this, EmailVerificationActivity::class.java)
 
 
         when(view?.id) {
             R.id.btn_login -> {
-
+                startActivity(SetPasswordToEnterName)
             }
             R.id.leftArrow -> {
                 startActivity(SetPasswordToEmailVerifiaction)
