@@ -105,13 +105,13 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
                 android:orientation="vertical" >
 
-                <ImageButton
+                <ToggleButton
+                    android:id="@+id/btn_woman"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/gender_woman"
+                    android:background="@drawable/unselect_button_color_woman"
                     />
 
                 <TextView
@@ -127,11 +127,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <ImageButton
+                <Button
+                    android:id="@+id/btn_man"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/gender_man"
+                    android:src="@drawable/button_bg"
+                    android:background="@drawable/unselect_button_color_man"
                     />
 
                 <TextView

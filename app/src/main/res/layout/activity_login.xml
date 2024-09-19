@@ -53,10 +53,8 @@
                 android:id="@+id/inputEmail"
                 style="@style/InputEditText"
                 android:layout_marginTop="60dp"
-                android:onTextChanged=""
                 android:hint="이메일을 입력해 주세요"
                 android:textColorHint="@color/gray800"
-
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
