@@ -6,7 +6,7 @@
         <item name="android:src">@drawable/killer_gram_banner</item>
     </style>
 
-    <style name="InputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="InputEditText" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:background">@drawable/bg_button_gray_radius_8</item>
@@ -16,10 +16,14 @@
         <item name="android:paddingStart">20dp</item>
     </style>
 
+    <style name="InputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    </style>
+
     <style name="InputButton" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">56dp</item>
-        <item name="android:background">@drawable/bg_button_gray_radius_8</item>
+        <item name="android:background">@drawable/bg_button_main_radius_8</item>
     </style>
 
     <!-- font style -->
