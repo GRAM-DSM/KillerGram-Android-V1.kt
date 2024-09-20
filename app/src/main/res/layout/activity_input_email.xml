@@ -31,7 +31,7 @@
             app:layout_constraintGuide_end="24dp" />
 
         <ImageView
-            android:id="@+id/leftArrow"
+            android:id="@+id/ImV_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
@@ -41,18 +41,19 @@
             />
 
         <LinearLayout
-            android:id="@+id/TextEmail_layout"
+            android:id="@+id/linear_email"
             android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:paddingVertical="20dp"
             android:orientation="vertical"
             android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@id/leftArrow"
+            app:layout_constraintTop_toBottomOf="@id/ImV_left_arrow"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             >
 
             <TextView
+                android:id="@+id/tv_title_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/pretendard_h1"
@@ -61,6 +62,7 @@
                 />
 
             <TextView
+                android:id="@+id/tv_sub_title_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/pretendard_m3"
@@ -74,18 +76,18 @@
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense"
             app:boxCornerRadiusBottomEnd="8dp"
             app:boxCornerRadiusBottomStart="8dp"
-            android:id="@+id/inputEmail_layout"
+            android:id="@+id/TIL_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterMaxLength="16"
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
-            app:layout_constraintTop_toBottomOf="@id/TextEmail_layout"
+            app:layout_constraintTop_toBottomOf="@id/linear_email"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputEmail"
+                android:id="@+id/TIE_email"
                 style="@style/InputEditText"
                 android:textColorHint="@color/gray800"
                 android:hint="이메일을 입력해 주세요"
