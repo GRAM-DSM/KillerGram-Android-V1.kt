@@ -30,7 +30,7 @@
             app:layout_constraintGuide_end="24dp" />
 
         <ImageView
-            android:id="@+id/leftArrow"
+            android:id="@+id/ImV_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
@@ -40,7 +40,7 @@
             />
 
         <TextView
-            android:id="@+id/enter_info_tv"
+            android:id="@+id/tv_enter_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="정보 입력"
@@ -50,28 +50,29 @@
             app:layout_constraintTop_toTopOf="@id/glTop" />
 
         <ImageView
-            android:id="@+id/progress_bar"
+            android:id="@+id/progress_bar_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/progress_bar_3"
             android:layout_marginTop="34dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/enter_info_tv"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_enter_info"/>
 
         <LinearLayout
-            android:id="@+id/TextEmail_layout"
+            android:id="@+id/linear_gender"
             android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:paddingVertical="20dp"
             android:orientation="vertical"
             android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@id/progress_bar"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar_3"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             >
 
             <TextView
+                android:id="@+id/tv_title_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/pretendard_h1"
@@ -80,6 +81,7 @@
                 />
 
             <TextView
+                android:id="@+id/tv_sub_title_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/pretendard_m3"
@@ -98,23 +100,25 @@
             app:counterMaxLength="16"
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
-            app:layout_constraintTop_toBottomOf="@id/TextEmail_layout"
+            app:layout_constraintTop_toBottomOf="@id/linear_gender"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:orientation="vertical" >
 
                 <ToggleButton
                     android:id="@+id/btn_woman"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/unselect_button_color_woman"
+                    android:background="@drawable/gender_woman"
                     />
 
                 <TextView
+                    android:id="@+id/tv_woman"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="여성"
@@ -133,10 +137,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:src="@drawable/button_bg"
-                    android:background="@drawable/unselect_button_color_man"
+                    android:background="@drawable/gender_man"
                     />
 
                 <TextView
+                    android:id="@+id/tv_man"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="남성"
