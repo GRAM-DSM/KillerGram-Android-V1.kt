@@ -48,19 +48,19 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btn_man -> {
-                toggleSelectM()
+                onWomanToggleSelected()
             }
 
             R.id.btn_woman -> {
-                toggleSelectW()
+                onManToggleSelected()
             }
         }
     }
 
-    private fun toggleSelectW() {
+    private fun onWomanToggleSelected() {
     }
 
-    private fun toggleSelectM() {
+    private fun onManToggleSelected() {
 
     }
 }

@@ -19,10 +19,10 @@ class SplashActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash)
 
-        splashScreen()
+        moveToLoginActivity()
     }
 
-    private fun splashScreen() {
+    private fun moveToLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
 
         Handler(Looper.getMainLooper()).postDelayed( {
