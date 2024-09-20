@@ -37,7 +37,6 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
         var selectW = false
         var selectM = false
 
-
         when (v?.id) {
             R.id.btn_login -> {
                 startActivity(enterGenderToEnterSkills)

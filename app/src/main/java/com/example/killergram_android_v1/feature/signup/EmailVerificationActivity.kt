@@ -24,16 +24,15 @@ class EmailVerificationActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        val EmailVerifiactionToSetPassword = Intent(this, SetPasswordActivity::class.java)
-        val EmailVerifiactionToInputEmail = Intent(this, InputEmailActivity::class.java)
-
+        val emailVerificationToSetPassword = Intent(this, SetPasswordActivity::class.java)
+        val emailVerificationToInputEmail = Intent(this, InputEmailActivity::class.java)
 
         when(view?.id) {
             R.id.btn_login -> {
-                startActivity(EmailVerifiactionToSetPassword)
+                startActivity(emailVerificationToSetPassword)
             }
             R.id.leftArrow -> {
-                startActivity(EmailVerifiactionToInputEmail)
+                startActivity(emailVerificationToInputEmail)
             }
         }
     }
