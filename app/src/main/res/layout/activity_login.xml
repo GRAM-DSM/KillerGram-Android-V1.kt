@@ -38,19 +38,19 @@
             app:layout_constraintTop_toTopOf="@id/glTop" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEmail_layout"
+            android:id="@+id/TIL_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="이메일"
             app:errorEnabled="true"
             app:errorTextAppearance="@color/main"
+            android:textColorHint="@color/gray800"
             android:layout_marginHorizontal="24dp"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintTop_toBottomOf="@id/KillerGramBanner">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputEmail"
+                android:id="@+id/TIE_email"
                 style="@style/InputEditText"
                 android:layout_marginTop="60dp"
                 android:hint="이메일을 입력해 주세요"
@@ -60,23 +60,24 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputPassword_layout"
+            android:id="@+id/TIL_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:hint="비밀번호"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             app:counterEnabled="true"
             app:counterMaxLength="20"
+            android:layout_marginHorizontal="24dp"
+            android:textColorHint="@color/gray800"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/inputEmail_layout">
+            app:layout_constraintTop_toBottomOf="@id/TIL_email">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputPassword"
+                android:id="@+id/Login_TIE_pwd"
                 style="@style/InputEditText"
                 android:layout_marginTop="8dp"
                 android:hint="비밀번호를 입력해 주세요"
-                android:textColor="@color/gray800" />
+                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -86,9 +87,10 @@
             android:text="로그인"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/inputPassword_layout" />
+            app:layout_constraintTop_toBottomOf="@id/TIL_pwd" />
 
         <LinearLayout
+            android:id="@+id/linear_text"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
@@ -108,6 +110,7 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tv_middle_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -117,6 +120,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/tv_find_pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/pretendard_label"
