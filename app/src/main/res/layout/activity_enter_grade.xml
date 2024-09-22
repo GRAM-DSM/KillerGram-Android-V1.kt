@@ -93,9 +93,8 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
             android:id="@+id/TIL_grade"
+            style="@style/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterMaxLength="16"

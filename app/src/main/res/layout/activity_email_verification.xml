@@ -68,6 +68,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TIL_email_verification"
+            style="@style/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"

@@ -9,6 +9,7 @@
     <style name="InputEditText" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">@color/gray800</item>
         <item name="android:background">@drawable/bg_button_gray_radius_8</item>
         <item name="android:fontFamily">@font/pretendard</item>
         <item name="android:textColorHint">@color/gray800</item>
@@ -18,6 +19,7 @@
 
     <style name="InputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="errorEnabled">true</item>
+        <item name="hintEnabled">false</item>
         <item name="boxStrokeErrorColor">@color/system</item>
     </style>
 

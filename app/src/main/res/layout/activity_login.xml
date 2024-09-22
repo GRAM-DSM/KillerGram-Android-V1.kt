@@ -64,6 +64,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TIL_pwd"
+            style="@style/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="false"
