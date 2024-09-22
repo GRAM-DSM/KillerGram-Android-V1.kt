@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:allowBackup="true"
@@ -11,21 +11,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KillerGram_AndroidV1"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".feature.signup.SignUpActivity"
+            android:name=".feature.enterinfo.EnterSkillsActivity"
             android:exported="false" />
-
         <activity
-            android:name=".feature.MainActivity"
+            android:name=".feature.enterinfo.EnterGenderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.enterinfo.EnterGradeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.enterinfo.EnterNameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".feature.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.signup.SetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.signup.EmailVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KillerGram_AndroidV1" />
+        <activity
+            android:name=".feature.signup.InputEmailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
