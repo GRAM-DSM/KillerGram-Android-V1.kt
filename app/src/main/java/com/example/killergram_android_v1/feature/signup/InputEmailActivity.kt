@@ -20,7 +20,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_input_email)
 
         binding.btnLogin.setOnClickListener(this)
-        binding.leftArrow.setOnClickListener(this)
+        binding.ImVLeftArrow.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -31,7 +31,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_login -> {
                 startActivity(inputEmailToEmailVerification)
             }
-            R.id.leftArrow -> {
+            R.id.ImV_left_arrow -> {
                 startActivity(inputEmailToLogin)
             }
         }

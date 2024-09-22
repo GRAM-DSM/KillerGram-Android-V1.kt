@@ -8,10 +8,12 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityLoginBinding
 import com.example.killergram_android_v1.feature.signup.InputEmailActivity
@@ -23,16 +25,20 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         ActivityLoginBinding.inflate(layoutInflater)
     }
 
+    private var emailFlag = false
+    private var passwordFlag = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
+        setContentView(binding.root)
 
-        isRegexEmail()
+        onEmailListener()
+        onPasswordListener()
         binding.tvSignUp.setOnClickListener(this)
+        binding.btnLogin.setOnClickListener(this)
+
     }
-
-
 
     override fun onClick(view: View?) {
         val loginToInputEmail = Intent(this, InputEmailActivity::class.java)
@@ -41,32 +47,83 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_sign_up -> {
                 startActivity(loginToInputEmail)
             }
+            R.id.btn_login -> {
+                if (flagCheck()) {
+                    Toast.makeText(this, "로그인에 성공하였습니다!", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this, "로그인에 실패하였습니다!", Toast.LENGTH_LONG).show()
+                }
+            }
         }
     }
 
-    private fun isRegexEmail() {
-        val email: String = binding.inputEmail.text.toString().trim()
-        val emailPattern = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
-        Log.d("TEST", "함수 실행")
+    private fun onEmailListener() {
+        binding.TIEEmail.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-        binding.inputEmail.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                Log.d("TEST", "onTextChanged 연결")
-                if (s?.length!! >= binding.inputEmailLayout.getCounterMaxLength())
-                    binding.inputEmailLayout.error = "Max character length is " + binding.inputEmailLayout.getCounterMaxLength()
-                else if (!emailPattern) {
-                    binding.inputEmailLayout.error = "이메일 형식이 맞지 않습니다!"
-                    Log.d("TEST", s.toString() + "이메일 형식이 맞지 않습니다!")
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (s != null) {
+                    when {
+                        s.isEmpty() -> {
+                            binding.TILEmail.error = "이메일을 입력해주세요"
+                        }
+                        !isRegexEmail(s.toString()) -> {
+                            binding.TILEmail.error = "이메일 형식이 맞지 않습니다!"
+                        }
+                        else -> {
+                            binding.TILEmail.error = null
+                            emailFlag = true
+                        }
+                    }
                 }
-                else
-                    binding.inputEmailLayout.error = null
             }
 
-            override fun afterTextChanged(s: Editable?) {
-
+            override fun afterTextChanged(p0: Editable?) {
             }
+
         })
+    }
+
+    private fun onPasswordListener() {
+        binding.LoginTIEPwd.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (s != null) {
+                    when {
+                        s.isEmpty() -> {
+                            binding.TILPwd.error = "비밀번호를 입력해주세요"
+                        }
+                        !isRegexPassword(s.toString()) -> {
+                            binding.TILPwd.error = "비밀번호 형식이 맞지 않습니다!"
+                        }
+                        else -> {
+                            binding.TILPwd.error = null
+                            passwordFlag = true
+                        }
+                    }
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
+    }
+
+    private fun isRegexEmail(email: String): Boolean {
+        return email.matches("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$".toRegex())
+    }
+
+    private fun isRegexPassword(password: String): Boolean {
+        // 8~16글자, 대문자 1개, 소문자 1개, 숫자 1개
+        return password.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*#?&])[A-Za-z\\d@\$!%*#?&]{8,16}$".toRegex())
+    }
+
+    private fun flagCheck(): Boolean {
+        return emailFlag && passwordFlag
     }
 }

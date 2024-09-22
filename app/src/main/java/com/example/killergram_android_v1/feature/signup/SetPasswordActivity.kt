@@ -23,7 +23,7 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_set_password)
 
         binding.btnLogin.setOnClickListener(this)
-        binding.leftArrow.setOnClickListener(this)
+        binding.ImVLeftArrow.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -34,7 +34,7 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_login -> {
                 startActivity(setPasswordToEnterName)
             }
-            R.id.leftArrow -> {
+            R.id.ImV_left_arrow -> {
                 startActivity(setPasswordToEmailVerification)
             }
         }
