@@ -22,7 +22,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_enter_name)
 
         binding.btnLogin.setOnClickListener(this)
-        binding.leftArrow.setOnClickListener(this)
+        binding.ImVLeftArrow.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -34,7 +34,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_login -> {
                 startActivity(enterNameToEnterGrade)
             }
-            R.id.leftArrow -> {
+            R.id.ImV_left_arrow -> {
                 Toast.makeText(this, "정보를 입력해주세요!", Toast.LENGTH_LONG)
             }
         }
