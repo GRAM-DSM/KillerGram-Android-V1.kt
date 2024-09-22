@@ -24,7 +24,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        val inputEmailToEmailVerification = Intent(this, EmailVerificationActivity::class.java)
+        val inputEmailToEmailVerification = Intent(this, EmailValidationActivity::class.java)
         val inputEmailToLogin = Intent(this, LoginActivity::class.java)
 
         when(view?.id) {

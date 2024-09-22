@@ -2,15 +2,13 @@ package com.example.killergram_android_v1.feature.signup
 
 import android.content.Intent
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Input
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEmailVerificationBinding
-import com.example.killergram_android_v1.feature.login.LoginActivity
 
-class EmailVerificationActivity : AppCompatActivity(), View.OnClickListener {
+class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityEmailVerificationBinding.inflate(layoutInflater)
     }
