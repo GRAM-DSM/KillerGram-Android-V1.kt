@@ -2,5 +2,7 @@
 
     <style name="Base.Theme.KillerGram_AndroidV1" parent="Theme.Material3.DayNight.NoActionBar" />
     <!-- Base application theme. -->
-    <style name="Theme.KillerGram_AndroidV1" parent="Base.Theme.KillerGram_AndroidV1" />
+    <style name="Theme.KillerGram_AndroidV1" parent="Base.Theme.KillerGram_AndroidV1" >
+        <item name="colorPrimary">@color/main</item>
+    </style>
 </resources>
