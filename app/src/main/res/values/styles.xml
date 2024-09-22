@@ -17,12 +17,14 @@
     </style>
 
     <style name="InputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
+        <item name="errorEnabled">true</item>
+        <item name="boxStrokeErrorColor">@color/system</item>
     </style>
 
-    <style name="InputButton" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="InputButton" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">56dp</item>
+        <item name="colorPrimary">@color/main</item>
         <item name="android:background">@drawable/bg_button_main_radius_8</item>
     </style>
 
