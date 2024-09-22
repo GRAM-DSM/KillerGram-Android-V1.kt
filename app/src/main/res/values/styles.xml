@@ -31,6 +31,12 @@
         <item name="android:background">@drawable/bg_button_main_radius_8</item>
     </style>
 
+    <style name="InputTextView" parent="pretendard_label">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginStart">1dp</item>
+        <item name="android:textColor">@color/gray800</item>
+    </style>
+
     <!-- font style -->
     <style name="pretendard_h1" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textSize">32sp</item>
