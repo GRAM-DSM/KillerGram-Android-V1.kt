@@ -67,6 +67,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 if (s != null) {
                     when {
                         s.isEmpty() -> {
+                            binding.TILEmail.boxStrokeWidth = 2
+                            binding.TILEmail.setBoxCornerRadii(5f,5f,5f,5f)
                             binding.TILEmail.error = "이메일을 입력해주세요"
                         }
                         !isRegexEmail(s.toString()) -> {
