@@ -2,6 +2,8 @@ package com.example.killergram_android_v1.feature.signup
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +14,7 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityEmailVerificationBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,15 +25,15 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        val emailVerificationToSetPassword = Intent(this, SetPasswordActivity::class.java)
-        val emailVerificationToInputEmail = Intent(this, InputEmailActivity::class.java)
+        val emailValidationToSetPassword = Intent(this, SetPasswordActivity::class.java)
+        val emailValidationToInputEmail = Intent(this, InputEmailActivity::class.java)
 
         when(view?.id) {
             R.id.btn_login -> {
-                startActivity(emailVerificationToSetPassword)
+                startActivity(emailValidationToInputEmail)
             }
             R.id.ImV_left_arrow -> {
-                startActivity(emailVerificationToInputEmail)
+                startActivity(emailValidationToSetPassword)
             }
         }
     }

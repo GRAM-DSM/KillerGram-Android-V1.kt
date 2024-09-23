@@ -90,7 +90,15 @@
                 android:text="원활한 서비스를 위해 학번을 입력해주세요" />
         </LinearLayout>
 
-
+        <TextView
+            android:id="@+id/tv_grade"
+            style="@style/InputTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학번"
+            app:layout_constraintBottom_toTopOf="@id/TIL_grade"
+            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@id/linear_grade" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TIL_grade"
@@ -98,9 +106,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterMaxLength="16"
+            android:layout_marginTop="8dp"
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
-            app:layout_constraintTop_toBottomOf="@id/linear_grade"
+            app:layout_constraintTop_toBottomOf="@id/tv_grade"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd">
 

@@ -32,7 +32,7 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
 
         when(view?.id) {
             R.id.btn_login -> {
-                startActivity(enterNameToEnterGrade)
+
             }
             R.id.ImV_left_arrow -> {
                 startActivity(enterNameToEnterGender)
