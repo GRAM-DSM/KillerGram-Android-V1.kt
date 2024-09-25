@@ -30,7 +30,7 @@
             app:layout_constraintGuide_end="24dp" />
 
         <ImageView
-            android:id="@+id/ImV_left_arrow"
+            android:id="@+id/img_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
@@ -48,7 +48,7 @@
             android:paddingVertical="20dp"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/ImV_left_arrow">
+            app:layout_constraintTop_toBottomOf="@id/img_left_arrow">
 
             <TextView
                 android:id="@+id/tv_title_email"
@@ -82,7 +82,7 @@
             style="@style/InputLayout"
             app:boxCornerRadiusBottomEnd="8dp"
             app:boxCornerRadiusBottomStart="8dp"
-            android:id="@+id/TIL_email"
+            android:id="@+id/til_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterMaxLength="16"
@@ -94,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="@id/glEnd">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TIE_email"
+                android:id="@+id/tie_email"
                 style="@style/InputEditText"
                 android:layout_marginTop="60dp"
                 android:hint="이메일을 입력해 주세요"

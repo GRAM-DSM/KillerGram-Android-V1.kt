@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="@id/glTop" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TIL_email"
+            android:id="@+id/til_email"
             style="@style/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
             app:layout_constraintTop_toBottomOf="@id/KillerGramBanner">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TIE_email"
+                android:id="@+id/tie_email"
                 style="@style/InputEditText"
                 android:backgroundTint="@color/gray1100"
                 android:backgroundTintMode="src_over"
@@ -66,7 +66,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TIL_pwd"
+            android:id="@+id/til_pwd"
             style="@style/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
             android:layout_marginHorizontal="24dp"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/TIL_email">
+            app:layout_constraintTop_toBottomOf="@id/til_email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Login_TIE_pwd"
@@ -97,7 +97,7 @@
             android:text="로그인"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/TIL_pwd" />
+            app:layout_constraintTop_toBottomOf="@id/til_pwd" />
 
         <LinearLayout
             android:id="@+id/linear_text"

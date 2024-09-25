@@ -30,7 +30,7 @@
             app:layout_constraintGuide_end="24dp" />
 
         <ImageView
-            android:id="@+id/ImV_left_arrow"
+            android:id="@+id/img_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
@@ -94,7 +94,7 @@
         <LinearLayout
             app:boxCornerRadiusBottomEnd="8dp"
             app:boxCornerRadiusBottomStart="8dp"
-            android:id="@+id/inputEmail_layout"
+            android:id="@+id/linear_click_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterMaxLength="16"
@@ -103,8 +103,6 @@
             app:layout_constraintTop_toBottomOf="@id/linear_gender"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd">
-
-
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"

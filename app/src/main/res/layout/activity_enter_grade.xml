@@ -31,7 +31,7 @@
             app:layout_constraintGuide_end="24dp" />
 
         <ImageView
-            android:id="@+id/ImV_left_arrow"
+            android:id="@+id/img_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
@@ -96,12 +96,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="학번"
-            app:layout_constraintBottom_toTopOf="@id/TIL_grade"
+            app:layout_constraintBottom_toTopOf="@id/til_grade"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintTop_toBottomOf="@id/linear_grade" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TIL_grade"
+            android:id="@+id/til_grade"
             style="@style/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
             app:layout_constraintEnd_toEndOf="@id/glEnd">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TIE_grade"
+                android:id="@+id/tie_grade"
                 style="@style/InputEditText"
                 android:textColorHint="@color/gray800"
                 android:hint="학번을 입력해주세요 ex) 1107"
