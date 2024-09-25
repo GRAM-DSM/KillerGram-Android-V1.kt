@@ -22,7 +22,7 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_enter_skills)
 
         binding.btnLogin.setOnClickListener(this)
-        binding.ImVLeftArrow.setOnClickListener(this)
+        binding.imgLeftArrow.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -34,7 +34,7 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_login -> {
 
             }
-            R.id.ImV_left_arrow -> {
+            R.id.img_left_arrow -> {
                 startActivity(enterNameToEnterGender)
             }
         }

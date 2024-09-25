@@ -24,7 +24,7 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_set_password)
 
         binding.btnLogin.setOnClickListener(this)
-        binding.ImVLeftArrow.setOnClickListener(this)
+        binding.imgLeftArrow.setOnClickListener(this)
 
         onPasswordListener()
         onPasswordCheckListener()
@@ -38,14 +38,14 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_login -> {
                 startActivity(setPasswordToEnterName)
             }
-            R.id.ImV_left_arrow -> {
+            R.id.img_left_arrow -> {
                 startActivity(setPasswordToEmailVerification)
             }
         }
     }
 
     private fun onPasswordListener() {
-        binding.TIEPwd.addTextChangedListener(object : TextWatcher {
+        binding.tiePwd.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
@@ -53,13 +53,13 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
                 if (s != null) {
                     when {
                         s.isEmpty() -> {
-                            binding.TILPwd.error = "비밀번호를 입력해주세요"
+                            binding.tilPwd.error = "비밀번호를 입력해주세요"
                         }
                         !isRegexPassword(s.toString()) -> {
-                            binding.TILPwd.error = "비밀번호 형식이 맞지 않습니다!"
+                            binding.tilPwd.error = "비밀번호 형식이 맞지 않습니다!"
                         }
                         else -> {
-                            binding.TILPwd.error = null
+                            binding.tilPwd.error = null
                             passwordFlag = true
                         }
                     }
@@ -73,7 +73,7 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun onPasswordCheckListener() {
-        binding.TIEPwd.addTextChangedListener(object : TextWatcher {
+        binding.tiePwdCheck.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
@@ -81,13 +81,13 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
                 if (s != null) {
                     when {
                         s.isEmpty() -> {
-                            binding.TILPwdCheck.error = "비밀번호를 입력해주세요"
+                            binding.tilPwdCheck.error = "비밀번호를 입력해주세요"
                         }
                         !isRegexPassword(s.toString()) -> {
-                            binding.TILPwdCheck.error = "비밀번호 형식이 맞지 않습니다!"
+                            binding.tilPwdCheck.error = "비밀번호 형식이 맞지 않습니다!"
                         }
                         else -> {
-                            binding.TILPwdCheck.error = null
+                            binding.tilPwdCheck.error = null
                             passwordCheckFlag = true
                         }
                     }

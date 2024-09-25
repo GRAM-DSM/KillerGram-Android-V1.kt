@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun onEmailListener() {
-        binding.TIEEmail.addTextChangedListener(object : TextWatcher {
+        binding.tieEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -67,15 +67,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 if (s != null) {
                     when {
                         s.isEmpty() -> {
-                            binding.TILEmail.boxStrokeWidth = 2
-                            binding.TILEmail.setBoxCornerRadii(5f,5f,5f,5f)
-                            binding.TILEmail.error = "이메일을 입력해주세요"
+                            binding.tilEmail.boxStrokeWidth = 2
+                            binding.tilEmail.setBoxCornerRadii(5f,5f,5f,5f)
+                            binding.tilEmail.error = "이메일을 입력해주세요"
                         }
                         !isRegexEmail(s.toString()) -> {
-                            binding.TILEmail.error = "이메일 형식이 맞지 않습니다!"
+                            binding.tilEmail.error = "이메일 형식이 맞지 않습니다!"
                         }
                         else -> {
-                            binding.TILEmail.error = null
+                            binding.tilEmail.error = null
                             emailFlag = true
                         }
                     }
@@ -97,13 +97,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 if (s != null) {
                     when {
                         s.isEmpty() -> {
-                            binding.TILPwd.error = "비밀번호를 입력해주세요"
+                            binding.tilPwd.error = "비밀번호를 입력해주세요"
                         }
                         !isRegexPassword(s.toString()) -> {
-                            binding.TILPwd.error = "비밀번호 형식이 맞지 않습니다!"
+                            binding.tilPwd.error = "비밀번호 형식이 맞지 않습니다!"
                         }
                         else -> {
-                            binding.TILPwd.error = null
+                            binding.tilPwd.error = null
                             passwordFlag = true
                         }
                     }

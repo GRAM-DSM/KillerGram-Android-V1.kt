@@ -19,7 +19,7 @@ class EnterGradeActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_enter_grade)
 
         binding.btnLogin.setOnClickListener(this)
-        binding.ImVLeftArrow.setOnClickListener(this)
+        binding.imgLeftArrow.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -31,7 +31,7 @@ class EnterGradeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_login -> {
                 startActivity(enterGradeToEnterGender)
             }
-            R.id.ImV_left_arrow -> {
+            R.id.img_left_arrow -> {
                 startActivity(enterGradeToEnterName)
             }
         }

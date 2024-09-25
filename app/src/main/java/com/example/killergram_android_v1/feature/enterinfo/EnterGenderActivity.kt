@@ -24,7 +24,7 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
         enableEdgeToEdge()
         setContentView(R.layout.activity_enter_gender)
 
-        binding.ImVLeftArrow.setOnClickListener(this)
+        binding.imgLeftArrow.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
 
         binding.btnMan.setOnClickListener(this)
@@ -42,7 +42,7 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(enterGenderToEnterSkills)
             }
 
-            R.id.ImV_left_arrow -> {
+            R.id.img_left_arrow -> {
                 startActivity(enterGenderToEnterGrade)
             }
 
