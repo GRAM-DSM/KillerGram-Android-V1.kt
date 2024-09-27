@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivitySetPasswordBinding
 import com.example.killergram_android_v1.feature.enterinfo.EnterNameActivity
+import com.example.killergram_android_v1.feature.utils.isRegexPassword
 
 class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -99,11 +100,6 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         })
-    }
-
-    private fun isRegexPassword(password: String): Boolean {
-        // 8~16글자, 대문자 1개, 소문자 1개, 숫자 1개
-        return password.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*#?&])[A-Za-z\\d@\$!%*#?&]{8,16}$".toRegex())
     }
 
 

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityInputEmailBinding
 import com.example.killergram_android_v1.feature.login.LoginActivity
+import com.example.killergram_android_v1.feature.utils.isRegexEmail
 
 class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -53,7 +54,6 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
                     when {
                         s.isEmpty() -> {
                             binding.tilEmail.boxStrokeWidth = 2
-                            binding.tilEmail.setBoxCornerRadii(5f,5f,5f,5f)
                             binding.tilEmail.error = "이메일을 입력해주세요"
                         }
                         !isRegexEmail(s.toString()) -> {
@@ -74,9 +74,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
         })
     }
 
-    private fun isRegexEmail(email: String): Boolean {
-        return email.matches("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$".toRegex())
-    }
+
 
     private fun flagCheck(): Boolean {
         return emailFlag

@@ -17,10 +17,12 @@ import androidx.core.widget.addTextChangedListener
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityLoginBinding
 import com.example.killergram_android_v1.feature.signup.InputEmailActivity
+import com.example.killergram_android_v1.feature.utils.isRegexEmail
+import com.example.killergram_android_v1.feature.utils.isRegexPassword
 import java.util.regex.Pattern
 
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
+open class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
@@ -48,11 +50,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(loginToInputEmail)
             }
             R.id.btn_login -> {
-                if (flagCheck()) {
-                    Toast.makeText(this, "로그인에 성공하였습니다!", Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(this, "로그인에 실패하였습니다!", Toast.LENGTH_LONG).show()
-                }
+                Toast.makeText(this, if (flagCheck()) "로그인에 성공하였습니다!" else "로그인에 실패하였습니다!", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -116,14 +114,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         })
     }
 
-    private fun isRegexEmail(email: String): Boolean {
-        return email.matches("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$".toRegex())
-    }
 
-    private fun isRegexPassword(password: String): Boolean {
-        // 8~16글자, 대문자 1개, 소문자 1개, 숫자 1개
-        return password.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*#?&])[A-Za-z\\d@\$!%*#?&]{8,16}$".toRegex())
-    }
 
     private fun flagCheck(): Boolean {
         return emailFlag && passwordFlag
