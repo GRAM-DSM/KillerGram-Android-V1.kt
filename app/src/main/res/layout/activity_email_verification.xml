@@ -30,7 +30,7 @@
             app:layout_constraintGuide_end="24dp" />
 
         <ImageView
-            android:id="@+id/leftArrow"
+            android:id="@+id/img_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
@@ -47,7 +47,7 @@
             android:paddingVertical="20dp"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/leftArrow">
+            app:layout_constraintTop_toBottomOf="@id/ImV_left_arrow">
 
             <TextView
                 android:id="@+id/tv_title_email"
@@ -67,7 +67,8 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TIL_email_verification"
+            android:id="@+id/til_email_verification"
+            style="@style/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
@@ -80,7 +81,7 @@
             app:layout_constraintTop_toBottomOf="@id/linear_email_verification">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TIE_email_verification"
+                android:id="@+id/tie_email_verification"
                 style="@style/InputEditText"
                 android:layout_marginTop="60dp"
                 android:hint="인증번호를 입력해 주세요" />
@@ -96,7 +97,7 @@
             android:paddingVertical="20dp"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/TIL_email_verification">
+            app:layout_constraintTop_toBottomOf="@id/til_email_verification">
 
             <TextView
                 android:id="@+id/tv_title_timer"

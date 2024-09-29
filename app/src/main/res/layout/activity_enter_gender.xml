@@ -30,7 +30,7 @@
             app:layout_constraintGuide_end="24dp" />
 
         <ImageView
-            android:id="@+id/ImV_left_arrow"
+            android:id="@+id/img_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
@@ -94,7 +94,7 @@
         <LinearLayout
             app:boxCornerRadiusBottomEnd="8dp"
             app:boxCornerRadiusBottomStart="8dp"
-            android:id="@+id/inputEmail_layout"
+            android:id="@+id/linear_click_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterMaxLength="16"
@@ -104,50 +104,65 @@
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintEnd_toEndOf="@id/glEnd">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/back_black"
+                android:background="@drawable/button_selected"
                 android:layout_marginStart="24dp"
-                android:orientation="vertical" >
+                app:cardCornerRadius="10dp" >
 
-                <ToggleButton
-                    android:id="@+id/btn_woman"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/gender_woman"
-                    />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_woman"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="여성"
-                    android:layout_gravity="center"
-                    style="@style/pretendard_m2" />
-            </LinearLayout>
+                    <ImageButton
+                        android:id="@+id/btn_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/gender_woman"
+                        />
 
-            <LinearLayout
+                    <TextView
+                        android:id="@+id/tv_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="여성"
+                        android:layout_gravity="center"
+                        style="@style/pretendard_m2" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:background="@drawable/button_selected"
+                android:backgroundTint="@color/back_black"
+                android:layout_marginStart="24dp"
+                app:cardCornerRadius="10dp" >
 
-                <Button
-                    android:id="@+id/btn_man"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:src="@drawable/button_bg"
-                    android:background="@drawable/gender_man"
-                    />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_man"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="남성"
-                    android:layout_gravity="center"
-                    style="@style/pretendard_m2" />
-            </LinearLayout>
+                    <ImageButton
+                        android:id="@+id/btn_man"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/gender_man"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_man"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="남성"
+                        android:layout_gravity="center"
+                        style="@style/pretendard_m2" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
         <Button

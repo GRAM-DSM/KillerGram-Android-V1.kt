@@ -41,7 +41,7 @@
             android:name=".feature.signup.SetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.signup.EmailVerificationActivity"
+            android:name=".feature.signup.EmailValidationActivity"
             android:exported="false"
             android:theme="@style/Theme.KillerGram_AndroidV1" />
         <activity
