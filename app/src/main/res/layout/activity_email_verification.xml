@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:src="@drawable/chevron_right"
+            android:src="@drawable/chevron_left"
             app:layout_constraintStart_toStartOf="@id/glStart"
             app:layout_constraintTop_toTopOf="@id/glTop" />
 
