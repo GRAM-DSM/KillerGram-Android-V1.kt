@@ -16,6 +16,8 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         moveToLoginActivity()
+
+
     }
 
     private fun moveToLoginActivity() {
