@@ -241,7 +241,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/chevron_left_gray500"
-                android:background=""
+                android:background="@color/back_black"
                 android:layout_marginEnd="4dp"
                 android:layout_gravity="center" />
 
@@ -384,7 +384,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/chevron_right_gray500"
-                android:background=""
+                android:background="@color/back_black"
                 android:layout_gravity="center_vertical" />
         </LinearLayout>
 

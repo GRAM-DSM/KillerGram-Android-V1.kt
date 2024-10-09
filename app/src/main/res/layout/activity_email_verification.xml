@@ -47,7 +47,7 @@
             android:paddingVertical="20dp"
             app:layout_constraintEnd_toEndOf="@id/glEnd"
             app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@id/ImV_left_arrow">
+            app:layout_constraintTop_toBottomOf="@id/img_left_arrow">
 
             <TextView
                 android:id="@+id/tv_title_email"

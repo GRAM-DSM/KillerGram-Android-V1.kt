@@ -30,10 +30,10 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
 
         when(view?.id) {
             R.id.btn_login -> {
-                startActivity(emailValidationToInputEmail)
+                startActivity(emailValidationToSetPassword)
             }
             R.id.img_left_arrow -> {
-                startActivity(emailValidationToSetPassword)
+                startActivity(emailValidationToInputEmail)
             }
         }
     }
