@@ -26,11 +26,5 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    private fun getDate()  { // 요일, 날짜
-        val now =  System.currentTimeMillis()
-        val simpleDateFormat = SimpleDateFormat("EEEE", Locale.KOREA).format(now)
-        val simpleDateFormatDate = SimpleDateFormat("dd", Locale.KOREA).format(now)
-        //val date: String = Date(simpleDateFormat, simpleDateFormatDate).toString()
 
-    }
 }
