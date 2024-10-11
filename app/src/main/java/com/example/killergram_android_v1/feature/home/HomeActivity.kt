@@ -6,8 +6,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
+import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import java.text.SimpleDateFormat
 import java.time.DayOfWeek
 import java.time.LocalDate
@@ -19,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
     private val binding: ActivityHomeBinding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
+    private val homeViewModel: HomeViewModel = ViewModelProvider(this@HomeActivity)[HomeViewModel::class.java]
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +33,17 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         getDate()
+
+        observeTodaySportList()
+    }
+
+    private fun observeTodaySportList() {
+        homeViewModel.todaySportList.observe(this@HomeActivity) {
+            val homeAdapter = HomeAdapter(it)
+            val layoutManager = LinearLayoutManager(baseContext)
+            binding.recyclerSport.layoutManager = layoutManager
+            binding.recyclerSport.adapter = homeAdapter
+        }
     }
 
     private fun getDate() {
@@ -58,6 +76,5 @@ class HomeActivity : AppCompatActivity() {
             //binding.tvDateFirst.setText(days.indexOf(i)).toString()
             Log.d("TEST", days.joinToString(","))
         }
-
     }
 }
