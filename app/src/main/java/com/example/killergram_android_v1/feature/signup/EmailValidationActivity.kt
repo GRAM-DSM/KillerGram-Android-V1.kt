@@ -8,17 +8,17 @@ import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
-import com.example.killergram_android_v1.databinding.ActivityEmailVerificationBinding
+import com.example.killergram_android_v1.databinding.ActivityEmailValidationBinding
 
 class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
-        ActivityEmailVerificationBinding.inflate(layoutInflater)
+        ActivityEmailValidationBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_email_verification)
+        setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener(this)
         binding.imgLeftArrow.setOnClickListener(this)

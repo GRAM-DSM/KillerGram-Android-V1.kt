@@ -21,7 +21,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_input_email)
+        setContentView(binding.root)
 
         onEmailListener()
 

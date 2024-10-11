@@ -22,7 +22,7 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_enter_gender)
+        setContentView(binding.root)
 
         binding.imgLeftArrow.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
