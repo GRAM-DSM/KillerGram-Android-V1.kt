@@ -114,9 +114,11 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
         })
     }
 
-
-
     private fun flagCheck(): Boolean {
         return emailFlag && passwordFlag
+    }
+
+    private fun formatDate() {
+
     }
 }
