@@ -18,7 +18,7 @@ class HomeViewModel : ViewModel() {
 
 
 
-    private fun getDate() { // 요일, 날짜
+    fun getDate() { // 요일, 날짜
         _todaySportList.value = // 서버연동 후 값 적용
 
         return

@@ -27,7 +27,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         val enterNameToEnterGrade = Intent(this, EnterGradeActivity::class.java)
-        //val enterNameTo = Intent(this, InputEmailActivity::class.java)
+        val enterNameToSetPassword = Intent(this, SetPasswordActivity::class.java)
 
 
         when(view?.id) {
@@ -35,7 +35,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(enterNameToEnterGrade)
             }
             R.id.img_left_arrow -> {
-                Toast.makeText(this, "정보를 입력해주세요!", Toast.LENGTH_LONG)
+                startActivity(enterNameToSetPassword)
             }
         }
     }
