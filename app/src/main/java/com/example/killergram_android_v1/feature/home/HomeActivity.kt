@@ -1,6 +1,7 @@
 package com.example.killergram_android_v1.feature.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
 
-
+        getDate()
     }
 
     private fun getDate() {
@@ -52,7 +53,11 @@ class HomeActivity : AppCompatActivity() {
         repeat(5) {
             now = now.plusDays(1)
             days.add(now.dayOfMonth - 1)
-            binding.tvDateFirst.setText(now.toString()).toString()
         }
+        for (i in days) {
+            //binding.tvDateFirst.setText(days.indexOf(i)).toString()
+            Log.d("TEST", days.joinToString(","))
+        }
+
     }
 }

@@ -1,17 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge>
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/constraint_sport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_bg">
+        android:background="@drawable/component_layout_complete"
+        android:layout_marginTop="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintTop_toBottomOf="@id/linear_calendar"
+        android:layout_marginHorizontal="24dp"
+        >
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingVertical="8dp"
+            android:paddingHorizontal="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tv_item_complete"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="16명 중 12명 참여"
-                android:textColor="@color/gray600" />
+                android:textColor="@color/main" />
 
         </LinearLayout>
 
@@ -45,11 +51,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="완료"
-            android:textColor="@color/gray600"
+            android:text="진행 중"
+            android:textColor="@color/main"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</merge>
+
+</layout>
