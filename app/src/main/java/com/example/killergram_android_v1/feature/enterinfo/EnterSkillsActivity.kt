@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterNameBinding
+import com.example.killergram_android_v1.feature.home.HomeActivity
 
 class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -26,13 +27,13 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        val enterNameToEnterGrade = Intent(this, EnterGradeActivity::class.java)
+        val enterNameToHome = Intent(this, HomeActivity::class.java)
         val enterNameToEnterGender = Intent(this, EnterGenderActivity::class.java)
 
 
         when(view?.id) {
             R.id.btn_login -> {
-
+                startActivity(enterNameToHome)
             }
             R.id.img_left_arrow -> {
                 startActivity(enterNameToEnterGender)
