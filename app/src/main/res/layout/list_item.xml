@@ -5,7 +5,7 @@
         android:id="@+id/constraint_sport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/component_layout_complete"
+        android:background="@drawable/button_selected"
         android:layout_marginTop="16dp"
         android:paddingVertical="12dp"
         app:layout_constraintTop_toBottomOf="@id/linear_calendar"
