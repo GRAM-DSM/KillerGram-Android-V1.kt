@@ -34,6 +34,7 @@ class HomeAdapter(
             } else {
                 binding.tvItemComplete.text =  "진행 중"
                 binding.subTitle.resources.getColor(R.color.white)
+                binding.constraintSport.setBackgroundResource(R.drawable.bg_button_main_radius_8)
             }
         }
     }

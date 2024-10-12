@@ -39,12 +39,12 @@ class HomeActivity : AppCompatActivity() {
 
 
     private fun observeTodaySportList() {
-        homeViewModel.todaySportList.observe(this@HomeActivity) {
-            val homeAdapter = HomeAdapter(it)
-            val layoutManager = LinearLayoutManager(this)
-            binding.recyclerSport.layoutManager = layoutManager
-            binding.recyclerSport.adapter = homeAdapter
-        }
+            homeViewModel.todaySportList.observe(this@HomeActivity) {
+                val homeAdapter = HomeAdapter(it)
+                val layoutManager = LinearLayoutManager(this)
+                binding.recyclerSport.layoutManager = layoutManager
+                binding.recyclerSport.adapter = homeAdapter
+            }
     }
 
     private fun getDate() {

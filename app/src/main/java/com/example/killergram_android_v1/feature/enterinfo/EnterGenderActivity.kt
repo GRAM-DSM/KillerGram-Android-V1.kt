@@ -1,18 +1,13 @@
 package com.example.killergram_android_v1.feature.enterinfo
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.provider.CalendarContract.Colors
 import android.view.View
-import android.widget.CompoundButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.widget.CompoundButtonCompat
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterGenderBinding
+import com.example.killergram_android_v1.feature.enterinfo.enterSkill.EnterSkillsActivity
 
 class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
