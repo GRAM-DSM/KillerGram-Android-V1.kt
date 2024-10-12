@@ -247,11 +247,10 @@
 
             <LinearLayout
                 android:id="@+id/linear_calendar_title_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
                 android:orientation="vertical"
-                android:layout_marginEnd="10dp"
-                android:paddingHorizontal="19dp" >
+                android:layout_marginEnd="10dp">
 
                 <TextView
                     android:id="@+id/tv_monday"
@@ -274,11 +273,10 @@
 
             <LinearLayout
                 android:id="@+id/linear_calendar_title_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
                 android:orientation="vertical"
-                android:layout_marginEnd="10dp"
-                android:paddingHorizontal="19dp" >
+                android:layout_marginEnd="10dp">
 
                 <TextView
                     android:id="@+id/tv_tuesday"
@@ -301,11 +299,10 @@
 
             <LinearLayout
                 android:id="@+id/linear_calendar_title_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
                 android:orientation="vertical"
-                android:layout_marginEnd="10dp"
-                android:paddingHorizontal="19dp" >
+                android:layout_marginEnd="10dp">
 
                 <TextView
                     android:id="@+id/tv_wednesday"
@@ -328,11 +325,10 @@
 
             <LinearLayout
                 android:id="@+id/linear_calendar_title_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
                 android:orientation="vertical"
-                android:layout_marginEnd="10dp"
-                android:paddingHorizontal="19dp" >
+                android:layout_marginEnd="10dp">
 
                 <TextView
                     android:id="@+id/tv_thursday"
@@ -355,11 +351,10 @@
 
             <LinearLayout
                 android:id="@+id/linear_calendar_title_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
                 android:orientation="vertical"
-                android:layout_marginEnd="4dp"
-                android:paddingHorizontal="19dp" >
+                android:layout_marginEnd="4dp">
 
                 <TextView
                     android:id="@+id/tv_friday"
