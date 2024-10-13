@@ -1,11 +1,9 @@
 package com.example.killergram_android_v1.feature.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -152,8 +150,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         dateText3.text = day3.toString()
         dateText4.text = day4.toString()
         dateText5.text = day5.toString()
-
-        val nowdate = LocalDate.now().dayOfMonth
 
         val today = LocalDate.now()
 

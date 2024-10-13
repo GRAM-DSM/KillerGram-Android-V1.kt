@@ -3,10 +3,7 @@ package com.example.killergram_android_v1.feature.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 class HomeViewModel : ViewModel() {
     // 오늘의 스포츠 컴포넌트

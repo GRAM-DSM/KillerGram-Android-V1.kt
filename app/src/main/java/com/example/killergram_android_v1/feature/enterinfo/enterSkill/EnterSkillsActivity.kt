@@ -2,12 +2,10 @@ package com.example.killergram_android_v1.feature.enterinfo.enterSkill
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterSkillsBinding
@@ -18,7 +16,6 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityEnterSkillsBinding.inflate(layoutInflater)
     }
-    //private var buttonState: Boolean = false
 
     private val enterSkillsViewModel by lazy {
         ViewModelProvider(this@EnterSkillsActivity)[EnterSkillsViewModel::class.java]

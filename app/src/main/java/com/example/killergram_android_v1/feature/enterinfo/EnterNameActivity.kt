@@ -3,12 +3,10 @@ package com.example.killergram_android_v1.feature.enterinfo
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterNameBinding
-import com.example.killergram_android_v1.feature.signup.InputEmailActivity
 import com.example.killergram_android_v1.feature.signup.SetPasswordActivity
 
 class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
