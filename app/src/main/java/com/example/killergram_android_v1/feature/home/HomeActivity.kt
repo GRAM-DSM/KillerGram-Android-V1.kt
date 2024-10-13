@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
+import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 import java.time.DayOfWeek
 import java.time.LocalDate
 
@@ -29,23 +30,27 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         getDate(0)
 
+        raiseRecycleView()
         observeTodaySportList()
 
         binding.imgLeftArrow.setOnClickListener(this)
         binding.imgRightArrow.setOnClickListener(this)
     }
 
-    private fun observeTodaySportList() {
-            homeViewModel.todaySportList.observe(this@HomeActivity) {
-                val homeAdapter = HomeAdapter(it)
-                val layoutManager = LinearLayoutManager(this)
-                binding.recyclerSport.layoutManager = layoutManager
-                binding.recyclerSport.adapter = homeAdapter
-            }
+    private fun raiseRecycleView() {
+        val sportList: List<Sport> = listOf(
+            Sport("축구", 16, 9, true)
+        )
+        homeViewModel.addSportList(sportList)
     }
 
-    private fun raiseRecycleView() {
-
+    private fun observeTodaySportList() {
+        homeViewModel.todaySportList.observe(this@HomeActivity) {
+            val homeAdapter = HomeAdapter(it)
+            val layoutManager = LinearLayoutManager(this)
+            binding.recyclerSport.layoutManager = layoutManager
+            binding.recyclerSport.adapter = homeAdapter
+        }
     }
 
     override fun onClick(v: View?) {
