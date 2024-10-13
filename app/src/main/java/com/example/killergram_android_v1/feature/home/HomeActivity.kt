@@ -1,20 +1,16 @@
 package com.example.killergram_android_v1.feature.home
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
-import android.view.View
-import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.BindingAdapter
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
-import org.w3c.dom.Text
 import java.time.DayOfWeek
 import java.time.LocalDate
 
@@ -45,6 +41,7 @@ class HomeActivity : AppCompatActivity() {
                 binding.recyclerSport.layoutManager = layoutManager
                 binding.recyclerSport.adapter = homeAdapter
             }
+            homeViewModel.addSportList()
     }
 
     private fun getDate() {
@@ -87,7 +84,32 @@ class HomeActivity : AppCompatActivity() {
         dateText4.text = day4.toString()
         dateText5.text = day5.toString()
 
-        Log.d("TEST", binding.tvDateFirst.text.toString())
+        val nowdate = LocalDate.now().dayOfMonth
 
+        Log.d("TEST", nowdate.toString())
+
+        val today = LocalDate.now()
+
+        // 현재 날짜에 맞게 text 색 변경
+        if (today == now) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
+            when(now.dayOfWeek) {
+                DayOfWeek.MONDAY -> {
+                    dateText1.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
+                }
+                DayOfWeek.TUESDAY -> {
+                    dateText2.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
+                }
+                DayOfWeek.WEDNESDAY -> {
+                    dateText3.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
+                }
+                DayOfWeek.THURSDAY -> {
+                    dateText4.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
+                }
+                DayOfWeek.FRIDAY -> {
+                    dateText5.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
+                }
+                else -> {}
+            }
+        }
     }
 }

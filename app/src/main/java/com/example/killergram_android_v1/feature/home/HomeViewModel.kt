@@ -16,11 +16,7 @@ class HomeViewModel : ViewModel() {
     private val _todaySportList: MutableLiveData<List<Sport>> = MutableLiveData()
     val todaySportList: LiveData<List<Sport>> = _todaySportList
 
-
-
-    fun getDate() { // 요일, 날짜
-        _todaySportList.value = // 서버연동 후 값 적용
-
-        return
+    fun addSportList(sport: List<Sport>) { // 요일, 날짜
+        _todaySportList.value = sport // 서버연동 후 값 적용
     }
 }
