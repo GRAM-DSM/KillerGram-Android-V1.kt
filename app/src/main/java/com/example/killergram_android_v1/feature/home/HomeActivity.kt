@@ -2,6 +2,7 @@ package com.example.killergram_android_v1.feature.home
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
@@ -15,7 +16,7 @@ import java.time.DayOfWeek
 import java.time.LocalDate
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val binding: ActivityHomeBinding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
@@ -28,11 +29,13 @@ class HomeActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        getDate()
+        getDate(0)
 
         observeTodaySportList()
-    }
 
+        binding.imgLeftArrow.setOnClickListener(this)
+        binding.imgRightArrow.setOnClickListener(this)
+    }
 
     private fun observeTodaySportList() {
             homeViewModel.todaySportList.observe(this@HomeActivity) {
@@ -41,10 +44,24 @@ class HomeActivity : AppCompatActivity() {
                 binding.recyclerSport.layoutManager = layoutManager
                 binding.recyclerSport.adapter = homeAdapter
             }
-            homeViewModel.addSportList()
     }
 
-    private fun getDate() {
+    private fun raiseRecycleView() {
+
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id) {
+            R.id.img_left_arrow -> {
+                getDate(2)
+            }
+            R.id.img_right_arrow -> {
+                getDate(1)
+            }
+        }
+    }
+
+    private fun getDate(weekState: Int) {
         var now = LocalDate.now()
         val weeks = DayOfWeek.entries.toList()
 
@@ -71,6 +88,58 @@ class HomeActivity : AppCompatActivity() {
             days.add(now.dayOfMonth - 1)
         }
 
+        // 다음 주 계산
+        if (weekState == 1) {
+            now = now.plusWeeks(1)
+
+            when (now.dayOfWeek) {
+                in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
+                    now = now.minusDays(weeks.indexOf(now.dayOfWeek).toLong())
+                }
+
+                DayOfWeek.SATURDAY -> {
+                    now = now.plusDays(2)
+                }
+
+                DayOfWeek.SUNDAY -> {
+                    now = now.plusDays(1)
+                }
+
+                else -> {}
+            }
+
+            repeat(5) {
+                now = now.plusDays(1)
+                days.set(it, now.dayOfMonth - 1)
+            }
+        }
+
+        // 저번 주 계산
+        if(weekState == 2) {
+            now = now.minusWeeks(1)
+
+            when (now.dayOfWeek) {
+                in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
+                    now = now.minusDays(weeks.indexOf(now.dayOfWeek).toLong())
+                }
+
+                DayOfWeek.SATURDAY -> {
+                    now = now.plusDays(2)
+                }
+
+                DayOfWeek.SUNDAY -> {
+                    now = now.plusDays(1)
+                }
+
+                else -> {}
+            }
+
+            repeat(5) {
+                now = now.plusDays(1)
+                days.set(it, now.dayOfMonth - 1)
+            }
+        }
+
         val (day1, day2, day3, day4, day5) = days
         val dateText1 = binding.tvDateFirst
         val dateText2 = binding.tvDateSecond
@@ -85,8 +154,6 @@ class HomeActivity : AppCompatActivity() {
         dateText5.text = day5.toString()
 
         val nowdate = LocalDate.now().dayOfMonth
-
-        Log.d("TEST", nowdate.toString())
 
         val today = LocalDate.now()
 
