@@ -33,8 +33,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        getDate()
-
+        getDate(0)
+        // 지금 문제가 뭐냐면 여기 getDate()에서 setText를 해주는데 여기서 한 번만 호출하고 있어
         raiseRecycleView()
         observeTodaySportList()
 
@@ -59,14 +59,30 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v?.id) {
+        val dayList = listOf(
+            binding.tvDateFirst,
+            binding.tvDateSecond,
+            binding.tvDateThird,
+            binding.tvDateFourth,
+            binding.tvDateFifth,
+        )
+        when (v?.id) {
             R.id.img_left_arrow -> {
-                now = now.plusDays(7 * count--)
-                setPreWeek(now)
+                setNextWeek(now.plusDays(7 * count++)).run {
+                    repeat(this.size) {
+                        dayList[it].text = this[it].toString()
+                    }
+                }
+
             }
+
             R.id.img_right_arrow -> {
-                now = now.plusDays(7 * count++)
-                setNextWeek(now)
+
+                setPreWeek(now.minusDays(7 * count--)).run {
+                    repeat(this.size) {
+                        dayList[it].text = this[it].toString()
+                    }
+                }
             }
         }
     }
@@ -75,7 +91,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         var now = LocalDate.now()
         val weeks = DayOfWeek.entries.toList()
 
-        val days = mutableListOf<Int>()
+        var days = mutableListOf<Int>()
 
         when (now.dayOfWeek) {
             in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
@@ -115,22 +131,27 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         // 현재 날짜에 맞게 text 색 변경
         if (today == now) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
-            when(now.dayOfWeek) {
+            when (now.dayOfWeek) {
                 DayOfWeek.MONDAY -> {
                     dateText1.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
                 }
+
                 DayOfWeek.TUESDAY -> {
                     dateText2.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
                 }
+
                 DayOfWeek.WEDNESDAY -> {
                     dateText3.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
                 }
+
                 DayOfWeek.THURSDAY -> {
                     dateText4.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
                 }
+
                 DayOfWeek.FRIDAY -> {
                     dateText5.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
                 }
+
                 else -> {}
             }
         }
