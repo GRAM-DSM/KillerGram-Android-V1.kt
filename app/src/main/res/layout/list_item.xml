@@ -7,50 +7,39 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_selected"
         android:layout_marginTop="16dp"
-        android:paddingVertical="12dp"
+        android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/linear_calendar"
-        android:layout_marginHorizontal="24dp"
         >
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingVertical="8dp"
-            android:paddingHorizontal="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tv_item_complete"
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/pretendard_m1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="축구"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            />
 
-            <TextView
-                android:id="@+id/title"
-                style="@style/pretendard_m1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="축구"
-                android:textColor="@color/white" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="6dp" />
-
-            <TextView
-                android:id="@+id/sub_title"
-                style="@style/pretendard_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16명 중 12명 참여"
-                android:textColor="@color/main" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/sub_title"
+            style="@style/pretendard_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16명 중 12명 참여"
+            android:textColor="@color/main"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
         <TextView
             android:id="@+id/tv_item_complete"
             style="@style/pretendard_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:text="진행 중"
             android:textColor="@color/main"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -58,5 +47,4 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

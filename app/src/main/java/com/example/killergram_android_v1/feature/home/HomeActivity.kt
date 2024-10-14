@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
@@ -32,7 +33,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        getDate(0)
+        getDate()
 
         raiseRecycleView()
         observeTodaySportList()
@@ -51,7 +52,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private fun observeTodaySportList() {
         homeViewModel.todaySportList.observe(this@HomeActivity) {
             val homeAdapter = HomeAdapter(it)
-            val layoutManager = LinearLayoutManager(this)
+            val layoutManager = GridLayoutManager(this, 1)
             binding.recyclerSport.layoutManager = layoutManager
             binding.recyclerSport.adapter = homeAdapter
         }
@@ -60,17 +61,17 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.img_left_arrow -> {
-                setPreWeek(now.plusDays(7 * count--))
-                Log.d("TEST", count.toString())
+                now = now.plusDays(7 * count--)
+                setPreWeek(now)
             }
             R.id.img_right_arrow -> {
-                setNextWeek(now.plusDays(7 * count++))
-                Log.d("TEST", count.toString())
+                now = now.plusDays(7 * count++)
+                setNextWeek(now)
             }
         }
     }
 
-    private fun getDate(weekState: Int) {
+    private fun getDate() {
         var now = LocalDate.now()
         val weeks = DayOfWeek.entries.toList()
 
@@ -96,34 +97,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             now = now.plusDays(1)
             days.add(now.dayOfMonth - 1)
         }
-
-        // 다음 주 계산
-        if (weekState == 1) {
-            now = now.plusWeeks(1)
-
-            when (now.dayOfWeek) {
-                in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
-                    now = now.minusDays(weeks.indexOf(now.dayOfWeek).toLong())
-                }
-
-                DayOfWeek.SATURDAY -> {
-                    now = now.plusDays(2)
-                }
-
-                DayOfWeek.SUNDAY -> {
-                    now = now.plusDays(1)
-                }
-
-                else -> {}
-            }
-
-            repeat(5) {
-                now = now.plusDays(1)
-                days.set(it, now.dayOfMonth - 1)
-            }
-        }
-
-        // 저번 주 계산
 
         val (day1, day2, day3, day4, day5) = days
         val dateText1 = binding.tvDateFirst
