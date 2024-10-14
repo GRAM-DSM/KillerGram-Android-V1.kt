@@ -1,6 +1,7 @@
 package com.example.killergram_android_v1.feature.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,9 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val homeViewModel: HomeViewModel by lazy {
         ViewModelProvider(this@HomeActivity)[HomeViewModel::class.java]
     }
+
+    private var now = LocalDate.now()
+    private var count = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +60,12 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.img_left_arrow -> {
-                getDate(2)
+                setPreWeek(now.plusDays(7 * count--))
+                Log.d("TEST", count.toString())
             }
             R.id.img_right_arrow -> {
-                getDate(1)
+                setNextWeek(now.plusDays(7 * count++))
+                Log.d("TEST", count.toString())
             }
         }
     }
@@ -118,30 +124,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         // 저번 주 계산
-        if(weekState == 2) {
-            now = now.minusWeeks(1)
-
-            when (now.dayOfWeek) {
-                in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
-                    now = now.minusDays(weeks.indexOf(now.dayOfWeek).toLong())
-                }
-
-                DayOfWeek.SATURDAY -> {
-                    now = now.plusDays(2)
-                }
-
-                DayOfWeek.SUNDAY -> {
-                    now = now.plusDays(1)
-                }
-
-                else -> {}
-            }
-
-            repeat(5) {
-                now = now.plusDays(1)
-                days.set(it, now.dayOfMonth - 1)
-            }
-        }
 
         val (day1, day2, day3, day4, day5) = days
         val dateText1 = binding.tvDateFirst
@@ -179,5 +161,65 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 else -> {}
             }
         }
+    }
+
+    fun setNextWeek(week: LocalDate): MutableList<Int> {
+        var now = week
+        val weeks = DayOfWeek.entries.toList()
+
+        val days = mutableListOf<Int>()
+
+        when (now.dayOfWeek) {
+            in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
+                now = now.minusDays(weeks.indexOf(now.dayOfWeek).toLong())
+            }
+
+            DayOfWeek.SATURDAY -> {
+                now = now.plusDays(2)
+            }
+
+            DayOfWeek.SUNDAY -> {
+                now = now.plusDays(1)
+            }
+
+            else -> {}
+        }
+
+        repeat(5) {
+            now = now.plusDays(1)
+            days.add(now.dayOfMonth - 1)
+        }
+
+        return days
+    }
+
+    fun setPreWeek(week: LocalDate): MutableList<Int> {
+        var now = week
+        val weeks = DayOfWeek.entries.toList()
+
+        val days = mutableListOf<Int>()
+
+        when (now.dayOfWeek) {
+            in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
+                now = now.minusDays(weeks.indexOf(now.dayOfWeek).toLong())
+            }
+
+            DayOfWeek.SATURDAY -> {
+                now = now.plusDays(2)
+            }
+
+            DayOfWeek.SUNDAY -> {
+                now = now.plusDays(1)
+            }
+
+            else -> {}
+        }
+
+        repeat(5) {
+            now = now.plusDays(1)
+            days.add(now.dayOfMonth - 1)
+        }
+
+        return days
     }
 }
