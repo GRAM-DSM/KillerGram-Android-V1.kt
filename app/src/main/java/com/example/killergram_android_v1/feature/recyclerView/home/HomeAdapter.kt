@@ -7,7 +7,8 @@ import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ListItemBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 
-class HomeAdapter(
+class
+HomeAdapter(
     private val items: List<Sport>
 ) : RecyclerView.Adapter<HomeAdapter.Holder>() {
 

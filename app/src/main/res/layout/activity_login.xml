@@ -9,21 +9,21 @@
         tools:context=".LoginFragment">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glTop"
+            android:id="@+id/gl_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="160dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glStart"
+            android:id="@+id/gl_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="24dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glEnd"
+            android:id="@+id/gl_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -32,9 +32,9 @@
         <ImageView
             android:id="@+id/KillerGramBanner"
             style="@style/KillerGramBanner"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toTopOf="@id/glTop" />
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toTopOf="@id/gl_top" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_email"
@@ -48,8 +48,8 @@
             android:textColorHint="@color/gray800"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="52dp"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/KillerGramBanner">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -76,8 +76,8 @@
             app:boxStrokeColor="@color/gray1100"
             android:textColorHint="@color/gray800"
             android:layout_marginHorizontal="24dp"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/til_email">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -95,8 +95,8 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/design_default_color_primary"
             android:text="로그인"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/til_pwd" />
 
         <LinearLayout
@@ -105,8 +105,8 @@
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            app:layout_constraintStart_toStartOf="@id/glStart"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/btn_login">
 
             <TextView
