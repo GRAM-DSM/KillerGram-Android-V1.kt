@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterGradeBinding
+import com.example.killergram_android_v1.feature.enterinfo.endterGender.EnterGenderActivity
 
 class EnterGradeActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {

@@ -26,7 +26,7 @@
             android:name=".feature.enterinfo.enterSkill.EnterSkillsActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.enterinfo.EnterGenderActivity"
+            android:name=".feature.enterinfo.endterGender.EnterGenderActivity"
             android:exported="false" />
         <activity
             android:name=".feature.enterinfo.EnterGradeActivity"

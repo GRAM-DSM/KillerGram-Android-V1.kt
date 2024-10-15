@@ -1,4 +1,4 @@
-package com.example.killergram_android_v1.feature.enterinfo
+package com.example.killergram_android_v1.feature.enterinfo.endterGender
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterGenderBinding
+import com.example.killergram_android_v1.feature.enterinfo.EnterGradeActivity
 import com.example.killergram_android_v1.feature.enterinfo.enterSkill.EnterSkillsActivity
 
 class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
