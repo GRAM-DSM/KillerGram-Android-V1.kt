@@ -74,22 +74,34 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun skillViewClickListener() {
+        val pref = getSharedPreferences("pref", 0)
+        val edit = pref.edit()
+
         enterSkillsViewModel.buttonState.observe(this@EnterSkillsActivity) {
             when(it) {
                 1 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
+
+                    edit.putString("SkillLevel", "상")
+                    edit.apply()
                 }
                 2 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
+
+                    edit.putString("SkillLevel", "중")
+                    edit.apply()
                 }
                 3 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
+
+                    edit.putString("SkillLevel", "하")
+                    edit.apply()
                 }
             }
         }

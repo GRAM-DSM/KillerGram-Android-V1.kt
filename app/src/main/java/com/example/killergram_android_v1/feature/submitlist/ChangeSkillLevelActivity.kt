@@ -2,6 +2,7 @@ package com.example.killergram_android_v1.feature.submitlist
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -52,22 +53,48 @@ class ChangeSkillLevelActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun skillViewClickListener() {
+        val pref = getSharedPreferences("pref", 0)
+        val edit = pref.edit()
+
+        when(pref.getString("SkillLevel", "")) {
+            "상" -> {
+                submitViewModel.onSelectItem(1)
+            }
+            "중" -> {
+                submitViewModel.onSelectItem(2)
+            }
+            "하" -> {
+                submitViewModel.onSelectItem(3)
+            }
+            else -> {}
+        }
+
         submitViewModel.buttonState.observe(this@ChangeSkillLevelActivity) {
             when(it) {
                 1 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
+
+                    edit.putString("SkillLevel", "상")
+                    edit.apply()
                 }
                 2 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
+
+                    edit.putString("SkillLevel", "중")
+                    edit.apply()
                 }
                 3 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
+
+                    edit.putString("SkillLevel", "하")
+                    edit.apply()
+                    Log.d("TEST", pref.getString("SKillLevel", " ").toString())
                 }
             }
         }

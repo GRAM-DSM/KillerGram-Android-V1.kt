@@ -8,14 +8,14 @@ class SubmitViewModel: ViewModel() {
     private val _buttonState: MutableLiveData<Int> = MutableLiveData() // setter
     var buttonState: LiveData<Int> = _buttonState // getter
 
-    private val _textState: MutableLiveData<Int> = MutableLiveData()
-    var textState: LiveData<Int> = _textState
+    private val _textState: MutableLiveData<String> = MutableLiveData()
+    var textState: LiveData<String> = _textState
 
     fun onSelectItem(selectedButton: Int) {
         _buttonState.value = selectedButton
     }
 
-    fun setLiveText(change: Int) {
+    fun setLiveText(change: String) {
         _textState.value = change
     }
 }

@@ -48,18 +48,8 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun observeChangeText() {
-        submitViewModel.textState.observe(this@SubmitBasketballActivity) {
-            when(it) {
-                1 -> {
-                    binding.tvSubmitSkillText.text = "상"
-                }
-                2 -> {
-                    binding.tvSubmitSkillText.text = "중"
-                }
-                3 -> {
-                    binding.tvSubmitSkillText.text = "하"
-                }
-            }
-        }
+        val pref = getSharedPreferences("pref", 0)
+
+        binding.tvSubmitSkillText.text = pref.getString("SkillLevel", "")
     }
 }
