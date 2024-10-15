@@ -92,7 +92,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/skill_top"
+                android:id="@+id/tv_submit_skill_text"
                 style="@style/pretendard_m3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

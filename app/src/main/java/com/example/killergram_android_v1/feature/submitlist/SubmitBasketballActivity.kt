@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivitySubmitBinding
 import com.example.killergram_android_v1.feature.home.HomeActivity
@@ -12,6 +13,9 @@ import com.example.killergram_android_v1.feature.home.HomeActivity
 class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivitySubmitBinding.inflate(layoutInflater)
+    }
+    private val submitViewModel by lazy {
+        ViewModelProvider(this@SubmitBasketballActivity)[SubmitViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +26,8 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
         binding.imgSubmitBack.setOnClickListener(this)
         binding.btnSubmit.setOnClickListener(this)
         binding.tvSubmitChangeSkill.setOnClickListener(this)
+
+        observeChangeText()
     }
 
     override fun onClick(v: View?) {
@@ -37,6 +43,22 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.tv_submit_change_skill -> {
                 startActivity(submitToChangeSkillLevel)
+            }
+        }
+    }
+
+    private fun observeChangeText() {
+        submitViewModel.textState.observe(this@SubmitBasketballActivity) {
+            when(it) {
+                1 -> {
+                    binding.tvSubmitSkillText.text = "상"
+                }
+                2 -> {
+                    binding.tvSubmitSkillText.text = "중"
+                }
+                3 -> {
+                    binding.tvSubmitSkillText.text = "하"
+                }
             }
         }
     }
