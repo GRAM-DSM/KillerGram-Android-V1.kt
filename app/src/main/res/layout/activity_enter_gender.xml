@@ -123,14 +123,14 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/btn_woman"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="7dp"
-                        android:layout_marginStart="12dp"
+                        android:padding="2dp"
                         android:src="@drawable/gender_woman"
                         android:background="@drawable/button_bg"
                         />
@@ -163,7 +163,7 @@
                         android:id="@+id/btn_man"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
+                        android:padding="2dp"
                         android:src="@drawable/gender_man"
                         android:background="@drawable/button_bg"
                         />
