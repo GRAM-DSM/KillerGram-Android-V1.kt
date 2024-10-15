@@ -33,8 +33,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        getDate(0)
-        // 지금 문제가 뭐냐면 여기 getDate()에서 setText를 해주는데 여기서 한 번만 호출하고 있어
+        getDate()
+
         raiseRecycleView()
         observeTodaySportList()
 
@@ -68,17 +68,19 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         )
         when (v?.id) {
             R.id.img_left_arrow -> {
-                setNextWeek(now.plusDays(7 * count++)).run {
+                now = now.minusWeeks(1)
+                setPreWeek(now).run {
+                    Log.d("TEST", now.toString())
                     repeat(this.size) {
                         dayList[it].text = this[it].toString()
                     }
                 }
-
             }
 
             R.id.img_right_arrow -> {
-
-                setPreWeek(now.minusDays(7 * count--)).run {
+                now = now.plusWeeks(1)
+                setNextWeek(now).run {
+                    Log.d("TEST", now.toString())
                     repeat(this.size) {
                         dayList[it].text = this[it].toString()
                     }
