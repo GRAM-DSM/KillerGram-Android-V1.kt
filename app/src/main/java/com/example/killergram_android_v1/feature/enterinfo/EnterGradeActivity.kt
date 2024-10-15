@@ -16,7 +16,7 @@ class EnterGradeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_enter_grade)
+        setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener(this)
         binding.imgLeftArrow.setOnClickListener(this)

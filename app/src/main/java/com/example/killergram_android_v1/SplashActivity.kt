@@ -10,12 +10,18 @@ import com.example.killergram_android_v1.databinding.ActivitySplashBinding
 import com.example.killergram_android_v1.feature.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
+    private val binding by lazy {
+        ActivitySplashBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_splash)
+        setContentView(binding.root)
 
         moveToLoginActivity()
+
+
     }
 
     private fun moveToLoginActivity() {

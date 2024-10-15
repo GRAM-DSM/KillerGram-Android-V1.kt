@@ -58,6 +58,7 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:lineSpacingExtra">7.2sp</item>
     </style>
 
@@ -87,5 +88,33 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/pretendard</item>
         <item name="android:lineSpacingExtra">7dp</item>
+    </style>
+
+    <style name="tableTennisIconStyle" >
+        <item name="android:layout_width">76dp</item>
+        <item name="android:layout_height">76dp</item>
+        <item name="background">@drawable/icon_radius</item>
+        <item name="srcCompat">@drawable/ic_table_tennis</item>
+    </style>
+
+    <style name="soccerIconStyle" >
+        <item name="android:layout_width">76dp</item>
+        <item name="android:layout_height">76dp</item>
+        <item name="background">@drawable/icon_radius</item>
+        <item name="srcCompat">@drawable/ic_soccer</item>
+    </style>
+
+    <style name="fitnessIconStyle" >
+        <item name="android:layout_width">76dp</item>
+        <item name="android:layout_height">76dp</item>
+        <item name="background">@drawable/icon_radius</item>
+        <item name="srcCompat">@drawable/ic_fitness</item>
+    </style>
+
+    <style name="baseballIconStyle" >
+        <item name="android:layout_width">76dp</item>
+        <item name="android:layout_height">76dp</item>
+        <item name="background">@drawable/icon_radius</item>
+        <item name="srcCompat">@drawable/ic_baseball</item>
     </style>
 </resources>

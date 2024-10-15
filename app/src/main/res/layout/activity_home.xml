@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_black"
+        tools:context=".feature.home.HomeActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.025" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linear_killerGram"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toTopOf="@id/gl_top">
+
+            <ImageView
+                android:id="@+id/killer_gram_banner"
+                style="@style/KillerGramBanner"
+                android:layout_width="124dp"
+                android:layout_height="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/my_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:background="@color/back_black"
+                android:src="@drawable/ic_person"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ic_setting"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/ic_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/back_black"
+                android:src="@drawable/ic_setting"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_sport_component"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:background="@drawable/today_base_component"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/linear_killerGram"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintEnd_toEndOf="@id/gl_end" >
+
+            <TextView
+                android:id="@+id/today_sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘의 스포츠"
+                android:textColor="@color/gray700"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="20dp"
+                style="@style/pretendard_m3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/sport_badminton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="농구"
+                android:textColor="@color/white"
+                style="@style/pretendard_h3"
+                app:layout_constraintTop_toBottomOf="@id/today_sport"
+                app:layout_constraintStart_toStartOf="@id/today_sport"
+                />
+
+            <ImageButton
+                android:id="@+id/right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chevron_right_gray900"
+                android:background="@color/gray1100"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/sport_badminton"
+                app:layout_constraintTop_toTopOf="@id/sport_badminton" />
+
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/today_basketball_component"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/sport_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/constraint_sport_component">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    style="@style/tableTennisIconStyle"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:background="@drawable/icon_radius" />
+
+                <TextView
+                    style="@style/pretendard_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="탁구"
+                    android:textColor="@color/gray400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    style="@style/fitnessIconStyle"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:background="@drawable/icon_radius" />
+
+                <TextView
+                    style="@style/pretendard_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="헬스"
+                    android:textColor="@color/gray400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    style="@style/baseballIconStyle"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:background="@drawable/icon_radius" />
+
+                <TextView
+                    style="@style/pretendard_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="야구"
+                    android:textColor="@color/gray400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    style="@style/soccerIconStyle"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:background="@drawable/icon_radius" />
+
+                <TextView
+                    style="@style/pretendard_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="축구"
+                    android:textColor="@color/gray400" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintTop_toBottomOf="@id/sport_icon">
+
+            <ImageButton
+                android:id="@+id/img_left_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chevron_left_gray500"
+                android:background="@color/back_black"
+                android:layout_marginEnd="4dp"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/linear_calendar_title_1"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/tv_monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="월"
+                    android:textColor="@color/gray800"
+                    android:layout_gravity="center"
+                    style="@style/pretendard_m3" />
+
+                <TextView
+                    android:id="@+id/tv_date_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    style="@style/pretendard_m1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_calendar_title_2"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/tv_tuesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화"
+                    android:textColor="@color/gray800"
+                    android:layout_gravity="center"
+                    style="@style/pretendard_m3" />
+
+                <TextView
+                    android:id="@+id/tv_date_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    style="@style/pretendard_m1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_calendar_title_3"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/tv_wednesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="수"
+                    android:textColor="@color/gray800"
+                    android:layout_gravity="center"
+                    style="@style/pretendard_m3" />
+
+                <TextView
+                    android:id="@+id/tv_date_third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    style="@style/pretendard_m1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_calendar_title_4"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/tv_thursday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="목"
+                    android:textColor="@color/gray800"
+                    android:layout_gravity="center"
+                    style="@style/pretendard_m3" />
+
+                <TextView
+                    android:id="@+id/tv_date_fourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    style="@style/pretendard_m1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_calendar_title_5"
+                android:layout_width="52dp"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="4dp">
+
+                <TextView
+                    android:id="@+id/tv_friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="금"
+                    android:textColor="@color/gray800"
+                    android:layout_gravity="center"
+                    style="@style/pretendard_m3" />
+
+                <TextView
+                    android:id="@+id/tv_date_fifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    style="@style/pretendard_m1" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/img_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chevron_right_gray500"
+                android:background="@color/back_black"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_sport"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:listitem="@layout/list_item"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintTop_toBottomOf="@id/linear_calendar"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

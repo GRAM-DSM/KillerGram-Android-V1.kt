@@ -9,34 +9,41 @@
         tools:context=".feature.signup.EmailVerificationFragment">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glTop"
+            android:id="@+id/gl_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="24dp" />
+            app:layout_constraintGuide_percent="0.025" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glStart"
+            android:id="@+id/gl_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="24dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glEnd"
+            android:id="@+id/gl_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.92" />
 
         <ImageView
             android:id="@+id/img_left_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:src="@drawable/chevron_right"
-            app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintTop_toTopOf="@id/glTop"
+            android:src="@drawable/chevron_left"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toTopOf="@id/gl_top"
             />
 
         <TextView
@@ -45,9 +52,9 @@
             android:layout_height="wrap_content"
             android:text="정보 입력"
             style="@style/pretendard_m2"
-            app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
-            app:layout_constraintTop_toTopOf="@id/glTop" />
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintTop_toTopOf="@id/gl_top" />
 
         <ImageView
             android:id="@+id/progress_bar_4"
@@ -66,8 +73,8 @@
             android:paddingVertical="20dp"
             android:orientation="vertical"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintTop_toBottomOf="@id/progress_bar_4"
             >
 
@@ -94,9 +101,10 @@
         <ImageButton
             android:id="@+id/btn_skill_1"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
             android:layout_marginHorizontal="24dp"
-            android:background="@color/gray1100"
+            android:background="@drawable/bg_button_gray_radius_8"
             android:src="@drawable/button_bg"
             app:layout_constraintTop_toBottomOf="@id/linear_top" />
 
@@ -130,10 +138,10 @@
         <ImageButton
             android:id="@+id/btn_skill_2"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/gray1100"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_button_gray_radius_8"
             android:src="@drawable/button_bg"
             app:layout_constraintTop_toBottomOf="@id/btn_skill_1" />
 
@@ -167,10 +175,10 @@
         <ImageButton
             android:id="@+id/btn_skill_3"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/gray1100"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_button_gray_radius_8"
             android:src="@drawable/button_bg"
             app:layout_constraintTop_toBottomOf="@id/btn_skill_2" />
 
@@ -206,12 +214,11 @@
             style="@style/InputButton"
             android:text="다음"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginBottom="48dp"
             android:layout_weight="1"
             android:onClick="onClick"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/glStart"
-            app:layout_constraintEnd_toEndOf="@id/glEnd"
+            app:layout_constraintBottom_toBottomOf="@id/gl_bottom"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

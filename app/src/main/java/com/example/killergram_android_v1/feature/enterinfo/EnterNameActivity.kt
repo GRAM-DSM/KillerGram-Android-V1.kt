@@ -3,12 +3,10 @@ package com.example.killergram_android_v1.feature.enterinfo
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterNameBinding
-import com.example.killergram_android_v1.feature.signup.InputEmailActivity
 import com.example.killergram_android_v1.feature.signup.SetPasswordActivity
 
 class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
@@ -19,7 +17,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_enter_name)
+        setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener(this)
         binding.imgLeftArrow.setOnClickListener(this)
@@ -27,7 +25,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         val enterNameToEnterGrade = Intent(this, EnterGradeActivity::class.java)
-        //val enterNameTo = Intent(this, InputEmailActivity::class.java)
+        val enterNameToSetPassword = Intent(this, SetPasswordActivity::class.java)
 
 
         when(view?.id) {
@@ -35,7 +33,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(enterNameToEnterGrade)
             }
             R.id.img_left_arrow -> {
-                Toast.makeText(this, "정보를 입력해주세요!", Toast.LENGTH_LONG)
+                startActivity(enterNameToSetPassword)
             }
         }
     }
