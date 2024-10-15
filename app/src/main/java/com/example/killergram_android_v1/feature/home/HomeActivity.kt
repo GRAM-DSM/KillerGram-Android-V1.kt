@@ -26,7 +26,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private var now = LocalDate.now()
-    private var count = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
