@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:src="@drawable/chevron_left"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toTopOf="@id/gl_top" />
 
@@ -82,7 +83,6 @@
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
             app:boxStrokeErrorColor="@color/main"
-            app:counterEnabled="true"
             app:counterMaxLength="20"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
