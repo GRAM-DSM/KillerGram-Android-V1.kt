@@ -26,13 +26,28 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val homeViewModel: HomeViewModel by lazy {
         ViewModelProvider(this@HomeActivity)[HomeViewModel::class.java]
     }
-
+    val sportList: MutableList<Sport> = mutableListOf (
+        Sport("축구", 16, 9, true)
+    )
     private var now = LocalDate.now()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        with(intent) {
+            getStringExtra("sportName")?.run {
+                sportList.add(
+                    Sport(
+                        sportName = this,
+                        personnel = getIntExtra("personnel", 0),
+                        participate = getIntExtra("participate", 0),
+                        isEnd = getBooleanExtra("isEnd", false)
+                    )
+                )
+            }
+        }
 
         getDate()
 
@@ -45,9 +60,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun raiseRecycleView() {
-        val sportList: List<Sport> = listOf(
-            Sport("축구", 16, 9, true)
-        )
         homeViewModel.addSportList(sportList)
     }
 
