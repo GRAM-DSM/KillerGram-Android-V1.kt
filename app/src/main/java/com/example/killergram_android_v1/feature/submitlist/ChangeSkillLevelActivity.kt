@@ -1,4 +1,4 @@
-package com.example.killergram_android_v1.feature.submitlist.changeSkillLevel
+package com.example.killergram_android_v1.feature.submitlist
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,15 +9,14 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProvider
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityChangeSkillLevelBinding
-import com.example.killergram_android_v1.feature.submitlist.SubmitBasketballActivity
 
 class ChangeSkillLevelActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityChangeSkillLevelBinding.inflate(layoutInflater)
     }
 
-    private val changeSkillLevelViewModel by lazy {
-        ViewModelProvider(this@ChangeSkillLevelActivity)[ChangeSkillLevelViewModel::class.java]
+    private val submitViewModel by lazy {
+        ViewModelProvider(this@ChangeSkillLevelActivity)[SubmitViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,19 +40,19 @@ class ChangeSkillLevelActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(changeSkillLevelToSubmit)
             }
             R.id.btn_skill_1 -> {
-                changeSkillLevelViewModel.onSelectItem(1)
+                submitViewModel.onSelectItem(1)
             }
             R.id.btn_skill_2 -> {
-                changeSkillLevelViewModel.onSelectItem(2)
+                submitViewModel.onSelectItem(2)
             }
             R.id.btn_skill_3 -> {
-                changeSkillLevelViewModel.onSelectItem(3)
+                submitViewModel.onSelectItem(3)
             }
         }
     }
 
     private fun skillViewClickListener() {
-        changeSkillLevelViewModel.buttonState.observe(this@ChangeSkillLevelActivity) {
+        submitViewModel.buttonState.observe(this@ChangeSkillLevelActivity) {
             when(it) {
                 1 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
