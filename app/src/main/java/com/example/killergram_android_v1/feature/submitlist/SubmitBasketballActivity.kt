@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivitySubmitBinding
 import com.example.killergram_android_v1.feature.home.HomeActivity
+import com.example.killergram_android_v1.feature.submitlist.changeSkillLevel.ChangeSkillLevelActivity
 
 class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -21,6 +22,7 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.imgSubmitBack.setOnClickListener(this)
         binding.btnSubmit.setOnClickListener(this)
+        binding.tvSubmitChangeSkill.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
