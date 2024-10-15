@@ -58,6 +58,7 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/pretendard</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:lineSpacingExtra">7.2sp</item>
     </style>
 

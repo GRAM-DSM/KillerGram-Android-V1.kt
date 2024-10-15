@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
+import com.example.killergram_android_v1.feature.submitlist.SubmitBasketballActivity
 import java.time.DayOfWeek
 import java.time.LocalDate
 
@@ -39,6 +41,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.imgLeftArrow.setOnClickListener(this)
         binding.imgRightArrow.setOnClickListener(this)
+        binding.constraintSportComponent.setOnClickListener(this)
     }
 
     private fun raiseRecycleView() {
@@ -58,6 +61,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        val homeToSubmitBasketBall = Intent(this, SubmitBasketballActivity::class.java)
         val dayList = listOf(
             binding.tvDateFirst,
             binding.tvDateSecond,
@@ -91,6 +95,9 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                         dayList[it].text = 31.toString()
                     }
                 }
+            }
+            R.id.constraint_sport_component -> {
+                startActivity(homeToSubmitBasketBall)
             }
         }
     }
