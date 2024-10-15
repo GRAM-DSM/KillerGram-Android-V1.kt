@@ -26,7 +26,6 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
-
     private var emailFlag = false
     private var passwordFlag = false
 
@@ -39,7 +38,6 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
         onPasswordListener()
         binding.tvSignUp.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
-
     }
 
     override fun onClick(view: View?) {

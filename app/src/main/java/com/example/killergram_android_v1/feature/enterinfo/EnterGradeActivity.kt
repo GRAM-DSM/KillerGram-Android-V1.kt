@@ -20,6 +20,8 @@ class EnterGradeActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.btnLogin.setOnClickListener(this)
         binding.imgLeftArrow.setOnClickListener(this)
+
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
     }
 
     override fun onClick(v: View?) {

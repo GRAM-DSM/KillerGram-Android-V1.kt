@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterGenderBinding
 import com.example.killergram_android_v1.feature.enterinfo.enterSkill.EnterSkillsActivity
@@ -19,7 +20,7 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        binding.imgLeftArrow.setOnClickListener(this)
+        binding.imgEnterGenderBack.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
 
         binding.btnMan.setOnClickListener(this)
@@ -37,7 +38,7 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(enterGenderToEnterSkills)
             }
 
-            R.id.img_left_arrow -> {
+            R.id.img_enter_gender_back -> {
                 startActivity(enterGenderToEnterGrade)
             }
 

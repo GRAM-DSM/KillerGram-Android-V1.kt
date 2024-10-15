@@ -9,12 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
-import com.example.killergram_android_v1.feature.submitlist.SubmitBasketballActivity
+import com.example.killergram_android_v1.feature.submitlist.SubmitActivity
 import java.time.DayOfWeek
 import java.time.LocalDate
 
@@ -46,7 +45,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun raiseRecycleView() {
         val sportList: List<Sport> = listOf(
-            Sport("축구", 16, 9, true)
+            Sport("축구", 16, 9, true),
+            Sport("축구", 13, 13, true)
         )
         homeViewModel.addSportList(sportList)
     }
@@ -61,7 +61,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        val homeToSubmitBasketBall = Intent(this, SubmitBasketballActivity::class.java)
+        val homeToSubmitBasketBall = Intent(this, SubmitActivity::class.java)
         val dayList = listOf(
             binding.tvDateFirst,
             binding.tvDateSecond,
