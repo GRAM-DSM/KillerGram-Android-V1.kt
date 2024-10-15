@@ -71,17 +71,24 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 setPreWeek(now).run {
                     Log.d("TEST", now.toString())
                     repeat(this.size) {
-                        dayList[it].text = this[it].toString()
+                        if (this[it] != 0) {
+                            dayList[it].text = this[it].toString()
+                        } else {
+                            dayList[it].text = 31.toString()
+                        }
                     }
                 }
             }
 
             R.id.img_right_arrow -> {
                 now = now.plusWeeks(1)
-                setNextWeek(now).run {
-                    Log.d("TEST", now.toString())
-                    repeat(this.size) {
-                        dayList[it].text = this[it].toString()
+                val days = setNextWeek(now)
+
+                repeat(days.size) {
+                    if (days[it] != 0) {
+                        dayList[it].text = days[it].toString()
+                    } else {
+                        dayList[it].text = 31.toString()
                     }
                 }
             }
