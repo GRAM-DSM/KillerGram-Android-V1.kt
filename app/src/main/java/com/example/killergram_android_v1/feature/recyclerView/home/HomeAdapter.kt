@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.recyclerView.home
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -30,12 +31,14 @@ HomeAdapter(
             binding.subTitle.text = "${sport.personnel}명 중 ${sport.participate}명 참여"
             if (sport.isEnd) {
                 binding.tvItemComplete.text =  "완료"
-                binding.constraintSport.setBackgroundResource(R.drawable.bg_button_gray_radius_8)
-                binding.subTitle.resources.getColor(R.color.main)
+                binding.constraintSport.setBackgroundResource(R.drawable.button_unselected)
+                binding.subTitle.setTextColor(Color.parseColor("#FF8F9094")) // gray
+                binding.tvItemComplete.setTextColor(Color.parseColor("#FF8F9094"))
             } else {
                 binding.tvItemComplete.text =  "진행 중"
-                binding.subTitle.resources.getColor(R.color.white)
-                binding.constraintSport.setBackgroundResource(R.drawable.bg_button_main_radius_8)
+                binding.constraintSport.setBackgroundResource(R.drawable.button_selected)
+                binding.subTitle.setTextColor(Color.parseColor("#FF9EFF00")) // main
+                binding.tvItemComplete.setTextColor(Color.parseColor("#FF9EFF00"))
             }
         }
     }

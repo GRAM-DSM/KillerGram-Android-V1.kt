@@ -38,10 +38,10 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
         val submitToHome = Intent(this, HomeActivity::class.java)
         val submitToChangeSkillLevel = Intent(this, ChangeSkillLevelActivity::class.java)
 
-        submitToHome.putExtra("sportName", "축구")
-        submitToHome.putExtra("personnel", 16)
-        submitToHome.putExtra("participate", 9)
-        submitToHome.putExtra("isEnd", true)
+        submitToHome.putExtra("sportName", "농구")
+        submitToHome.putExtra("personnel", 14)
+        submitToHome.putExtra("participate", 2  )
+        submitToHome.putExtra("isEnd", false)
 
         when(v?.id) {
             R.id.img_submit_back -> {
