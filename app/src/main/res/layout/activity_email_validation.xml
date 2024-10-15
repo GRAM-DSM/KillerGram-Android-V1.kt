@@ -123,7 +123,7 @@
                 style="@style/pretendard_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="인증번호 재전송"
+                android:text="@string/retry"
                 android:textColor="@color/gray400"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
