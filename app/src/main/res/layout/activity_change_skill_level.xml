@@ -92,6 +92,7 @@
             android:id="@+id/btn_skill_1"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:padding="1dp"
             android:layout_marginTop="8dp"
             android:layout_marginHorizontal="24dp"
             android:background="@drawable/bg_button_gray_radius_8"
@@ -131,7 +132,8 @@
             android:layout_height="80dp"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/bg_button_gray_radius_8"
+            android:padding="1dp"
+            android:background="@drawable/button_selected"
             android:src="@drawable/button_bg"
             app:layout_constraintTop_toBottomOf="@id/btn_skill_1" />
 
@@ -166,6 +168,7 @@
             android:id="@+id/btn_skill_3"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:padding="1dp"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_button_gray_radius_8"
