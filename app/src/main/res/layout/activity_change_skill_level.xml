@@ -203,7 +203,7 @@
 
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_change_skill_submit"
             style="@style/InputButton"
             android:text="완료"
             android:layout_marginHorizontal="24dp"
