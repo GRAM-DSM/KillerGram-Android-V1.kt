@@ -2,9 +2,11 @@ package com.example.killergram_android_v1.feature.submitlist
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.killergram_android_v1.R
@@ -18,8 +20,8 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivitySubmitBinding.inflate(layoutInflater)
     }
-    private val homeViewModel by lazy {
-        ViewModelProvider(this)[HomeViewModel::class.java]
+    private val submitViewModel by lazy {
+        ViewModelProvider(this)[SubmitViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +39,7 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         val submitToHome = Intent(this, HomeActivity::class.java)
         val submitToChangeSkillLevel = Intent(this, ChangeSkillLevelActivity::class.java)
+
 
         submitToHome.putExtra("sportName", "농구")
         submitToHome.putExtra("personnel", 14)

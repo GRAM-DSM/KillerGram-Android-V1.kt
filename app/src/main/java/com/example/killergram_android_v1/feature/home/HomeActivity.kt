@@ -9,13 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 import com.example.killergram_android_v1.feature.submitlist.SubmitBasketballActivity
-import com.example.killergram_android_v1.feature.submitlist.SubmitSoccerListActivity
+import com.example.killergram_android_v1.feature.submitlist.submitSoccer.SubmitSoccerListActivity
 import java.time.DayOfWeek
 import java.time.LocalDate
 
@@ -28,7 +27,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         ViewModelProvider(this@HomeActivity)[HomeViewModel::class.java]
     }
     val sportList: MutableList<Sport> = mutableListOf (
-        Sport("축구", 16, 9, true)
+        Sport("축구", 14, 2, true)
     )
     private var now = LocalDate.now()
 
