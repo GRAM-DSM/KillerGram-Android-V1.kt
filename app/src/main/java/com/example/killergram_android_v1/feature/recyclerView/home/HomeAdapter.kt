@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.recyclerView.home
 
+import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ListItemBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
+import com.example.killergram_android_v1.feature.utils.dpToPx
 
 class
 HomeAdapter(
@@ -14,7 +16,23 @@ HomeAdapter(
 ) : RecyclerView.Adapter<HomeAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        return Holder(ListItemBinding.inflate(LayoutInflater.from(parent.context)))
+        val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        val layoutParams = binding.root.layoutParams as RecyclerView.LayoutParams
+
+        val marginInDp = 16
+        val marginInPx = dpToPx(parent.context, marginInDp)
+        layoutParams.setMargins(0, marginInPx, 0, marginInPx)
+
+        binding.root.layoutParams = layoutParams
+
+        val paddingInDp = 16
+        val paddingInPx = dpToPx(parent.context, paddingInDp)
+        binding.root.setPadding(paddingInPx, paddingInPx, paddingInPx, paddingInPx)
+        binding.root.requestLayout()
+
+
+        return Holder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -42,5 +60,4 @@ HomeAdapter(
             }
         }
     }
-
 }

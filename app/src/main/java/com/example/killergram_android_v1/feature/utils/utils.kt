@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.utils
 
+import android.content.Context
 import android.icu.util.Calendar
 import java.time.DayOfWeek
 import java.time.LocalDate
@@ -14,33 +15,7 @@ fun isRegexPassword(password: String): Boolean {
     return password.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*#?&])[A-Za-z\\d@\$!%*#?&]{8,16}$".toRegex())
 }
 
-fun initialThisWeek(): MutableList<Int> {
-    var now = LocalDate.now()
-    val weeks = DayOfWeek.entries.toList()
-
-    val days = mutableListOf<Int>()
-
-    when (now.dayOfWeek) {
-        in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
-            now = now.minusDays(weeks.indexOf(now.dayOfWeek).toLong())
-        }
-
-        DayOfWeek.SATURDAY -> {
-            now = now.plusDays(2)
-        }
-
-        DayOfWeek.SUNDAY -> {
-            now = now.plusDays(1)
-        }
-
-        else -> {}
-    }
-
-    repeat(5) {
-        now = now.plusDays(1)
-        days.add(now.dayOfMonth - 1)
-    }
-
-    return days
+fun dpToPx(context: Context, dp: Int): Int {
+    return (dp * context.resources.displayMetrics.density).toInt()
 }
 
