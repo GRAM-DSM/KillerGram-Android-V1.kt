@@ -1,22 +1,13 @@
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/constraint_sport"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:background="@drawable/button_selected"
         android:layout_marginTop="16dp"
-        android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/linear_calendar"
         >
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
 
         <TextView
             android:id="@+id/title"
@@ -25,8 +16,10 @@
             android:layout_height="wrap_content"
             android:text="축구"
             android:textColor="@color/white"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintStart_toStartOf="parent"
             />
 
         <TextView
@@ -34,11 +27,20 @@
             style="@style/pretendard_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="16명 중 12명 참여"
             android:textColor="@color/main"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/spacer"
+            app:layout_constraintTop_toBottomOf="@id/spacer" />
+
+        <Space
+            android:id="@+id/spacer"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/title"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintStart_toStartOf="parent"
             />
 
         <TextView
@@ -48,6 +50,7 @@
             android:layout_height="wrap_content"
             android:text="진행 중"
             android:textColor="@color/main"
+            android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

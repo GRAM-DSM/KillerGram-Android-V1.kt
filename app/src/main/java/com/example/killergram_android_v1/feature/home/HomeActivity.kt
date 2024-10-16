@@ -15,6 +15,7 @@ import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 import com.example.killergram_android_v1.feature.submitlist.SubmitBasketballActivity
+import com.example.killergram_android_v1.feature.submitlist.SubmitSoccerListActivity
 import java.time.DayOfWeek
 import java.time.LocalDate
 
@@ -65,7 +66,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun observeTodaySportList() {
         homeViewModel.todaySportList.observe(this@HomeActivity) {
-            val homeAdapter = HomeAdapter(it)
+            val homeAdapter = HomeAdapter(it) {
+                val intent = Intent(this, SubmitSoccerListActivity::class.java)
+                startActivity(intent)
+            }
             val layoutManager = GridLayoutManager(this, 1)
             binding.recyclerSport.layoutManager = layoutManager
             binding.recyclerSport.adapter = homeAdapter
@@ -74,6 +78,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         val homeToSubmitBasketBall = Intent(this, SubmitBasketballActivity::class.java)
+        val homeToSubmitSoccer = Intent(this, SubmitSoccerListActivity::class.java)
+
         val dayList = listOf(
             binding.tvDateFirst,
             binding.tvDateSecond,
@@ -110,6 +116,9 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.constraint_sport_component -> {
                 startActivity(homeToSubmitBasketBall)
+            }
+            R.id.recycler_sport -> {
+                startActivity(homeToSubmitSoccer)
             }
         }
     }
