@@ -95,6 +95,7 @@
             android:layout_height="wrap_content"
             app:counterMaxLength="16"
             android:layout_marginTop="4dp"
+            app:errorIconDrawable="@null"
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
             app:layout_constraintTop_toBottomOf="@id/tv_email"

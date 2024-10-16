@@ -48,6 +48,7 @@
             android:textColorHint="@color/gray800"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="52dp"
+            app:errorIconDrawable="@null"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/KillerGramBanner">
@@ -75,6 +76,7 @@
             app:boxStrokeWidth="1dp"
             app:boxStrokeColor="@color/gray1100"
             android:textColorHint="@color/gray800"
+            app:errorIconDrawable="@null"
             android:layout_marginHorizontal="24dp"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"

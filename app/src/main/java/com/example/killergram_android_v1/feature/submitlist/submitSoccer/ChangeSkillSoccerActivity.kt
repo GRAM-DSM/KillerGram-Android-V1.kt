@@ -28,10 +28,11 @@ class ChangeSkillSoccerActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnSkill1.setOnClickListener(this)
         binding.btnSkill2.setOnClickListener(this)
         binding.btnSkill3.setOnClickListener(this)
+        binding.btnChangeSkillSubmit.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        val changeSkillSoccerToSubmitSoccer = Intent(this, ChangeSkillSoccerActivity::class.java)
+        val changeSkillSoccerToSubmitSoccer = Intent(this, SubmitSoccerListActivity::class.java)
 
         when(v?.id) {
             R.id.btn_skill_1 -> {
@@ -43,7 +44,7 @@ class ChangeSkillSoccerActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_skill_3 -> {
                 submitViewModel.onSelectItem(3)
             }
-            R.id.btn_submit -> {
+            R.id.btn_change_skill_submit -> {
                 startActivity(changeSkillSoccerToSubmitSoccer)
             }
         }

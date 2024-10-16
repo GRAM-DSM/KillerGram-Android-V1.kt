@@ -83,7 +83,8 @@
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
             app:boxStrokeErrorColor="@color/main"
-            app:counterMaxLength="20"
+            app:counterMaxLength="16"
+            app:errorIconDrawable="@null"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/linear_email_verification">
