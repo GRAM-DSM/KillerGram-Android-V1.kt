@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityLoginBinding
+import com.example.killergram_android_v1.feature.home.HomeActivity
 import com.example.killergram_android_v1.feature.signup.InputEmailActivity
 import com.example.killergram_android_v1.feature.utils.isRegexEmail
 import com.example.killergram_android_v1.feature.utils.isRegexPassword
@@ -44,13 +45,17 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         val loginToInputEmail = Intent(this, InputEmailActivity::class.java)
+        val loginToHome = Intent(this, HomeActivity::class.java)
 
         when(view?.id) {
             R.id.tv_sign_up -> {
                 startActivity(loginToInputEmail)
             }
             R.id.btn_login -> {
-                Toast.makeText(this, if (flagCheck()) "로그인에 성공하였습니다!" else "로그인에 실패하였습니다!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, if (flagCheck()) "로그인에 성공하였습니다!" else "로그인에 실패하였습니다!", Toast.LENGTH_SHORT).show()
+                if (flagCheck()) {
+                    startActivity(loginToHome)
+                }
             }
         }
     }

@@ -3,6 +3,7 @@ package com.example.killergram_android_v1.feature.enterinfo.enterSkill
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -11,6 +12,7 @@ import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterSkillsBinding
 import com.example.killergram_android_v1.feature.enterinfo.endterGender.EnterGenderActivity
 import com.example.killergram_android_v1.feature.home.HomeActivity
+import com.example.killergram_android_v1.feature.login.LoginActivity
 
 class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -37,12 +39,13 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        val enterNameToHome = Intent(this, HomeActivity::class.java)
+        val enterNameToLogin = Intent(this, LoginActivity::class.java)
         val enterNameToEnterGender = Intent(this, EnterGenderActivity::class.java)
 
         when(view?.id) {
             R.id.btn_login -> {
-                startActivity(enterNameToHome)
+                Toast.makeText(this, "회원가입에 성공하였습니다!", Toast.LENGTH_SHORT).show()
+                startActivity(enterNameToLogin)
             }
             R.id.img_left_arrow -> {
                 startActivity(enterNameToEnterGender)
