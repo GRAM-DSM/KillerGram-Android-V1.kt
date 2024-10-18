@@ -126,7 +126,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         var now = LocalDate.now()
         val weeks = DayOfWeek.entries.toList()
 
-        var days = mutableListOf<Int>()
+        val days = mutableListOf<Int>()
 
         when (now.dayOfWeek) {
             in DayOfWeek.MONDAY..DayOfWeek.FRIDAY -> {
@@ -156,17 +156,22 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         val dateText4 = binding.tvDateFourth
         val dateText5 = binding.tvDateFifth
 
+        val today = LocalDate.now()
+
         dateText1.text = day1.toString()
         dateText2.text = day2.toString()
         dateText3.text = day3.toString()
         dateText4.text = day4.toString()
         dateText5.text = day5.toString()
 
-        val today = LocalDate.now()
+        Log.d("TEST", now.toString())
+        Log.d("TEST", today.toString())
+
+        val calendarDate = now.minusDays(1)
 
         // 현재 날짜에 맞게 text 색 변경
-        if (today == now) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
-            when (now.dayOfWeek) {
+        if (today == calendarDate) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
+            when (calendarDate.dayOfWeek) {
                 DayOfWeek.MONDAY -> {
                     dateText1.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
                 }
@@ -186,7 +191,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 DayOfWeek.FRIDAY -> {
                     dateText5.setTextColor(ContextCompat.getColor(baseContext, R.color.main))
                 }
-
                 else -> {}
             }
         }
