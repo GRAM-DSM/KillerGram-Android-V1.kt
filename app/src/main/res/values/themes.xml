@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Base.Theme.KillerGram_AndroidV1" parent="Theme.Material3.DayNight.NoActionBar" />
-    <!-- Base application theme. -->
-    <style name="Theme.KillerGram_AndroidV1" parent="Base.Theme.KillerGram_AndroidV1" >
+    <style name="Base.Theme.KillerGram_AndroidV1" parent="Theme.Material3.DayNight.NoActionBar" >
+        <item name="android:windowIsTranslucent">true</item>
         <item name="colorPrimary">@color/main</item>
         <item name="colorAccent">@color/gray1100</item>
     </style>
+    <!-- Base application theme. -->
+
+    <style name="Theme.KillerGram_AndroidV1" parent="Base.Theme.KillerGram_AndroidV1" />
 </resources>
