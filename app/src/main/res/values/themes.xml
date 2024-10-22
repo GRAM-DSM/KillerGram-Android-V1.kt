@@ -8,4 +8,5 @@
     <!-- Base application theme. -->
 
     <style name="Theme.KillerGram_AndroidV1" parent="Base.Theme.KillerGram_AndroidV1" />
+
 </resources>
