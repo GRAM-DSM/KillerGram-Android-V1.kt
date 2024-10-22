@@ -40,7 +40,6 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
         onPasswordListener()
         binding.tvSignUp.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
-
     }
 
     override fun onClick(view: View?) {
@@ -52,9 +51,11 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(loginToInputEmail)
             }
             R.id.btn_login -> {
-                Toast.makeText(this, if (flagCheck()) "로그인에 성공하였습니다!" else "로그인에 실패하였습니다!", Toast.LENGTH_SHORT).show()
                 if (flagCheck()) {
                     startActivity(loginToHome)
+                } else {
+                    binding.tilPwd.error = " "
+                    binding.tilEmail.error = " "
                 }
             }
         }
@@ -86,8 +87,8 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-            }
 
+            }
         })
     }
 
@@ -115,7 +116,6 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
             override fun afterTextChanged(p0: Editable?) {
             }
-
         })
     }
 
