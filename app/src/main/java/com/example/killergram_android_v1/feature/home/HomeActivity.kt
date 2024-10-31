@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val homeViewModel: HomeViewModel by lazy {
         ViewModelProvider(this@HomeActivity)[HomeViewModel::class.java]
     }
-    val sportList: MutableList<Sport> = mutableListOf (
+    private val sportList: MutableList<Sport> = mutableListOf (
         Sport("축구", 14, 2, true)
     )
     private var now = LocalDate.now()

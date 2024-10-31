@@ -87,6 +87,9 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
                         !isRegexPassword(s.toString()) -> {
                             binding.tilPwdCheck.error = "비밀번호 형식이 맞지 않습니다!"
                         }
+                        binding.tiePwd.text.toString() != s.toString() -> {
+                            binding.tilPwdCheck.error = "비밀번호가 일치하지 않습니다."
+                        }
                         else -> {
                             binding.tilPwdCheck.error = null
                             passwordCheckFlag = true

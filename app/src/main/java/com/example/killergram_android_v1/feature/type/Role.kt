@@ -5,4 +5,3 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 enum class Role {
     STUDENT, ADMIN
 }
-
