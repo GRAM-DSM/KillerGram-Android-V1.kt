@@ -34,7 +34,7 @@ class ChangeSkillLevelActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        val changeSkillLevelToSubmit = Intent(this, SubmitBasketballActivity::class.java)
+        val changeSkillLevelToSubmit = Intent(this, SubmitActivity::class.java)
 
         when(v?.id) {
             R.id.btn_change_skill_submit -> {

@@ -2,21 +2,15 @@ package com.example.killergram_android_v1.feature.submitlist
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivitySubmitBinding
 import com.example.killergram_android_v1.feature.home.HomeActivity
-import com.example.killergram_android_v1.feature.home.HomeViewModel
-import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
-import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 
-class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
+class SubmitActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivitySubmitBinding.inflate(layoutInflater)
     }

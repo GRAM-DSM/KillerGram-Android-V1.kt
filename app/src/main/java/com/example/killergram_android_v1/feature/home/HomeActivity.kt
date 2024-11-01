@@ -13,8 +13,7 @@ import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
-import com.example.killergram_android_v1.feature.submitlist.SubmitBasketballActivity
-import com.example.killergram_android_v1.feature.submitlist.submitSoccer.SubmitSoccerListActivity
+import com.example.killergram_android_v1.feature.submitlist.SubmitActivity
 import java.time.DayOfWeek
 import java.time.LocalDate
 
@@ -73,7 +72,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private fun observeTodaySportList() {
         homeViewModel.todaySportList.observe(this@HomeActivity) {
             val homeAdapter = HomeAdapter(it) {
-                val intent = Intent(this, SubmitSoccerListActivity::class.java)
+                val intent = Intent(this, SubmitActivity::class.java)
                 startActivity(intent)
             }
             val layoutManager = GridLayoutManager(this, 1)
@@ -83,8 +82,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        val homeToSubmitBasketBall = Intent(this, SubmitBasketballActivity::class.java)
-        val homeToSubmitSoccer = Intent(this, SubmitSoccerListActivity::class.java)
+        val homeToSubmit = Intent(this, SubmitActivity::class.java)
 
         val dayList = listOf(
             binding.tvDateFirst,
@@ -121,14 +119,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
             R.id.constraint_sport_component -> {
-                startActivity(homeToSubmitBasketBall)
+                startActivity(homeToSubmit)
             }
             R.id.recycler_sport -> {
-                startActivity(homeToSubmitSoccer)
+                startActivity(homeToSubmit)
             }
             R.id.img_btn_home_tableTennis -> {
-                homeToSubmitBasketBall.putExtra("homeSport", "탁구")
-                startActivity(homeToSubmitBasketBall)
+                homeToSubmit.putExtra("homeSport", "탁구")
+                startActivity(homeToSubmit)
             }
             R.id.img_btn_home_fitness -> {
 
