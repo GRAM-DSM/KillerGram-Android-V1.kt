@@ -28,6 +28,7 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        changeMainText()
 
         binding.imgSubmitBack.setOnClickListener(this)
         binding.btnSubmit.setOnClickListener(this)
@@ -40,10 +41,9 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
         val submitToHome = Intent(this, HomeActivity::class.java)
         val submitToChangeSkillLevel = Intent(this, ChangeSkillLevelActivity::class.java)
 
-
         submitToHome.putExtra("sportName", "농구")
         submitToHome.putExtra("personnel", 14)
-        submitToHome.putExtra("participate", 2  )
+        submitToHome.putExtra("participate", 2)
         submitToHome.putExtra("isEnd", false)
 
         when(v?.id) {
@@ -63,5 +63,14 @@ class SubmitBasketballActivity : AppCompatActivity(), View.OnClickListener {
         val pref = getSharedPreferences("pref", 0)
 
         binding.tvSubmitSkillText.text = pref.getString("SkillLevel", "")
+    }
+
+    private fun changeMainText() {
+        with(intent) {
+            getStringExtra("homeSport")?.run {
+                binding.tvSubmitEnterSport.text = this
+            }
+        }
+
     }
 }

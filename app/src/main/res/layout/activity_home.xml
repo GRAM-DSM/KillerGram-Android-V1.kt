@@ -131,6 +131,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/img_btn_home_tableTennis"
                     style="@style/tableTennisIconStyle"
                     android:layout_width="76dp"
                     android:layout_height="76dp"
@@ -152,6 +153,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/img_btn_home_fitness"
                     style="@style/fitnessIconStyle"
                     android:layout_width="76dp"
                     android:layout_height="76dp"
@@ -172,6 +174,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/img_btn_home_baseball"
                     style="@style/baseballIconStyle"
                     android:layout_width="76dp"
                     android:layout_height="76dp"
@@ -193,6 +196,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/img_btn_home_soccer"
                     style="@style/soccerIconStyle"
                     android:layout_width="76dp"
                     android:layout_height="76dp"

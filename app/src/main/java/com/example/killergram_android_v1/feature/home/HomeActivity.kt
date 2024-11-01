@@ -54,9 +54,16 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         raiseRecycleView()
         observeTodaySportList()
 
+        binding.imgBtnHomeSoccer.setOnClickListener(this)
+
         binding.imgLeftArrow.setOnClickListener(this)
         binding.imgRightArrow.setOnClickListener(this)
         binding.constraintSportComponent.setOnClickListener(this)
+
+        binding.imgBtnHomeTableTennis.setOnClickListener(this)
+        binding.imgBtnHomeSoccer.setOnClickListener(this)
+        binding.imgBtnHomeFitness.setOnClickListener(this)
+        
     }
 
     private fun raiseRecycleView() {
@@ -118,6 +125,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.recycler_sport -> {
                 startActivity(homeToSubmitSoccer)
+            }
+            R.id.img_btn_home_tableTennis -> {
+                homeToSubmitBasketBall.putExtra("homeSport", "탁구")
+                startActivity(homeToSubmitBasketBall)
             }
         }
     }
