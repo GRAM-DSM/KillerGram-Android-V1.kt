@@ -63,7 +63,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.imgBtnHomeTableTennis.setOnClickListener(this)
         binding.imgBtnHomeSoccer.setOnClickListener(this)
         binding.imgBtnHomeFitness.setOnClickListener(this)
-        
+        binding.imgBtnHomeTableTennis.setOnClickListener(this)
     }
 
     private fun raiseRecycleView() {
@@ -129,6 +129,15 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.img_btn_home_tableTennis -> {
                 homeToSubmitBasketBall.putExtra("homeSport", "탁구")
                 startActivity(homeToSubmitBasketBall)
+            }
+            R.id.img_btn_home_fitness -> {
+
+            }
+            R.id.img_btn_home_baseball -> {
+
+            }
+            R.id.img_btn_home_soccer -> {
+
             }
         }
     }
