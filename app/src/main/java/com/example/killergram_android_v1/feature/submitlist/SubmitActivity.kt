@@ -65,6 +65,5 @@ class SubmitActivity : AppCompatActivity(), View.OnClickListener {
                 binding.tvSubmitEnterSport.text = this
             }
         }
-
     }
 }
