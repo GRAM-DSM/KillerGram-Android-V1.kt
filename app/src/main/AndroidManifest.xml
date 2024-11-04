@@ -23,7 +23,7 @@
             android:name=".feature.submitlist.ChangeSkillLevelActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.submitlist.SubmitBasketballActivity"
+            android:name=".feature.submitlist.SubmitActivity"
             android:exported="false" />
         <activity
             android:name=".feature.home.HomeActivity"

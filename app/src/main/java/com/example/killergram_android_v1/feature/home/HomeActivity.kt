@@ -3,7 +3,10 @@ package com.example.killergram_android_v1.feature.home
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -34,6 +37,9 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        supportActionBar?.title = "KillerGram"
+        supportActionBar?.show()
 
         with(intent) {
             getStringExtra("sportName")?.run {
@@ -272,5 +278,29 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         return days
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_option, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId) {
+            R.id.menu_item_log_out -> {
+                Toast.makeText(this, "로그인 선택 됨", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menu_item_setting -> {
+                Toast.makeText(this, "설정 선택 됨", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menu_item_out_membership -> {
+                Toast.makeText(this, "고객센터 선택 됨", Toast.LENGTH_SHORT).show()
+                return true
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
