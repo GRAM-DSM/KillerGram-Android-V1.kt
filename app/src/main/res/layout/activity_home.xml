@@ -30,13 +30,11 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="24dp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/linear_killerGram"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginHorizontal="24dp"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toTopOf="@id/gl_top">
 
             <ImageView
@@ -54,10 +52,11 @@
                 android:layout_height="wrap_content"
                 android:background="@color/back_black"
                 android:src="@drawable/ic_setting"
+                android:layout_gravity="end"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_sport_component"
