@@ -108,7 +108,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
                         startActivity(inputEmailToEmailVerification)
                     }
                     else -> {
-
+                        binding.tilEmail.error = "${response.message()}: ${response.code()}"
                     }
                 }
             }
