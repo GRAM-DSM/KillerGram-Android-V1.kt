@@ -6,7 +6,13 @@ import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
+import com.example.killergram_android_v1.data.api.ApiProvider
+import com.example.killergram_android_v1.data.request.auth.signup.VerifyEmailRequest
+import com.example.killergram_android_v1.data.response.auth.VerifyEmailResponse
 import com.example.killergram_android_v1.databinding.ActivityEmailValidationBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.Timer
 import java.util.TimerTask
 
@@ -17,6 +23,7 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
     private var time = 0
     private val timer = Timer()
 
+    private val retrofit = ApiProvider.getAuthApi()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +73,24 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun verifyEmailCode() {
+        val emailCode = binding.tieEmailVerification.text.toString()
 
+        retrofit.verifyEmail(
+            VerifyEmailRequest(
+                email = "",
+                emailCode = emailCode,
+            )
+        ).enqueue(object : Callback<VerifyEmailResponse> {
+            override fun onResponse(
+                call: Call<VerifyEmailResponse>,
+                response: Response<VerifyEmailResponse>
+            ) {
+
+            }
+
+            override fun onFailure(call: Call<VerifyEmailResponse>, t: Throwable) {
+
+            }
+        })
     }
 }
