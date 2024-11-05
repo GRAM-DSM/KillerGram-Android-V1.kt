@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ApiProvider {
-    private const val BASE_URL = "http://10.10.10.100"
+    private const val BASE_URL = "http://10.10.10.100:8080"
     private const val CONNECT_TIMEOUT_SEC = 20000L
     private var retrofit: Retrofit? = null
 
