@@ -11,7 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.data.api.ApiProvider
-import com.example.killergram_android_v1.data.request.auth.EmailRequest
+import com.example.killergram_android_v1.data.request.auth.signup.EmailRequest
 import com.example.killergram_android_v1.databinding.ActivityInputEmailBinding
 import com.example.killergram_android_v1.feature.login.LoginActivity
 import com.example.killergram_android_v1.feature.utils.isRegexEmail
@@ -108,7 +108,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
                         startActivity(inputEmailToEmailVerification)
                     }
                     else -> {
-
+                        binding.tilEmail.error = "${response.message()}: ${response.code()}"
                     }
                 }
             }

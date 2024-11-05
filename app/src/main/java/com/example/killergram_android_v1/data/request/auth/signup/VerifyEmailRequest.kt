@@ -1,4 +1,4 @@
-package com.example.killergram_android_v1.data.request.auth
+package com.example.killergram_android_v1.data.request.auth.signup
 
 import com.google.gson.annotations.SerializedName
 
