@@ -38,8 +38,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        supportActionBar?.title = "KillerGram"
-        supportActionBar?.show()
+        setSupportActionBar(binding.toolbarHome)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_setting)
 
         with(intent) {
             getStringExtra("sportName")?.run {
