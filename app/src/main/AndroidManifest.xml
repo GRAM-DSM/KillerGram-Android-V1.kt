@@ -14,12 +14,6 @@
         android:windowSoftInputMode="adjustPan"
         tools:targetApi="31">
         <activity
-            android:name=".feature.submitlist.submitSoccer.ChangeSkillSoccerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".feature.submitlist.submitSoccer.SubmitSoccerListActivity"
-            android:exported="false" />
-        <activity
             android:name=".feature.submitlist.ChangeSkillLevelActivity"
             android:exported="false" />
         <activity
