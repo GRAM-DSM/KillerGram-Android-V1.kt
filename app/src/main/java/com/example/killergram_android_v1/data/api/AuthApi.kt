@@ -1,8 +1,8 @@
 package com.example.killergram_android_v1.data.api
 
-import com.example.killergram_android_v1.data.request.auth.signup.EmailRequest
-import com.example.killergram_android_v1.data.request.auth.signup.SetPasswordRequest
-import com.example.killergram_android_v1.data.request.auth.signup.VerifyEmailRequest
+import com.example.killergram_android_v1.data.request.auth.EmailRequest
+import com.example.killergram_android_v1.data.request.auth.SetPasswordRequest
+import com.example.killergram_android_v1.data.request.auth.VerifyEmailRequest
 import com.example.killergram_android_v1.data.response.auth.VerifyEmailResponse
 import retrofit2.Call
 import retrofit2.http.Body
