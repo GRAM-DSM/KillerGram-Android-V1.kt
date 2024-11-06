@@ -39,7 +39,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbarHome)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_setting)
+        binding.toolbarHome.contentInsetStartWithNavigation = 0
+        supportActionBar?.title = ""
+
+        binding.toolbarHome.overflowIcon = getDrawable(R.drawable.ic_setting)
 
         with(intent) {
             getStringExtra("sportName")?.run {
@@ -48,7 +51,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                         sportName = this,
                         personnel = getIntExtra("personnel", 0),
                         participate = getIntExtra("participate", 0),
-                        isEnd = getBooleanExtra("isEnd", false)
+                        isEnd = getBooleanExtra(    "isEnd", false)
                     )
                 )
             }

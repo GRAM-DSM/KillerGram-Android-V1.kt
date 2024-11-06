@@ -1,6 +1,8 @@
 package com.example.killergram_android_v1.feature.signup
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -103,8 +105,6 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
             ) {
                 when(response.code()) {
                     200 -> {
-                        Toast.makeText(baseContext, "이메일 값 성공!", Toast.LENGTH_SHORT).show()
-                        Log.d("TEST", response.code().toString())
                         startActivity(inputEmailToEmailVerification)
                     }
                     else -> {
