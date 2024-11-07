@@ -197,6 +197,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         val calendarDate = now.minusDays(1)
 
         // 현재 날짜에 맞게 text 색 변경
+        Log.d("TEST", (today == calendarDate).toString())
         if (today == calendarDate) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
             when (calendarDate.dayOfWeek) {
                 DayOfWeek.MONDAY -> {

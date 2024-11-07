@@ -1,11 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Base.Theme.KillerGram_AndroidV1" parent="Theme.Material3.DayNight.NoActionBar">
-
+        <item name="android:itemBackground">@color/menu_gray</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="colorPrimary">@color/main</item>
         <item name="colorAccent">@color/gray1100</item>
     </style>
+<!--    <style name="Theme.KillerGram_AndroidV1.home" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        <item name="colorPrimary"></item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--        <item name="android:textColor">@color/colorPrimary</item>-->
+<!--        <item name="android:itemBackground">@color/skyBlue</item>-->
+<!--    </style>-->
+    
     <!-- Base application theme. -->
     <style name="Theme.KillerGram_AndroidV1" parent="Base.Theme.KillerGram_AndroidV1" />
 </resources>

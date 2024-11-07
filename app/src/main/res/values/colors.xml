@@ -29,4 +29,6 @@
 
     <!--  BACK  -->
     <color name="back_black">#FF0F0F0F</color>
+
+    <color name="menu_gray">#252525</color>
 </resources>
