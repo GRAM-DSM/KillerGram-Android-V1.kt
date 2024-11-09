@@ -2,13 +2,14 @@ package com.example.killergram_android_v1.feature.signup
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.data.api.ApiProvider
 import com.example.killergram_android_v1.data.request.auth.signup.VerifyEmailRequest
-import com.example.killergram_android_v1.data.response.auth.VerifyEmailResponse
+import com.example.killergram_android_v1.data.response.auth.signup.VerifyEmailResponse
 import com.example.killergram_android_v1.databinding.ActivityEmailValidationBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,27 +48,30 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(emailValidationToInputEmail)
             }
             R.id.tv_email_reverification -> {
-                getTaskTimer()
+                getTaskTimer().scheduledExecutionTime()
+                timer.schedule(getTaskTimer(), 1000, 1000)
             }
         }
     }
 
     private fun getTaskTimer(): TimerTask {
         binding.tvTitleTimer.text = "05:00"
-        time = 300
+        time = 10
 
         return object : TimerTask() {
             override fun run() {
                 runOnUiThread {
-                    if (time == 0) {
-                        binding.tilEmailVerification.boxStrokeColor = resources.getColor(R.color.system)
+                    if (time != 0) {
+                        Log.d("TEST", time.toString())
+                        binding.tilEmailVerification.error = null
+                        time -= 1
+                        val min = time / 60
+                        val sec = time % 60
+                        binding.tvTitleTimer.text = String.format("%02d:%02d", min, sec)
+                    } else {
+                        timer.cancel()
                         binding.tilEmailVerification.error = "제한시간 5분을 초과하였습니다."
-                        timer.schedule(getTaskTimer(), 1000, 1000)
                     }
-                    time -= 1
-                    val min = time / 60
-                    val sec = time % 60
-                    binding.tvTitleTimer.text = String.format("%02d:%02d", min, sec)
                 }
             }
         }

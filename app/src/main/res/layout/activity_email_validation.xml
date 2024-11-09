@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
-            app:boxStrokeErrorColor="@color/main"
+            app:boxStrokeErrorColor="@color/system"
             app:counterMaxLength="16"
             app:errorIconDrawable="@null"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
