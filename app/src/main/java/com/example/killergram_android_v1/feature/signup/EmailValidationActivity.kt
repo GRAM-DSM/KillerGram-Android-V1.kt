@@ -1,9 +1,7 @@
 package com.example.killergram_android_v1.feature.signup
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -43,7 +41,7 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
 
         when(view?.id) {
             R.id.btn_login -> {
-                verifyEmailCode()
+                verifyEmailCodeToServer()
             }
             R.id.img_left_arrow -> {
                 startActivity(emailValidationToInputEmail)
@@ -62,7 +60,6 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
             override fun run() {
                 runOnUiThread {
                     if (time == 0) {
-                        timer.cancel()
                         binding.tilEmailVerification.boxStrokeColor = resources.getColor(R.color.system)
                         binding.tilEmailVerification.error = "제한시간 5분을 초과하였습니다."
                         timer.schedule(getTaskTimer(), 1000, 1000)
@@ -76,15 +73,14 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun verifyEmailCode() {
+    private fun verifyEmailCodeToServer() {
         val emailCode = binding.tieEmailVerification.text.toString()
-        val pref = baseContext.getSharedPreferences("killerGram", Context.MODE_PRIVATE)
-        val emailPref = pref.getString("email", "")!!
+        val email = intent.getStringExtra("killerGram")!!
 
 
         retrofit.verifyEmail(
             VerifyEmailRequest(
-                email = emailPref,
+                email = email,
                 emailCode = emailCode,
             )
         ).enqueue(object : Callback<VerifyEmailResponse> {

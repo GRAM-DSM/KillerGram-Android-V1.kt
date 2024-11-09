@@ -93,6 +93,7 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun connectEmailToServer(email: String) {
         val inputEmailToEmailVerification = Intent(this, EmailValidationActivity::class.java)
+        inputEmailToEmailVerification.putExtra("killerGramEmail", binding.tieEmail.text.toString())
 
         retrofit.sendEmail(
             EmailRequest(
