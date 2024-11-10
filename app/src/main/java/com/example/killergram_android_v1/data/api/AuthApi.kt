@@ -3,6 +3,7 @@ package com.example.killergram_android_v1.data.api
 import com.example.killergram_android_v1.data.request.auth.login.LoginRequest
 import com.example.killergram_android_v1.data.request.auth.signup.EmailRequest
 import com.example.killergram_android_v1.data.request.auth.signup.SetPasswordRequest
+import com.example.killergram_android_v1.data.request.auth.signup.SignUpRequest
 import com.example.killergram_android_v1.data.request.auth.signup.VerifyEmailRequest
 import com.example.killergram_android_v1.data.response.auth.login.LoginResponse
 import com.example.killergram_android_v1.data.response.auth.signup.VerifyEmailResponse
@@ -25,6 +26,10 @@ interface AuthApi {
     @PATCH("users/reset-password")
     fun setPassword(
         @Body request: SetPasswordRequest
+    ): Call<Void>
+
+    fun singUp(
+        @Body request: SignUpRequest
     ): Call<Void>
 
     fun login(
