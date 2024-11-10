@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterSkillsBinding
 import com.example.killergram_android_v1.feature.enterinfo.endterGender.EnterGenderActivity
-import com.example.killergram_android_v1.feature.home.HomeActivity
 import com.example.killergram_android_v1.feature.login.LoginActivity
 
 class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {

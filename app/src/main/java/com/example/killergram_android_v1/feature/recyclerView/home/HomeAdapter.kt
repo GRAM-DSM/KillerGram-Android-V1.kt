@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ListItemBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
-import com.example.killergram_android_v1.feature.utils.dpToPx
 
 class
 HomeAdapter(

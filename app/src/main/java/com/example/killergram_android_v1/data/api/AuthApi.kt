@@ -2,13 +2,11 @@ package com.example.killergram_android_v1.data.api
 
 import com.example.killergram_android_v1.data.request.auth.login.LoginRequest
 import com.example.killergram_android_v1.data.request.auth.signup.EmailRequest
-import com.example.killergram_android_v1.data.request.auth.signup.SetPasswordRequest
 import com.example.killergram_android_v1.data.request.auth.signup.SignUpRequest
 import com.example.killergram_android_v1.data.request.auth.signup.VerifyEmailRequest
 import com.example.killergram_android_v1.data.response.auth.login.LoginResponse
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.PATCH
 import retrofit2.http.POST
 
 interface AuthApi {
@@ -20,11 +18,6 @@ interface AuthApi {
     @POST("/users/verify-email")
     fun verifyEmail(
         @Body request: VerifyEmailRequest
-    ): Call<Void>
-
-    @PATCH("users/reset-password")
-    fun setPassword(
-        @Body request: SetPasswordRequest
     ): Call<Void>
 
     @POST("users/signup")

@@ -1,6 +1,5 @@
 package com.example.killergram_android_v1.feature.signup
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -10,13 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.data.api.ApiProvider
-import com.example.killergram_android_v1.data.request.auth.signup.SetPasswordRequest
 import com.example.killergram_android_v1.databinding.ActivitySetPasswordBinding
 import com.example.killergram_android_v1.feature.enterinfo.EnterNameActivity
 import com.example.killergram_android_v1.feature.utils.isRegexPassword
-import retrofit2.Call
-import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -41,10 +36,11 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         val setPasswordToEmailVerification = Intent(this, EmailValidationActivity::class.java)
+        val setPasswordToEnterName = Intent(this, EnterNameActivity::class.java)
 
         when(view?.id) {
             R.id.btn_login -> {
-                passwordSendToServer()
+                startActivity(setPasswordToEnterName)
             }
             R.id.img_left_arrow -> {
                 startActivity(setPasswordToEmailVerification)
@@ -75,8 +71,8 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-            }
 
+            }
         })
     }
 
@@ -114,31 +110,5 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun flagCheck(): Boolean {
         return passwordFlag && passwordCheckFlag
-    }
-
-    private fun passwordSendToServer() {
-        val setPasswordToEnterName = Intent(this, EnterNameActivity::class.java)
-        val pref = this.getSharedPreferences("email", Context.MODE_PRIVATE)
-        val email =  pref.getString("email", "")!!
-
-        retrofit.setPassword(
-            SetPasswordRequest(
-                email, // 계정 id 에 적합한 값 대입
-                binding.tiePwd.text.toString()
-            )
-        ).enqueue(object : retrofit2.Callback<Void> {
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                when(response.code()) {
-                    200 -> {
-                        startActivity(setPasswordToEnterName)
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<Void>, t: Throwable) {
-
-            }
-
-        })
     }
 }
