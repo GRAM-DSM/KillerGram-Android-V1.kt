@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.data.api.ApiProvider
 import com.example.killergram_android_v1.data.request.auth.signup.VerifyEmailRequest
-import com.example.killergram_android_v1.data.response.auth.signup.VerifyEmailResponse
 import com.example.killergram_android_v1.databinding.ActivityEmailValidationBinding
 import retrofit2.Call
 import retrofit2.Callback

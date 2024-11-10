@@ -6,7 +6,6 @@ import com.example.killergram_android_v1.data.request.auth.signup.SetPasswordReq
 import com.example.killergram_android_v1.data.request.auth.signup.SignUpRequest
 import com.example.killergram_android_v1.data.request.auth.signup.VerifyEmailRequest
 import com.example.killergram_android_v1.data.response.auth.login.LoginResponse
-import com.example.killergram_android_v1.data.response.auth.signup.VerifyEmailResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.PATCH

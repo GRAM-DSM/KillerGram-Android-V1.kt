@@ -96,6 +96,7 @@
             app:counterMaxLength="16"
             android:layout_marginTop="4dp"
             app:errorIconDrawable="@null"
+            android:maxLines="1"
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
             app:layout_constraintTop_toBottomOf="@id/tv_email"
@@ -105,6 +106,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie_email"
                 style="@style/InputEditText"
+                android:maxLines="1"
                 android:layout_marginTop="60dp"
                 android:hint="이메일을 입력해 주세요"
                 android:textColorHint="@color/gray800" />
