@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.signup
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -117,9 +118,12 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun passwordSendToServer() {
         val setPasswordToEnterName = Intent(this, EnterNameActivity::class.java)
+        val pref = this.getSharedPreferences("email", Context.MODE_PRIVATE)
+        val email =  pref.getString("email", "")!!
+
         retrofit.setPassword(
             SetPasswordRequest(
-                "", // 계정 id 에 적합한 값 대입
+                email, // 계정 id 에 적합한 값 대입
                 binding.tiePwd.text.toString()
             )
         ).enqueue(object : retrofit2.Callback<Void> {

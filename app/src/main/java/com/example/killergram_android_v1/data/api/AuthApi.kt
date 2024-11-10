@@ -21,17 +21,19 @@ interface AuthApi {
     @POST("/users/verify-email")
     fun verifyEmail(
         @Body request: VerifyEmailRequest
-    ): Call<VerifyEmailResponse>
+    ): Call<Void>
 
     @PATCH("users/reset-password")
     fun setPassword(
         @Body request: SetPasswordRequest
     ): Call<Void>
 
+    @POST("users/signup")
     fun singUp(
         @Body request: SignUpRequest
     ): Call<Void>
 
+    @POST("users/login")
     fun login(
         @Body request: LoginRequest
     ): Call<LoginResponse>

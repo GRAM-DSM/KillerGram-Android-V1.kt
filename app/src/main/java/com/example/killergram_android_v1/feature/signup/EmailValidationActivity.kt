@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.signup
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -62,7 +63,6 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
             override fun run() {
                 runOnUiThread {
                     if (time != 0) {
-                        Log.d("TEST", time.toString())
                         binding.tilEmailVerification.error = null
                         time -= 1
                         val min = time / 60
@@ -81,32 +81,31 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
         val emailVerifyToSetPassword = Intent(this, SetPasswordActivity::class.java)
 
         val emailCode = binding.tieEmailVerification.text.toString()
-        val email = intent.getStringExtra("killerGram")!!
 
+        val pref = this.getSharedPreferences("email", Context.MODE_PRIVATE)
+        val email = pref.getString("email", "")!!
 
         retrofit.verifyEmail(
             VerifyEmailRequest(
                 email = email,
                 emailCode = emailCode,
             )
-        ).enqueue(object : Callback<VerifyEmailResponse> {
-            override fun onResponse(
-                call: Call<VerifyEmailResponse>,
-                response: Response<VerifyEmailResponse>
-            ) {
+        ).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 when(response.code()) {
                     200 -> {
                         startActivity(emailVerifyToSetPassword)
                     }
                     else -> {
-                        binding.tilEmailVerification.error = response.code().toString()
+                        Log.d("TEST", response.code().toString())
                     }
                 }
             }
 
-            override fun onFailure(call: Call<VerifyEmailResponse>, t: Throwable) {
+            override fun onFailure(call: Call<Void>, t: Throwable) {
 
             }
+
         })
     }
 }

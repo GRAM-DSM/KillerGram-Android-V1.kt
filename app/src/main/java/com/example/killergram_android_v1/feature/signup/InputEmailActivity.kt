@@ -48,7 +48,8 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
 
         when(view?.id) {
             R.id.btn_login -> {
-                connectEmailToServer(email)
+                if(flagCheck())
+                    connectEmailToServer(email)
             }
             R.id.img_left_arrow -> {
                 startActivity(inputEmailToLogin)
@@ -93,8 +94,11 @@ class InputEmailActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun connectEmailToServer(email: String) {
         val inputEmailToEmailVerification = Intent(this, EmailValidationActivity::class.java)
-        inputEmailToEmailVerification.putExtra("killerGramEmail", binding.tieEmail.text.toString())
-
+        val pref = this.getSharedPreferences("email", Context.MODE_PRIVATE)
+        val editor = pref.edit()
+        editor.putString("email", binding.tieEmail.text.toString())
+        editor.apply()
+        Log.d("TEST", pref.getString("email", "").toString())
         retrofit.sendEmail(
             EmailRequest(
                 email = email
