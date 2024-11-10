@@ -7,7 +7,7 @@ import java.time.LocalDate
 
 
 fun isRegexEmail(email: String): Boolean {
-    return email.matches("^(?=.*[A-Za-z])(?=.*\\\\d)(?=.*[$@!%*#?&])[A-Za-z\\\\d$@!%*#?&]{8,16}$".toRegex())
+    return email.matches("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$".toRegex())
 }
 
 fun isRegexPassword(password: String): Boolean {
