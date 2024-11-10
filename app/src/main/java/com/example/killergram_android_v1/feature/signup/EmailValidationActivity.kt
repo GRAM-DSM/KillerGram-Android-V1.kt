@@ -56,7 +56,7 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun getTaskTimer(): TimerTask {
         binding.tvTitleTimer.text = "05:00"
-        time = 10
+        time = 300
 
         return object : TimerTask() {
             override fun run() {
@@ -78,6 +78,8 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun verifyEmailCodeToServer() {
+        val emailVerifyToSetPassword = Intent(this, SetPasswordActivity::class.java)
+
         val emailCode = binding.tieEmailVerification.text.toString()
         val email = intent.getStringExtra("killerGram")!!
 
@@ -92,7 +94,14 @@ class EmailValidationActivity : AppCompatActivity(), View.OnClickListener {
                 call: Call<VerifyEmailResponse>,
                 response: Response<VerifyEmailResponse>
             ) {
-
+                when(response.code()) {
+                    200 -> {
+                        startActivity(emailVerifyToSetPassword)
+                    }
+                    else -> {
+                        binding.tilEmailVerification.error = response.code().toString()
+                    }
+                }
             }
 
             override fun onFailure(call: Call<VerifyEmailResponse>, t: Throwable) {
