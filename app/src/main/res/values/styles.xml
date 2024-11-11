@@ -118,4 +118,10 @@
         <item name="background">@drawable/icon_radius</item>
         <item name="srcCompat">@drawable/ic_baseball</item>
     </style>
+
+    <style name="toolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/system</item>
+        <item name="android:textColor">@color/system</item>
+    </style>
 </resources>

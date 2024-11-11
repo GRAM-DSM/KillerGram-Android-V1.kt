@@ -32,6 +32,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_home"
+            android:theme="@style/toolbarTheme"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             app:contentInsetStart="0dp"
