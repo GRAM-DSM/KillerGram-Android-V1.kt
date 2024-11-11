@@ -27,7 +27,6 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
-
         onEmailListener()
         onPasswordListener()
         binding.tvSignUp.setOnClickListener(this)

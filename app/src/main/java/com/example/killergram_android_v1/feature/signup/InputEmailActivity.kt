@@ -16,6 +16,7 @@ import com.example.killergram_android_v1.data.api.ApiProvider
 import com.example.killergram_android_v1.data.request.auth.signup.EmailRequest
 import com.example.killergram_android_v1.databinding.ActivityInputEmailBinding
 import com.example.killergram_android_v1.feature.login.LoginActivity
+import com.example.killergram_android_v1.feature.type.Ability
 import com.example.killergram_android_v1.feature.utils.isRegexEmail
 import retrofit2.Call
 import retrofit2.Callback
