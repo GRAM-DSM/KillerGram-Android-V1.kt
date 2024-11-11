@@ -1,9 +1,6 @@
 package com.example.killergram_android_v1.feature.utils
 
 import android.content.Context
-import android.icu.util.Calendar
-import java.time.DayOfWeek
-import java.time.LocalDate
 
 
 fun isRegexEmail(email: String): Boolean {

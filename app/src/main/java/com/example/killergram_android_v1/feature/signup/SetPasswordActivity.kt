@@ -20,8 +20,6 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     private var passwordFlag = false
     private var passwordCheckFlag = false
 
-    private val retrofit = ApiProvider.getAuthApi()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

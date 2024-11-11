@@ -4,6 +4,6 @@ enum class TodaySport {
     BADMINTON,
     BASEBALL,
     FITNESS,
-    TABLETENNIS,
+    TABLE_TENNIS,
     SOCCER,
 }
