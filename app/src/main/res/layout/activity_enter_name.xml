@@ -117,7 +117,6 @@
             app:counterMaxLength="16"
             android:layout_marginTop="8dp"
             app:errorIconDrawable="@null"
-            android:maxLines="1"
             android:layout_marginHorizontal="24dp"
             android:textColorHint="@color/gray800"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
@@ -127,7 +126,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie_name"
                 style="@style/InputEditText"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:textColorHint="@color/gray800"
                 android:hint="이름을 입력해주세요"
                 android:layout_marginTop="60dp" />

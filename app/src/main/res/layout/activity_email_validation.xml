@@ -93,7 +93,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie_email_verification"
                 style="@style/InputEditText"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:layout_marginTop="60dp"
                 android:hint="인증번호를 입력해 주세요" />
         </com.google.android.material.textfield.TextInputLayout>
