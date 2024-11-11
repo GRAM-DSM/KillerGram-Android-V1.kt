@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.enterinfo
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -27,14 +28,18 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
         val enterNameToEnterGrade = Intent(this, EnterGradeActivity::class.java)
         val enterNameToSetPassword = Intent(this, SetPasswordActivity::class.java)
 
+        val pref = this.getSharedPreferences("name", Context.MODE_PRIVATE)
+        val editor = pref.edit()
 
         when(view?.id) {
             R.id.btn_login -> {
+                editor.putString("name", binding.tieName.text.toString())
+                editor.apply()
                 startActivity(enterNameToEnterGrade)
             }
             R.id.img_left_arrow -> {
                 startActivity(enterNameToSetPassword)
-            }
+      4      }
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.signup
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -35,9 +36,13 @@ class SetPasswordActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         val setPasswordToEmailVerification = Intent(this, EmailValidationActivity::class.java)
         val setPasswordToEnterName = Intent(this, EnterNameActivity::class.java)
+        val pref = this.getSharedPreferences("password", Context.MODE_PRIVATE)
+        val editor = pref.edit()
 
         when(view?.id) {
             R.id.btn_login -> {
+                editor.putString("password", binding.tiePwd.text.toString())
+                editor.apply()
                 startActivity(setPasswordToEnterName)
             }
             R.id.img_left_arrow -> {

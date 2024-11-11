@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.enterinfo.endterGender
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,7 @@ import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterGenderBinding
 import com.example.killergram_android_v1.feature.enterinfo.EnterGradeActivity
 import com.example.killergram_android_v1.feature.enterinfo.enterSkill.EnterSkillsActivity
+import com.example.killergram_android_v1.feature.type.Gender
 
 class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -37,6 +39,7 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
         val enterGenderToEnterSkills = Intent(this, EnterSkillsActivity::class.java)
         val enterGenderToEnterGrade = Intent(this, EnterGradeActivity::class.java)
 
+
         when (v?.id) {
             R.id.btn_login -> {
                 startActivity(enterGenderToEnterSkills)
@@ -57,15 +60,24 @@ class EnterGenderActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun onGenderToggleSelected() {
+        val pref = this.getSharedPreferences("gender", Context.MODE_PRIVATE)
+        val editor = pref.edit()
+
         enterGenderViewModel.buttonState.observe(this@EnterGenderActivity) {
             when(it) {
                 1 -> {
                     binding.btnMan.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
                     binding.btnWoman.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
+
+                    editor.putString("gender", Gender.MAN.toString())
+                    editor.apply()
                 }
                 2 -> {
                     binding.btnMan.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnWoman.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
+
+                    editor.putString("gender", Gender.WOMAN.toString())
+                    editor.apply()
                 }
             }
         }

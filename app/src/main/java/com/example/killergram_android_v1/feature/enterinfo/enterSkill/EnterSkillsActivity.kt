@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.enterinfo.enterSkill
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.databinding.ActivityEnterSkillsBinding
 import com.example.killergram_android_v1.feature.enterinfo.endterGender.EnterGenderActivity
 import com.example.killergram_android_v1.feature.login.LoginActivity
+import com.example.killergram_android_v1.feature.type.Ability
 
 class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
@@ -76,8 +78,8 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun skillViewClickListener() {
-        val pref = getSharedPreferences("pref", 0)
-        val edit = pref.edit()
+        val pref = this.getSharedPreferences("ability", Context.MODE_PRIVATE)
+        val editor = pref.edit()
 
         enterSkillsViewModel.buttonState.observe(this@EnterSkillsActivity) {
             when(it) {
@@ -86,24 +88,24 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
 
-                    edit.putString("SkillLevel", "상")
-                    edit.apply()
+                    editor.putString("ability", Ability.UPPER.toString())
+                    editor.apply()
                 }
                 2 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
 
-                    edit.putString("SkillLevel", "중")
-                    edit.apply()
+                    editor.putString("ability", Ability.MIDDLE.toString())
+                    editor.apply()
                 }
                 3 -> {
                     binding.btnSkill1.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill2.background = AppCompatResources.getDrawable(this, R.drawable.button_unselected)
                     binding.btnSkill3.background = AppCompatResources.getDrawable(this, R.drawable.button_selected)
 
-                    edit.putString("SkillLevel", "하")
-                    edit.apply()
+                    editor.putString("ability", Ability.LOWER.toString())
+                    editor.apply()
                 }
             }
         }
