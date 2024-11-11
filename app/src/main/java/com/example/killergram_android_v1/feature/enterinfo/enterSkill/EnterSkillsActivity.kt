@@ -3,6 +3,7 @@ package com.example.killergram_android_v1.feature.enterinfo.enterSkill
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +29,10 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        Log.d("TEST2", this.getSharedPreferences("grade", Context.MODE_PRIVATE).getString("grade", "").toString())
+        Log.d("TEST3", this.getSharedPreferences("password", Context.MODE_PRIVATE).getString("password", "").toString())
+
 
         binding.btnLogin.setOnClickListener(this)
         binding.imgLeftArrow.setOnClickListener(this)

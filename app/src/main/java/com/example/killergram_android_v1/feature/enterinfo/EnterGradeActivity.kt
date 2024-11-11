@@ -30,12 +30,7 @@ class EnterGradeActivity : AppCompatActivity(), View.OnClickListener {
         val enterGradeToEnterName = Intent(this, EnterNameActivity::class.java)
         val pref = this.getSharedPreferences("grade", Context.MODE_PRIVATE)
         val editor = pref.edit()
-        Log.d("TEST", pref.getString("ability", "")!! + "\n"
-                + pref.getString("email", "")!! + "\n"
-                + pref.getString("gender", "")!! + "\n"
-                + pref.getString("name", "")!! + "\n"
-                + pref.getString("grade", "") + "\n"
-                + pref.getString("password", ""))
+
         when(v?.id) {
             R.id.btn_login -> {
                 editor.putString("grade", binding.tieGrade.text.toString())
