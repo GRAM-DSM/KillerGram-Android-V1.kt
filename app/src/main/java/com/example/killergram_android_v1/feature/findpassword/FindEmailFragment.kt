@@ -6,8 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.killergram_android_v1.R
+import com.example.killergram_android_v1.databinding.FragmentFindEmailBinding
 
 class FindEmailFragment : Fragment() {
+    private val binding: FragmentFindEmailBinding by lazy {
+        FragmentFindEmailBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,8 +21,8 @@ class FindEmailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_find_email, container, false)
+        return binding.root
     }
 }
