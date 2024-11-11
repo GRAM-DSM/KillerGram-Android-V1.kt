@@ -138,13 +138,13 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(homeToSubmit)
             }
             R.id.img_btn_home_fitness -> {
-
+                homeToSubmit.putExtra("homeSport", "헬스")
             }
             R.id.img_btn_home_baseball -> {
-
+                homeToSubmit.putExtra("homeSport", "야구")
             }
             R.id.img_btn_home_soccer -> {
-
+                homeToSubmit.putExtra("homeSport", "축구")
             }
         }
     }
@@ -197,7 +197,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         val calendarDate = now.minusDays(1)
 
         // 현재 날짜에 맞게 text 색 변경
-        Log.d("TEST", (today == calendarDate).toString())
+        Log.d("TEST", today.toString() + calendarDate.toString())
         if (today == calendarDate) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
             when (calendarDate.dayOfWeek) {
                 DayOfWeek.MONDAY -> {
@@ -224,7 +224,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun setNextWeek(week: LocalDate): MutableList<Int> {
+    private fun setNextWeek(week: LocalDate): MutableList<Int> {
         var now = week
         val weeks = DayOfWeek.entries.toList()
 
@@ -254,7 +254,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         return days
     }
 
-    fun setPreWeek(week: LocalDate): MutableList<Int> {
+    private fun setPreWeek(week: LocalDate): MutableList<Int> {
         var now = week
         val weeks = DayOfWeek.entries.toList()
 
