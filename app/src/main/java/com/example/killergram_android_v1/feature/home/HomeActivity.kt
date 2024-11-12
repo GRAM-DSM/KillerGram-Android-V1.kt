@@ -25,9 +25,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val binding: ActivityHomeBinding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
-    private val homeViewModel: HomeViewModel by lazy {
-        ViewModelProvider(this@HomeActivity)[HomeViewModel::class.java]
-    }
     private val sportList: MutableList<Sport> = mutableListOf (
         Sport("축구", 14, 2, true)
     )
@@ -59,7 +56,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         getDate()
 
-        raiseRecycleView()
         observeTodaySportList()
 
         binding.imgBtnHomeSoccer.setOnClickListener(this)
@@ -74,20 +70,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.imgBtnHomeTableTennis.setOnClickListener(this)
     }
 
-    private fun raiseRecycleView() {
-        homeViewModel.addSportList(sportList)
-    }
-
     private fun observeTodaySportList() {
-        homeViewModel.todaySportList.observe(this@HomeActivity) {
-            val homeAdapter = HomeAdapter(it) {
-                val intent = Intent(this, SubmitActivity::class.java)
-                startActivity(intent)
-            }
-            val layoutManager = GridLayoutManager(this, 1)
-            binding.recyclerSport.layoutManager = layoutManager
-            binding.recyclerSport.adapter = homeAdapter
+        val homeAdapter = HomeAdapter(sportList) {
+            val intent = Intent(this, SubmitActivity::class.java)
+            startActivity(intent)
         }
+        val layoutManager = GridLayoutManager(this, 1)
+        binding.recyclerSport.layoutManager = layoutManager
+        binding.recyclerSport.adapter = homeAdapter
     }
 
     override fun onClick(v: View?) {
