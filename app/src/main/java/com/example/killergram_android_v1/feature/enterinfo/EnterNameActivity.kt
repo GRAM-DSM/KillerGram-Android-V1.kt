@@ -39,7 +39,7 @@ class EnterNameActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.img_left_arrow -> {
                 startActivity(enterNameToSetPassword)
-      4      }
+            }
         }
     }
 }
