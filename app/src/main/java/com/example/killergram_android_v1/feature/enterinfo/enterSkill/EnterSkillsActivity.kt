@@ -11,15 +11,23 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProvider
 import com.example.killergram_android_v1.R
+import com.example.killergram_android_v1.data.api.ApiProvider
+import com.example.killergram_android_v1.data.request.auth.login.LoginRequest
+import com.example.killergram_android_v1.data.request.auth.signup.SignUpRequest
 import com.example.killergram_android_v1.databinding.ActivityEnterSkillsBinding
 import com.example.killergram_android_v1.feature.enterinfo.endterGender.EnterGenderActivity
 import com.example.killergram_android_v1.feature.login.LoginActivity
 import com.example.killergram_android_v1.feature.type.Ability
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityEnterSkillsBinding.inflate(layoutInflater)
     }
+
+    private val retrofit = ApiProvider.getAuthApi()
 
     private val enterSkillsViewModel by lazy {
         ViewModelProvider(this@EnterSkillsActivity)[EnterSkillsViewModel::class.java]
@@ -45,13 +53,11 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        val enterNameToLogin = Intent(this, LoginActivity::class.java)
         val enterNameToEnterGender = Intent(this, EnterGenderActivity::class.java)
 
         when(view?.id) {
             R.id.btn_login -> {
-                Toast.makeText(this, "회원가입에 성공하였습니다!", Toast.LENGTH_SHORT).show()
-                startActivity(enterNameToLogin)
+                connectToServer()
             }
             R.id.img_left_arrow -> {
                 startActivity(enterNameToEnterGender)
@@ -114,5 +120,46 @@ class EnterSkillsActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    private fun connectToServer() {
+        val enterNameToLogin = Intent(this, LoginActivity::class.java)
+        val ability = this.getSharedPreferences("ability", Context.MODE_PRIVATE).getString("ability", "")!!
+        val email = this.getSharedPreferences("email", Context.MODE_PRIVATE).getString("email", "")!!
+        val deviceToken = this.getSharedPreferences("device_token", Context.MODE_PRIVATE).getString("device_token", "")!!
+        val gender = this.getSharedPreferences("gender", Context.MODE_PRIVATE).getString("gender", "")!!
+        val name = this.getSharedPreferences("name", Context.MODE_PRIVATE).getString("name", "")!!
+        val grade = this.getSharedPreferences("grade", Context.MODE_PRIVATE).getString("grade", "")!!
+        val password = this.getSharedPreferences("password", Context.MODE_PRIVATE).getString("password", "")!!
+
+
+        retrofit.singUp(
+            SignUpRequest(
+                ability = ability,
+                accountId = email,
+                deviceToken = deviceToken,
+                gender = gender,
+                name = name,
+                password = password,
+                schoolNumber = grade,
+            )
+        ).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                when(response.code()) {
+                    200 -> {
+                        Toast.makeText(baseContext, "회원가입에 성공하였습니다!", Toast.LENGTH_SHORT).show()
+                        startActivity(enterNameToLogin)
+                    }
+                    else -> {
+                        Log.d("TEST", response.code().toString())
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+
+            }
+
+        })
     }
 }
