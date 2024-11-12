@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustPan"
         tools:targetApi="31">
-        <service android:name=".MyFirebaseMessagingService"
+        <service android:name=".FirebaseMessagingService"
             android:exported="true">
             <intent-filter>
 

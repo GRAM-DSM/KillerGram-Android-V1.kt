@@ -1,24 +1,39 @@
 package com.example.killergram_android_v1.feature.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.killergram_android_v1.FirebaseMessagingService
 import com.example.killergram_android_v1.R
+import com.example.killergram_android_v1.data.api.ApiProvider
+import com.example.killergram_android_v1.data.request.auth.login.LoginRequest
+import com.example.killergram_android_v1.data.response.auth.login.LoginResponse
 import com.example.killergram_android_v1.databinding.ActivityLoginBinding
 import com.example.killergram_android_v1.feature.home.HomeActivity
 import com.example.killergram_android_v1.feature.signup.InputEmailActivity
 import com.example.killergram_android_v1.feature.utils.isRegexEmail
 import com.example.killergram_android_v1.feature.utils.isRegexPassword
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.messaging
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
-open class LoginActivity : AppCompatActivity(), View.OnClickListener {
+class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
+
+    private val retrofit = ApiProvider.getAuthApi()
 
     private var emailFlag = false
     private var passwordFlag = false
@@ -31,11 +46,23 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
         onPasswordListener()
         binding.tvSignUp.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                return@OnCompleteListener
+            }
+
+            val token = task.result
+            val pref = this.getSharedPreferences("device_token", Context.MODE_PRIVATE)
+            val editor = pref.edit()
+            editor.putString("device_token", token)
+            editor.apply()
+            Log.d("TEST22", token)
+        })
     }
 
     override fun onClick(view: View?) {
         val loginToInputEmail = Intent(this, InputEmailActivity::class.java)
-        val loginToHome = Intent(this, HomeActivity::class.java)
 
         when(view?.id) {
             R.id.tv_sign_up -> {
@@ -43,7 +70,7 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_login -> {
                 if (flagCheck()) {
-                    startActivity(loginToHome)
+                    connectLoginToServer()
                 } else {
                     binding.tilPwd.error = " "
                     binding.tilEmail.error = " "
@@ -112,5 +139,36 @@ open class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun flagCheck(): Boolean {
         return emailFlag && passwordFlag
+    }
+
+    private fun connectLoginToServer() {
+        val loginToHome = Intent(this, HomeActivity::class.java)
+        val pref = this.getSharedPreferences("token", Context.MODE_PRIVATE)
+        val editor = pref.edit()
+
+
+        retrofit.login(
+            LoginRequest(
+                accountId = binding.tieEmail.text.toString(),
+                password = binding.LoginTIEPwd.text.toString(),
+            )
+        ).enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                when(response.code()) {
+                    200 -> {
+                        startActivity(loginToHome)
+                        editor.putString("access_token", response.body()?.accessToken)
+                        editor.putString("refresh_token", response.body()?.refreshToken)
+                        editor.apply()
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+
+            }
+        })
+
+
     }
 }
