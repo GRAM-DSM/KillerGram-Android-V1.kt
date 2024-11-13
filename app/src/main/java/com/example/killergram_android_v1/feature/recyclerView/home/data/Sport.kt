@@ -5,4 +5,5 @@ data class Sport(
     val personnel: Int,
     val participate: Int,
     val isEnd: Boolean,
+    val date: String
 )

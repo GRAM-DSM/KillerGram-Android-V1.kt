@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         ActivityHomeBinding.inflate(layoutInflater)
     }
     private val sportList: MutableList<Sport> = mutableListOf (
-        Sport("축구", 14, 2, true)
+        Sport("축구", 14, 2, true, "11")
     )
     private var now = LocalDate.now()
 
@@ -48,7 +48,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                         sportName = this,
                         personnel = getIntExtra("personnel", 0),
                         participate = getIntExtra("participate", 0),
-                        isEnd = getBooleanExtra(    "isEnd", false)
+                        isEnd = getBooleanExtra(    "isEnd", false),
+                        date = "11"
                     )
                 )
             }
@@ -90,6 +91,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             binding.tvDateFourth,
             binding.tvDateFifth,
         )
+
         when (v?.id) {
             R.id.img_left_arrow -> {
                 now = now.minusWeeks(1)
@@ -108,7 +110,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.img_right_arrow -> {
                 now = now.plusWeeks(1)
                 val days = setNextWeek(now)
-
                 repeat(days.size) {
                     if (days[it] != 0) {
                         dayList[it].text = days[it].toString()
@@ -280,7 +281,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item?.itemId) {
+        when(item.itemId) {
             R.id.menu_item_log_out -> {
                 Toast.makeText(this, "로그인 선택 됨", Toast.LENGTH_SHORT).show()
                 return true
