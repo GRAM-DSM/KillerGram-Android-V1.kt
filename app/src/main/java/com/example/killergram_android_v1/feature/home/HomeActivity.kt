@@ -1,5 +1,6 @@
 package com.example.killergram_android_v1.feature.home
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -13,12 +14,17 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.killergram_android_v1.R
+import com.example.killergram_android_v1.data.api.ApiProvider
+import com.example.killergram_android_v1.data.response.sport.GetSportResponse
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
 import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 import com.example.killergram_android_v1.feature.submitlist.SubmitActivity
 import java.time.DayOfWeek
 import java.time.LocalDate
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
@@ -29,6 +35,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         Sport("축구", 14, 2, true, "11")
     )
     private var now = LocalDate.now()
+
+    private val retrofit = ApiProvider.getSportApi()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +66,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         getDate()
 
         observeTodaySportList()
+
+        getSportListToServer()
 
         binding.imgBtnHomeSoccer.setOnClickListener(this)
 
@@ -297,5 +307,24 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun getSportListToServer() {
+        val accessToken = this.getSharedPreferences("access_token", Context.MODE_PRIVATE).getString("access_token", "")!!
+
+        retrofit.getSport(
+            accessToken = accessToken
+        ).enqueue(object : Callback<GetSportResponse> {
+            override fun onResponse(
+                call: Call<GetSportResponse>,
+                response: Response<GetSportResponse>
+            ) {
+                
+            }
+
+            override fun onFailure(call: Call<GetSportResponse>, t: Throwable) {
+
+            }
+        })
     }
 }
