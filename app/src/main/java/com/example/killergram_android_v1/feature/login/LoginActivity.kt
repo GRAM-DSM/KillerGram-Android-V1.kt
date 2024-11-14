@@ -69,6 +69,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(loginToInputEmail)
             }
             R.id.btn_login -> {
+                Log.d("TEST", flagCheck().toString())
                 if (flagCheck()) {
                     connectLoginToServer()
                 } else {
@@ -160,6 +161,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         editor.putString("access_token", response.body()?.accessToken)
                         editor.putString("refresh_token", response.body()?.refreshToken)
                         editor.apply()
+                    }
+                    else -> {
+                        Log.d("TEST", response.code().toString())
                     }
                 }
             }
