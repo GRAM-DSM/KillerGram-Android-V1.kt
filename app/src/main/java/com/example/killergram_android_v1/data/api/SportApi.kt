@@ -9,5 +9,5 @@ interface SportApi {
     @GET("/sports/getSport")
     fun getSport(
         @Header("Authorization") accessToken: String
-    ): Call<GetSportResponse>
+    ): Call<List<GetSportResponse>>
 }

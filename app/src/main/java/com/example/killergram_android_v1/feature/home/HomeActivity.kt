@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.data.api.ApiProvider
@@ -314,17 +313,25 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         retrofit.getSport(
             accessToken = accessToken
-        ).enqueue(object : Callback<GetSportResponse> {
+        ).enqueue(object : Callback<List<GetSportResponse>> {
             override fun onResponse(
-                call: Call<GetSportResponse>,
-                response: Response<GetSportResponse>
+                call: Call<List<GetSportResponse>>,
+                response: Response<List<GetSportResponse>>
             ) {
-                
+                when(response.code()) {
+                    200 -> {
+                        Log.d("TEST", response.body().toString())
+                    }
+                    else -> {
+                        Log.d("TEST2", response.code().toString())
+                    }
+                }
             }
 
-            override fun onFailure(call: Call<GetSportResponse>, t: Throwable) {
+            override fun onFailure(call: Call<List<GetSportResponse>>, t: Throwable) {
 
             }
+
         })
     }
 }
