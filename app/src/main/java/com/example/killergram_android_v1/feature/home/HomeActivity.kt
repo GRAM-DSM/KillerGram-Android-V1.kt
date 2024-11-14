@@ -24,7 +24,7 @@ import java.time.LocalDate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
+import java.util.ArrayList
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val binding: ActivityHomeBinding by lazy {
@@ -33,6 +33,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val sportList: MutableList<Sport> = mutableListOf (
         Sport("축구", 14, 2, true, "11")
     )
+    private val homeAdapter = HomeAdapter(sportList, ArrayList()) {
+        val intent = Intent(this, SubmitActivity::class.java)
+        startActivity(intent)
+    }
     private var now = LocalDate.now()
 
     private val retrofit = ApiProvider.getSportApi()
@@ -47,6 +51,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.title = ""
 
         binding.toolbarHome.overflowIcon = getDrawable(R.drawable.ic_setting)
+
+        binding.frameContent.visibility = View.VISIBLE
 
         with(intent) {
             getStringExtra("sportName")?.run {
@@ -63,6 +69,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         getDate()
+        calenderEventFilter()
 
         observeTodaySportList()
 
@@ -80,11 +87,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.imgBtnHomeTableTennis.setOnClickListener(this)
     }
 
-    private fun observeTodaySportList() {
-        val homeAdapter = HomeAdapter(sportList) {
-            val intent = Intent(this, SubmitActivity::class.java)
-            startActivity(intent)
-        }
+    private fun observeTodaySportList() { // TODO: TODO("날짜값만 필터링된 리스트 전달 ")
+
         val layoutManager = GridLayoutManager(this, 1)
         binding.recyclerSport.layoutManager = layoutManager
         binding.recyclerSport.adapter = homeAdapter
@@ -311,6 +315,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun getSportListToServer() {
         val accessToken = this.getSharedPreferences("access_token", Context.MODE_PRIVATE).getString("access_token", "")!!
+        Log.d("TEST", accessToken)
 
         retrofit.getSport(
             accessToken = accessToken
@@ -332,7 +337,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             override fun onFailure(call: Call<List<GetSportResponse>>, t: Throwable) {
 
             }
-
         })
+    }
+
+    private fun calenderEventFilter() {
+        with(binding) {
+            tvDateFirst.setOnClickListener {
+                homeAdapter.filter.filter(tvDateFirst.text)
+            }
+        }
     }
 }
