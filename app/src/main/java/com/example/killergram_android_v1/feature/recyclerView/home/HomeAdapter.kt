@@ -14,7 +14,6 @@ import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 class HomeAdapter(
     private val items: MutableList<Sport>,
     private val itemClickListener: (Int) -> Unit,
-    unFilteredList: ArrayList<String>,
 ) : RecyclerView.Adapter<HomeAdapter.Holder>(), Filterable {
 
     companion object {
@@ -25,11 +24,11 @@ class HomeAdapter(
     // TODO: filteredList
     private var filteredList = ArrayList<String>()
 
-    init {
-        // 초기화 시 fullList와 filteredList를 unFilteredList로 설정
-        fullList.addAll(unFilteredList)
-        filteredList.addAll(unFilteredList)
-    }
+//    init {
+//        // 초기화 시 fullList와 filteredList를 unFilteredList로 설정
+//        fullList.addAll(unFilteredList)
+//        filteredList.addAll(unFilteredList)
+//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
