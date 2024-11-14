@@ -34,4 +34,8 @@ object ApiProvider {
     fun getAuthApi(): AuthApi {
         return getApiInstance().create(AuthApi::class.java)
     }
+
+    fun getSportApi(): SportApi {
+        return getApiInstance().create(SportApi::class.java)
+    }
 }
