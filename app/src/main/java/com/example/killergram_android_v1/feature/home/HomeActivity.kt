@@ -114,7 +114,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.img_left_arrow -> {
                 now = now.minusWeeks(1)
                 setPreWeek(now).run {
-                    Log.d("TEST", now.toString())
+                    Log.d("TEST_DATE_1", now.toString())
                     repeat(this.size) {
                         if (this[it] != 0) {
                             dayList[it].text = this[it].toString()
@@ -126,7 +126,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.img_right_arrow -> {
-                Log.d("TEST2", now.toString())
+                Log.d("TEST_DATE_2", now.toString())
                 now = now.plusWeeks(1)
                 val days = setNextWeek(now)
                 repeat(days.size) {
@@ -201,14 +201,14 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         dateText4.text = day4.toString()
         dateText5.text = day5.toString()
 
-        Log.d("TEST", now.toString())
-        Log.d("TEST", today.toString())
+        Log.d("TEST_DATE_3", now.toString())
+        Log.d("TEST_DATE_4", today.toString())
 
         val calendarDate = now.minusDays(1)
 
         // 현재 날짜에 맞게 text 색 변경
         Log.d("TEST", today.toString() + calendarDate.minusDays(1).toString())
-        if (today == calendarDate.minusDays(1)) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
+        if (today == calendarDate) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
             when (today.dayOfWeek) {
                 DayOfWeek.MONDAY -> {
                     dateText1.setTextColor(ContextCompat.getColor(baseContext, R.color.main))

@@ -2,6 +2,7 @@ package com.example.killergram_android_v1.feature.login
 
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -143,6 +144,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun connectLoginToServer() {
         val loginToHome = Intent(this, HomeActivity::class.java)
+        loginToHome.setFlags(FLAG_ACTIVITY_NEW_TASK)
         val pref = this.getSharedPreferences("token", Context.MODE_PRIVATE)
         val editor = pref.edit()
 
