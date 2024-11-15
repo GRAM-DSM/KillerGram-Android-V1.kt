@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 
 interface SportApi {
-    @GET("/sports/getSport")
+    @GET("/sport/getSport")
     fun getSport(
         @Header("Authorization") accessToken: String
     ): Call<List<GetSportResponse>>
