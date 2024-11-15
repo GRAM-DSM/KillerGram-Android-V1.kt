@@ -69,7 +69,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(loginToInputEmail)
             }
             R.id.btn_login -> {
-                Log.d("TEST", flagCheck().toString())
                 if (flagCheck()) {
                     connectLoginToServer()
                 } else {

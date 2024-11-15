@@ -24,20 +24,23 @@ import java.time.LocalDate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.ArrayList
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val binding: ActivityHomeBinding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
-    private val sportList: MutableList<Sport> = mutableListOf (
-        Sport("축구", 14, 2, true, "11")
-    )
-    private val homeAdapter = HomeAdapter(sportList, ArrayList()) {
+    private val sportList: MutableList<GetSportResponse> = mutableListOf()
+    // TODO: TODO("날짜값만 필터링된 리스트 전달")
+    private val dateList by lazy {
+        arrayListOf("3", "3", "2", "13", "14", "14", "11")
+    }
+    private val homeAdapter = HomeAdapter(sportList, dateList) {
         val intent = Intent(this, SubmitActivity::class.java)
         startActivity(intent)
     }
     private var now = LocalDate.now()
+
+
 
     private val retrofit = ApiProvider.getSportApi()
 
@@ -52,17 +55,20 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.toolbarHome.overflowIcon = getDrawable(R.drawable.ic_setting)
 
-        binding.frameContent.visibility = View.VISIBLE
+        binding.frameContent.visibility = View.INVISIBLE
 
         with(intent) {
             getStringExtra("sportName")?.run {
                 sportList.add(
-                    Sport(
+                    GetSportResponse(
+                        createdDate = "",
+                        managerEmail = "",
+                        personnel = 0,
+                        position = true,
+                        sportId = "",
                         sportName = this,
-                        personnel = getIntExtra("personnel", 0),
-                        participate = getIntExtra("participate", 0),
-                        isEnd = getBooleanExtra(    "isEnd", false),
-                        date = "11"
+                        enabled = false,
+                        currentPersonnel = 2
                     )
                 )
             }
@@ -87,8 +93,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.imgBtnHomeTableTennis.setOnClickListener(this)
     }
 
-    private fun observeTodaySportList() { // TODO: TODO("날짜값만 필터링된 리스트 전달 ")
-
+    private fun observeTodaySportList() {
         val layoutManager = GridLayoutManager(this, 1)
         binding.recyclerSport.layoutManager = layoutManager
         binding.recyclerSport.adapter = homeAdapter
@@ -314,11 +319,11 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getSportListToServer() {
-        val accessToken = this.getSharedPreferences("access_token", Context.MODE_PRIVATE).getString("access_token", "")!!
-        Log.d("TEST", accessToken)
+        val accessToken = this.getSharedPreferences("token", Context.MODE_PRIVATE).getString("access_token", "")!!
+        Log.d("TEST_TOKEN", accessToken)
 
         retrofit.getSport(
-            accessToken = accessToken
+            accessToken = "Bearer $accessToken"
         ).enqueue(object : Callback<List<GetSportResponse>> {
             override fun onResponse(
                 call: Call<List<GetSportResponse>>,
@@ -327,6 +332,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 when(response.code()) {
                     200 -> {
                         Log.d("TEST", response.body().toString())
+                        val list = response.body()!!
+                        Log.d("TEST", list.sortedBy { it.createdDate }.toString())
+                        homeAdapter.addList(list)
+                        homeAdapter.notifyDataSetChanged()
                     }
                     else -> {
                         Log.d("TEST2", response.code().toString())

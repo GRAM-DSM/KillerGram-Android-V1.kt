@@ -1,18 +1,17 @@
 package com.example.killergram_android_v1.feature.recyclerView.home
 
-import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.recyclerview.widget.AsyncListDiffer.ListListener
 import androidx.recyclerview.widget.RecyclerView
-import com.example.killergram_android_v1.R
+import com.example.killergram_android_v1.data.response.sport.GetSportResponse
 import com.example.killergram_android_v1.databinding.ListItemBinding
-import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 
 class HomeAdapter(
-    private val items: MutableList<Sport>,
+    private val items: MutableList<GetSportResponse>,
     unFilteredList: ArrayList<String>,
     private val itemClickListener: (Int) -> Unit,
 ) : RecyclerView.Adapter<HomeAdapter.Holder>(), Filterable {
@@ -29,6 +28,12 @@ class HomeAdapter(
         // 초기화 시 fullList와 filteredList를 unFilteredList로 설정
         fullList.addAll(unFilteredList)
         filteredList.addAll(unFilteredList)
+    }
+
+    fun addList(item: List<GetSportResponse>) {
+        items.addAll(item)
+        Log.d("TEST", "Full List: $fullList")
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -84,20 +89,20 @@ class HomeAdapter(
                 }
             }
         }
-        fun bind(sport: Sport) {
-            binding.title.text = sport.sportName
-            binding.subTitle.text = "${sport.personnel}명 중 ${sport.participate}명 참여"
-            if (sport.isEnd) {
-                binding.tvItemComplete.text =  "완료"
-                binding.constraintSport.setBackgroundResource(R.drawable.button_unselected)
-                binding.subTitle.setTextColor(Color.parseColor("#FF8F9094")) // gray
-                binding.tvItemComplete.setTextColor(Color.parseColor("#FF8F9094"))
-            } else {
-                binding.tvItemComplete.text =  "진행 중"
-                binding.constraintSport.setBackgroundResource(R.drawable.button_selected)
-                binding.subTitle.setTextColor(Color.parseColor("#FF9EFF00")) // main
-                binding.tvItemComplete.setTextColor(Color.parseColor("#FF9EFF00"))
-            }
+        fun bind(sport: GetSportResponse) {
+//            binding.title.text = sport.sportName
+//            binding.subTitle.text = "${sport.personnel}명 중 ${sport.participate}명 참여"
+//            if (sport.isEnd) {
+//                binding.tvItemComplete.text =  "완료"
+//                binding.constraintSport.setBackgroundResource(R.drawable.button_unselected)
+//                binding.subTitle.setTextColor(Color.parseColor("#FF8F9094")) // gray
+//                binding.tvItemComplete.setTextColor(Color.parseColor("#FF8F9094"))
+//            } else {
+//                binding.tvItemComplete.text =  "진행 중"
+//                binding.constraintSport.setBackgroundResource(R.drawable.button_selected)
+//                binding.subTitle.setTextColor(Color.parseColor("#FF9EFF00")) // main
+//                binding.tvItemComplete.setTextColor(Color.parseColor("#FF9EFF00"))
+//            }
         }
     }
 }
