@@ -14,27 +14,26 @@ import com.example.killergram_android_v1.databinding.ListItemBinding
 
 class HomeAdapter(
     private val items: MutableList<GetSportResponse>,
-    unFilteredList: ArrayList<String>,
     private val itemClickListener: (Int) -> Unit,
 ) : RecyclerView.Adapter<HomeAdapter.Holder>(), Filterable {
 
     companion object {
         // TODO: fullList
-        private val fullList = arrayListOf<String>()
+        private val fullList = mutableListOf<GetSportResponse>()
     }
 
     // TODO: filteredList
-    private var filteredList = ArrayList<String>()
+    private var filteredList = mutableListOf<GetSportResponse>()
 
     init {
         // 초기화 시 fullList와 filteredList를 unFilteredList로 설정
-        fullList.addAll(unFilteredList)
-        filteredList.addAll(unFilteredList)
+        fullList.addAll(items)
+        filteredList.addAll(items)
+        Log.d("TEST", "Full List: $fullList")
     }
 
     fun addList(item: List<GetSportResponse>) {
-        items.addAll(item)
-        Log.d("TEST", "Full List: $fullList")
+        fullList.addAll(item)
         notifyDataSetChanged()
     }
 
@@ -55,29 +54,35 @@ class HomeAdapter(
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val charString = constraint?.toString() ?: ""
-                filteredList = if (charString.isEmpty()) {
-                    ArrayList(null)  // TODO: fullList를 기반으로 필터링이 없을 때 존재하지 않는 리스트(null or "")를 반환
+                val query = constraint?.toString()?.lowercase() ?: ""
+                filteredList = if (query.isEmpty()) {
+                    mutableListOf()
                 } else {
-                    // TODO: filteringList
-                    val filteringList = ArrayList<String>()
-                    for (name in fullList) { // 항상 fullList에서 필터링
-                        if (name.lowercase().contains(charString.lowercase())) {
-                            filteringList.add(name)
+                    val filteringList = mutableListOf<GetSportResponse>()
+                    for (date in fullList) {
+                        if (date.createdDate.substring(8 until 10) == query) {
+                            filteringList.add(date)
                         }
                     }
                     filteringList
                 }
+                Log.d("TEST", filteredList.toString())
                 return FilterResults().apply { values = filteredList }
             }
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                filteredList = results?.values as ArrayList<String>
-                Log.d("TEST", "Filtered List: $filteredList")
-                notifyDataSetChanged()
+                // 필터링 결과를 filteredList에 반영
+                filteredList.clear()
+                if (results?.values != null) {
+                    @Suppress("UNCHECKED_CAST")
+                    Log.d("TEST", "Filtered List: $filteredList")
+                    filteredList.addAll(results.values as List<GetSportResponse>)
+                }
+                notifyDataSetChanged() // 화면 갱신
             }
         }
     }
+
 
     class Holder(
         private val binding: ListItemBinding,

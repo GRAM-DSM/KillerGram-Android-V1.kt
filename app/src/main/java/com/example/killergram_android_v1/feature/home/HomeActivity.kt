@@ -24,17 +24,18 @@ import java.time.LocalDate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.ArrayList
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val binding: ActivityHomeBinding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
     private val sportList: MutableList<GetSportResponse> = mutableListOf()
-    // TODO: TODO("날짜값만 필터링된 리스트 전달")
-    private val dateList by lazy {
-        arrayListOf("3", "3", "2", "13", "14", "14", "11")
+
+    private val dateList: MutableList<GetSportResponse> by lazy {
+        mutableListOf()
     }
-    private val homeAdapter = HomeAdapter(sportList, dateList) {
+    private val homeAdapter = HomeAdapter(sportList) {
         val intent = Intent(this, SubmitActivity::class.java)
         startActivity(intent)
     }
@@ -331,9 +332,12 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             ) {
                 when(response.code()) {
                     200 -> {
-                        Log.d("TEST", response.body().toString())
                         val list = response.body()!!
-                        Log.d("TEST", list.sortedBy { it.createdDate }.toString())
+                        Log.d("TEST", binding.tvDateFirst.text.toString())
+                        val firstDateList = list.filter { it.createdDate.substring(8 until 10) == binding.tvDateFirst.text.toString() }
+                        dateList.addAll(firstDateList)
+                        Log.d("TEST1", firstDateList.toString())
+                        Log.d("TEST2", list.toString())
                         homeAdapter.addList(list)
                         homeAdapter.notifyDataSetChanged()
                     }
@@ -353,6 +357,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         with(binding) {
             tvDateFirst.setOnClickListener {
                 homeAdapter.filter.filter(tvDateFirst.text)
+
             }
         }
     }
