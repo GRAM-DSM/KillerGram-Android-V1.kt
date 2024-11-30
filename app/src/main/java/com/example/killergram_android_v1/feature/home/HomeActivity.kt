@@ -321,7 +321,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun getSportListToServer() {
         val accessToken = this.getSharedPreferences("token", Context.MODE_PRIVATE).getString("access_token", "")!!
-        Log.d("TEST_TOKEN", accessToken)
 
         retrofit.getSport(
             accessToken = "Bearer $accessToken"
@@ -333,11 +332,12 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 when(response.code()) {
                     200 -> {
                         val list = response.body()!!
-                        Log.d("TEST", binding.tvDateFirst.text.toString())
-                        val firstDateList = list.filter { it.createdDate.substring(8 until 10) == binding.tvDateFirst.text.toString() }
+
+                        val firstDateList = list.filter {
+                            it.createdDate.substring(8 until 10) == binding.tvDateFirst.text.toString()
+                        }
                         dateList.addAll(firstDateList)
-                        Log.d("TEST1", firstDateList.toString())
-                        Log.d("TEST2", list.toString())
+
                         homeAdapter.addList(list)
                         homeAdapter.notifyDataSetChanged()
                     }
