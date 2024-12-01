@@ -9,7 +9,6 @@ import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
-import com.example.killergram_android_v1.data.api.ApiProvider
 import com.example.killergram_android_v1.databinding.ActivitySetPasswordBinding
 import com.example.killergram_android_v1.feature.enterinfo.EnterNameActivity
 import com.example.killergram_android_v1.feature.utils.isRegexPassword

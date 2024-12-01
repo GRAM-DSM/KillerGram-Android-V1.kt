@@ -12,7 +12,6 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProvider
 import com.example.killergram_android_v1.R
 import com.example.killergram_android_v1.data.api.ApiProvider
-import com.example.killergram_android_v1.data.request.auth.login.LoginRequest
 import com.example.killergram_android_v1.data.request.auth.signup.SignUpRequest
 import com.example.killergram_android_v1.databinding.ActivityEnterSkillsBinding
 import com.example.killergram_android_v1.feature.enterinfo.endterGender.EnterGenderActivity

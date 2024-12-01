@@ -17,14 +17,12 @@ import com.example.killergram_android_v1.data.api.ApiProvider
 import com.example.killergram_android_v1.data.response.sport.GetSportResponse
 import com.example.killergram_android_v1.databinding.ActivityHomeBinding
 import com.example.killergram_android_v1.feature.recyclerView.home.HomeAdapter
-import com.example.killergram_android_v1.feature.recyclerView.home.data.Sport
 import com.example.killergram_android_v1.feature.submitlist.SubmitActivity
-import java.time.DayOfWeek
-import java.time.LocalDate
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.ArrayList
+import java.time.DayOfWeek
+import java.time.LocalDate
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
     private val binding: ActivityHomeBinding by lazy {
@@ -39,9 +37,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         val intent = Intent(this, SubmitActivity::class.java)
         startActivity(intent)
     }
+
     private var now = LocalDate.now()
-
-
 
     private val retrofit = ApiProvider.getSportApi()
 
@@ -115,7 +112,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.img_left_arrow -> {
                 now = now.minusWeeks(1)
                 setPreWeek(now).run {
-                    Log.d("TEST_DATE_1", now.toString())
                     repeat(this.size) {
                         if (this[it] != 0) {
                             dayList[it].text = this[it].toString()
@@ -127,7 +123,6 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.img_right_arrow -> {
-                Log.d("TEST_DATE_2", now.toString())
                 now = now.plusWeeks(1)
                 val days = setNextWeek(now)
                 repeat(days.size) {
@@ -202,13 +197,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         dateText4.text = day4.toString()
         dateText5.text = day5.toString()
 
-        Log.d("TEST_DATE_3", now.toString())
-        Log.d("TEST_DATE_4", today.toString())
-
         val calendarDate = now.minusDays(1)
 
         // 현재 날짜에 맞게 text 색 변경
-        Log.d("TEST", today.toString() + calendarDate.minusDays(1).toString())
+        // Log.d("TEST4", today.toString() + calendarDate.minusDays(1).toString())
         if (today == calendarDate) { // todayDate의 요일을 구함 // 그 요일에 맞는 when에 들어가 text 색 변경
             when (today.dayOfWeek) {
                 DayOfWeek.MONDAY -> {
@@ -357,8 +349,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         with(binding) {
             tvDateFirst.setOnClickListener {
                 homeAdapter.filter.filter(tvDateFirst.text)
-
             }
+            
         }
     }
 }

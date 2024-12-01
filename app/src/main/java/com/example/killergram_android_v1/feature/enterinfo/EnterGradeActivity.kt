@@ -3,7 +3,6 @@ package com.example.killergram_android_v1.feature.enterinfo
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity

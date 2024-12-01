@@ -2,13 +2,11 @@ package com.example.killergram_android_v1.feature.signup
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.killergram_android_v1.R
@@ -16,7 +14,6 @@ import com.example.killergram_android_v1.data.api.ApiProvider
 import com.example.killergram_android_v1.data.request.auth.signup.EmailRequest
 import com.example.killergram_android_v1.databinding.ActivityInputEmailBinding
 import com.example.killergram_android_v1.feature.login.LoginActivity
-import com.example.killergram_android_v1.feature.type.Ability
 import com.example.killergram_android_v1.feature.utils.isRegexEmail
 import retrofit2.Call
 import retrofit2.Callback
