@@ -44,11 +44,11 @@ class HomeAdapter(
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return filteredList.size
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(filteredList[position])
     }
 
     override fun getFilter(): Filter {
@@ -59,6 +59,7 @@ class HomeAdapter(
                     mutableListOf()
                 } else {
                     val filteringList = mutableListOf<GetSportResponse>()
+                    filteredList.clear()
                     for (date in fullList) {
                         if (date.createdDate.substring(8 until 10) == query) {
                             filteringList.add(date)
@@ -72,19 +73,20 @@ class HomeAdapter(
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 // 필터링 결과를 filteredList에 반영
-                filteredList.clear()
+
                 if (results?.values != null) {
                     @Suppress("UNCHECKED_CAST")
                     Log.d("TEST", "Filtered List: $filteredList")
                     filteredList.addAll(results.values as List<GetSportResponse>)
                 }
+
                 notifyDataSetChanged() // 화면 갱신
             }
         }
     }
 
 
-    class Holder(
+    inner class Holder(
         private val binding: ListItemBinding,
         private val itemClickListener: (Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
