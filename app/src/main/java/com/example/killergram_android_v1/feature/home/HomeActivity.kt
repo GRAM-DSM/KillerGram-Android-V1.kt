@@ -350,7 +350,18 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             tvDateFirst.setOnClickListener {
                 homeAdapter.filter.filter(tvDateFirst.text)
             }
-            
+            tvDateSecond.setOnClickListener {
+                homeAdapter.filter.filter(tvDateSecond.text)
+            }
+            tvDateThird.setOnClickListener {
+                homeAdapter.filter.filter(tvDateThird.text)
+            }
+            tvDateFourth.setOnClickListener {
+                homeAdapter.filter.filter(tvDateFourth.text)
+            }
+            tvDateFifth.setOnClickListener {
+                homeAdapter.filter.filter(tvDateFifth.text)
+            }
         }
     }
 }
